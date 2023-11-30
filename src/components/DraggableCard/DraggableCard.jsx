@@ -8,6 +8,7 @@ const DraggableCard = ({ id, name, co2, img }) => {
       id,
     });
 
+    
   return (
     <div
       ref={setNodeRef}

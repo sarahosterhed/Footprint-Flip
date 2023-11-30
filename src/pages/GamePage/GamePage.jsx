@@ -1,6 +1,18 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import "./GamePage.css";
+// import smartphoneImage from "../../assets/smartphone.svg";
+import jeansImage from "../../assets/jeans.svg";
+
+import bicycleImage from "../../assets/bicycle.svg";
+import busImage from "../../assets/bus.svg";
+import carImage from "../../assets/car.svg";
+import flightImage from "../../assets/flight.svg";
+import meatImage from "../../assets/meat.svg";
+import sneakersImage from "../../assets/sneakers.svg"; //why taking bicycle?
+import tShirtImage from "../../assets/tShirt.svg";
+import trainImage from "../../assets/train.svg";
+import defaultImage from "../../assets/car.svg"; // Note: put a question mark image here later
 
 const GamePage = () => {
   //const products = useSelector((state) => state.game.products);
@@ -11,6 +23,37 @@ const GamePage = () => {
   const [draggedCard, setDraggedCard] = useState();
   const [droppedCard, setDroppedCard] = useState();
   const [droppedLast, setDroppedLast] = useState(false);
+
+
+const getImagePath = (img) => {
+  console.log("Image Path:", img);
+  switch (img) {
+    case "../assets/smartphone.svg": ///change the image to smartphone later
+      return busImage;
+    case "../assets/jeans.svg":
+      return jeansImage;
+      case "../assets/bicycle.svg":
+        return bicycleImage;
+      case "../assets/bus.svg":
+        return busImage;
+        case "../assets/car.svg":
+          return carImage;
+        case "../assets/flight.svg":
+          return flightImage;
+          case "../assets/sneakers.svg": 
+            return sneakersImage;
+          case "../assets/meat.svg":
+            return meatImage;
+            case "../assets/train.svg":
+              return trainImage;
+            case "../assets/tShirt.svg":
+              return tShirtImage;
+    default:
+      return defaultImage;
+  }
+};
+
+
 
   const handleDragStart = (e) => {
     const card = bottomCards.find((card) => card.id == e.target.id);
@@ -66,6 +109,7 @@ const GamePage = () => {
           >
             <p>{card.name}</p>
             <p>{card.co2}</p>
+            <img  src={getImagePath(card.img)} style={{ width: '20%'}}/>
           </div>
         ))}
         <div
@@ -90,6 +134,7 @@ const GamePage = () => {
           >
             <p>{card.name}</p>
             <p>{card.co2}</p>
+            <img  src={getImagePath(card.img)} style={{ width: '20%'}}/>
           </div>
         ))}
       </div>
