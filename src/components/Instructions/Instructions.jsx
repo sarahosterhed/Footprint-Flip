@@ -1,7 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import "./Instructions.css";
 import co2 from "../../assets/co2.jpg";
 
 const Instructions = () => {
+  const navigate = useNavigate();
+
+  const playGame = () => {
+    navigate("/gamepage");
+  };
   return (
     <>
       <div className="instructions-container">
@@ -26,6 +32,7 @@ const Instructions = () => {
           Keep in mind the environmental impact of each product, and make
           environmentally friendly choices!
         </p>
+        <button onClick={playGame}>Play Game</button>
       </div>
     </>
   );
