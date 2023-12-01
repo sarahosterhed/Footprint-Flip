@@ -1,5 +1,6 @@
 // TopCard.js
 import React from 'react';
+import "./TopCard.css"
 
 const TopCard = ({ card, droppedCard, getImagePath }) => (
     <div className='card-container'>
@@ -13,7 +14,7 @@ const TopCard = ({ card, droppedCard, getImagePath }) => (
   >
     <p>{card.name}</p>
     <p>{card.co2}</p>
-    <img src={getImagePath(card.img)} style={{ width: '20%' }} alt={card.name} />
+    <img src={getImagePath(card.img)} alt={card.name} />
   </div>
   </div>
 );

@@ -15,7 +15,7 @@ const products = [
   },
   {
     id: 3,
-    name: "Cotton T-shirt",
+    name: "T-shirt",
     co2: "6kg",
     img: "../assets/tShirt.svg",
   },

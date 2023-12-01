@@ -1,9 +1,30 @@
-.top-cards {
-  border: 1px solid;
-  padding: 2rem;
+body {
+  background-color: #B4D6CC;
+ 
+}
+.top-section {
+  display: flex;
+  justify-content: space-between;
+}
+.top-item {
+  font-weight: 700;
+  font-size: 15px;
+}
+.item-color {
+  color: #1D4E89;
+}
+
+.score-color {
+  color: #FB6105;
 }
 
 .bottom-cards {
   border: 1px solid;
-  padding: 2rem;
+
+}
+.board-container {
+  
+    background-color: #7DCFB6;
+    margin-top: 1%;
+    padding: 1%;
 }

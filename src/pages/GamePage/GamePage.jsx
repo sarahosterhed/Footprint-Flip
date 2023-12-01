@@ -15,6 +15,7 @@ import trainImage from "../../assets/train.svg";
 import defaultImage from "../../assets/car.svg"; // Note: put a question mark image here later
 import TopCard from "../../components/TopCard/TopCard";
 import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
+import BackButton from "../../components/BackButton/BackButton";
 
 const GamePage = () => {
   //const products = useSelector((state) => state.game.products);
@@ -93,12 +94,23 @@ const getImagePath = (img) => {
     setDroppedCard(null);
   };
   return (
+    <div  className="game-page">
+    <BackButton />
+    <div className="top-section">
+      <p className="top-item item-color">Lowest Emission</p>
+      <p className="top-item score-color">Score 🏁<span>0</span></p>
+      <p className="top-item item-color">Highest Emission</p>
+    </div>
+    <hr className="horizontal-line"/>
     <div
       onDragStart={handleDragStart}
       onDragOver={handleDragOver}
       onDragEnd={handleDragEnd}
+     
     >
-       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+    
+
+       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }} className="board-container">
        
         {topCards.map((card) => (
           <TopCard key={card.id} card={card} droppedCard={droppedCard} getImagePath={getImagePath} />
@@ -114,15 +126,16 @@ const getImagePath = (img) => {
             draggable
             id={card.id}
             key={card.id}
-            className="bottom-cards card"
+            className="bottom-cards card card-container"
             style={{ opacity: card.id == draggedCard?.id ? 0.2 : 1.0 }}
           >
             <p>{card.name}</p>
             <p>{card.co2}</p>
-            <img  src={getImagePath(card.img)} style={{ width: '20%'}}/>
+            <img  src={getImagePath(card.img)}/>
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

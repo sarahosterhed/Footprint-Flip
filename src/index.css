@@ -8,13 +8,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+}
+body {
+  margin: 0;
+  padding: 0;
 }
 
-body {
+/* body {
   margin: 0;
   display: flex;
   place-items: center;
-}
+} */
 
 /* .card-board {
   display: flex;
@@ -24,10 +29,24 @@ body {
 
 .card {
   border: 1px solid black;
-  padding: 20px;
-  margin: 5px;
-  width: 80px
+  margin: 1%;
+  padding-left: 1.5%;
+  width: 80px;
+  height: 170px;
+  background-color: white;
+  margin-bottom: "10px";
+ border-style: solid none none solid;
+ border-color: gray;
+ box-shadow: -1px -1px 3px lightgray;
+border-radius: 4px;
 
 }
+.card:hover {
+ 
+  background-color: #e0e0e0;
+  
+}
 
-
+img {
+  width: 50%;
+}

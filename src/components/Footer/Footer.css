@@ -1,0 +1,13 @@
+.footer-item {
+    text-decoration: none;
+}
+.footer-item:hover {
+    text-decoration: underline;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+  }
