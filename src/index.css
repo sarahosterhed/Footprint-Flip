@@ -16,14 +16,18 @@ body {
   place-items: center;
 }
 
-.card-board {
+/* .card-board {
   display: flex;
   flex-direction: row;
   justify-content: center;
-}
+} */
 
 .card {
   border: 1px solid black;
   padding: 20px;
-  margin: 20px;
+  margin: 5px;
+  width: 80px
+
 }
+
+

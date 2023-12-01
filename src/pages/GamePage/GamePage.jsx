@@ -13,6 +13,8 @@ import sneakersImage from "../../assets/sneakers.svg"; //why taking bicycle?
 import tShirtImage from "../../assets/tShirt.svg";
 import trainImage from "../../assets/train.svg";
 import defaultImage from "../../assets/car.svg"; // Note: put a question mark image here later
+import TopCard from "../../components/TopCard/TopCard";
+import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
 
 const GamePage = () => {
   //const products = useSelector((state) => state.game.products);
@@ -96,32 +98,15 @@ const getImagePath = (img) => {
       onDragOver={handleDragOver}
       onDragEnd={handleDragEnd}
     >
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+       
         {topCards.map((card) => (
-          <div
-            id={card.id}
-            key={card.id}
-            className="top-cards"
-            style={{
-              borderLeft:
-                card.id == droppedCard?.id ? "30px dashed lightgray" : "",
-            }}
-          >
-            <p>{card.name}</p>
-            <p>{card.co2}</p>
-            <img  src={getImagePath(card.img)} style={{ width: '20%'}}/>
-          </div>
+          <TopCard key={card.id} card={card} droppedCard={droppedCard} getImagePath={getImagePath} />
         ))}
-        <div
-          id="invisible"
-          style={{
-            width: "200px",
-            borderLeft: droppedLast ? "30px dashed lightgray" : "",
-          }}
-        >
-          INVISIBLE CARD
+        <InvisibleCard droppedLast={droppedLast} />
+
         </div>
-      </div>
+  
       <div>-----------------------------------------</div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
         {bottomCards.map((card) => (
@@ -129,7 +114,7 @@ const getImagePath = (img) => {
             draggable
             id={card.id}
             key={card.id}
-            className="bottom-cards"
+            className="bottom-cards card"
             style={{ opacity: card.id == draggedCard?.id ? 0.2 : 1.0 }}
           >
             <p>{card.name}</p>
