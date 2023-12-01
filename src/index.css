@@ -27,26 +27,7 @@ body {
   justify-content: center;
 } */
 
-.card {
-  border: 1px solid black;
-  margin: 1%;
-  padding-left: 1.5%;
-  width: 80px;
-  height: 170px;
-  background-color: white;
-  margin-bottom: "10px";
- border-style: solid none none solid;
- border-color: gray;
- box-shadow: -1px -1px 3px lightgray;
-border-radius: 4px;
-
-}
-.card:hover {
- 
-  background-color: #e0e0e0;
-  
-}
 
 img {
-  width: 50%;
+  width: 60%;
 }
