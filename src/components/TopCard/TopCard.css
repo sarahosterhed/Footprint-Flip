@@ -1,3 +1,19 @@
-.top-cards {
-  padding: 1%;   
-  }
+
+.top-container {
+  border: 1px solid black;
+  width: 100px;
+  height: 170px;
+  padding-left: 2%;
+  padding-bottom: 1%;
+  background-color: white;
+ border-style: solid none none solid;
+ border-color: gray;
+ box-shadow: -1px -1px 3px lightgray;
+border-radius: 4px;
+
+}
+.top-container:hover {
+ 
+  background-color: #e0e0e0;
+  
+}

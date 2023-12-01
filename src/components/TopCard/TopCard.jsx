@@ -3,12 +3,12 @@ import React from 'react';
 import "./TopCard.css"
 
 const TopCard = ({ card, droppedCard, getImagePath }) => (
-    <div className='card-container'>
+    <div className='top-container'>
   <div
     id={card.id}
-    className="top-cards card"
+    className="top-cards"
     style={{
-      borderLeft: card.id === droppedCard?.id ? '30px dashed lightgray' : '',
+      borderLeft: card.id === droppedCard?.id ? '30px dashed black' : '',
       
     }}
   >
