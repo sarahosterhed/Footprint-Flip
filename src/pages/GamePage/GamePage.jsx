@@ -9,7 +9,7 @@ import busImage from "../../assets/bus.svg";
 import carImage from "../../assets/car.svg";
 import flightImage from "../../assets/flight.svg";
 import meatImage from "../../assets/meat.svg";
-import sneakersImage from "../../assets/sneakers.svg"; 
+import sneakersImage from "../../assets/sneakers.svg";
 import tShirtImage from "../../assets/tShirt.svg";
 import trainImage from "../../assets/train.svg";
 import defaultImage from "../../assets/qmark.svg"; // Note: put a question mark image here later
@@ -27,36 +27,35 @@ const GamePage = () => {
   const [droppedCard, setDroppedCard] = useState();
   const [droppedLast, setDroppedLast] = useState(false);
 
+  const [touchedCard, setTouchedCard] = useState(null);
 
-const getImagePath = (img) => {
-  console.log("Image Path:", img);
-  switch (img) {
-    case "../assets/smartphone.svg": 
-      return busImage;
-    case "../assets/jeans.svg":
-      return jeansImage;
+  const getImagePath = (img) => {
+    console.log("Image Path:", img);
+    switch (img) {
+      case "../assets/smartphone.svg":
+        return busImage;
+      case "../assets/jeans.svg":
+        return jeansImage;
       case "../assets/bicycle.svg":
         return bicycleImage;
       case "../assets/bus.svg":
         return busImage;
-        case "../assets/car.svg":
-          return carImage;
-        case "../assets/flight.svg":
-          return flightImage;
-          case "../assets/sneakers.svg": 
-            return sneakersImage;
-          case "../assets/meat.svg":
-            return meatImage;
-            case "../assets/train.svg":
-              return trainImage;
-            case "../assets/tShirt.svg":
-              return tShirtImage;
-    default:
-      return defaultImage;
-  }
-};
-
-
+      case "../assets/car.svg":
+        return carImage;
+      case "../assets/flight.svg":
+        return flightImage;
+      case "../assets/sneakers.svg":
+        return sneakersImage;
+      case "../assets/meat.svg":
+        return meatImage;
+      case "../assets/train.svg":
+        return trainImage;
+      case "../assets/tShirt.svg":
+        return tShirtImage;
+      default:
+        return defaultImage;
+    }
+  };
 
   const handleDragStart = (e) => {
     const card = bottomCards.find((card) => card.id == e.target.id);
@@ -93,50 +92,86 @@ const getImagePath = (img) => {
     setDraggedCard(null);
     setDroppedCard(null);
   };
+
+  // for mobile version
+  const handleTouchStart = (e) => {
+    const touchedId = e.target.id;
+    setTouchedCard(touchedId);
+    handleDragStart(e.touches[0]);
+  };
+
+  const handleTouchMove = (e) => {
+    handleDragOver(e.touches[0]);
+  };
+
+  const handleTouchEnd = (e) => {
+    handleDragEnd(e.changedTouches[0]);
+    setTouchedCard(null);
+  };
+
   return (
-    <div  className="game-page">
-    <BackButton />
-    <div className="top-section">
-      <p className="top-item item-color">Lowest Emission</p>
-      <p className="top-item score-color">Score 🏁<span>0</span></p>
-      <p className="top-item item-color">Highest Emission</p>
-    </div>
-    <hr className="horizontal-line"/>
-    <div
-      onDragStart={handleDragStart}
-      onDragOver={handleDragOver}
-      onDragEnd={handleDragEnd}
-     
-    >
-    
-
-       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: "center" }} className="board-container">
-     
-        {topCards.map((card) => (
-          <TopCard key={card.id} card={card} droppedCard={droppedCard} getImagePath={getImagePath} />
-        ))}
-        <InvisibleCard droppedLast={droppedLast} />
-
-        </div>
-      <div style={{ position: "relative", margin: "5% 0 0 45%" }}>
-        {bottomCards.map((card, index) => (
-          <div
-            draggable
-            id={card.id}
-            key={card.id}
-            className="bottom-cards card card-container"
-            style={{ opacity: card.id == draggedCard?.id ? 0.2 : 1.0, position: "absolute",
-            left: `${index * 15}px`, 
-            top: `${index * 15}px`,  
-           }}
-          >
-            <p className="product-item">{card.name}</p>
-            <p className="product-item guess-co2">{card.co2}</p>
-            <img  src={getImagePath(card.img)}/>
-          </div>
-        ))}
+    <div className="game-page">
+      <BackButton />
+      <div className="top-section">
+        <p className="top-item item-color">Lowest Emission</p>
+        <p className="top-item score-color">
+          Score 🏁<span>0</span>
+        </p>
+        <p className="top-item item-color">Highest Emission</p>
       </div>
-    </div>
+      <hr className="horizontal-line" />
+      <div
+        onDragStart={handleDragStart}
+        onDragOver={handleDragOver}
+        onDragEnd={handleDragEnd}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "20px",
+            justifyContent: "center",
+          }}
+          className="board-container"
+        >
+          {topCards.map((card) => (
+            <TopCard
+              key={card.id}
+              card={card}
+              droppedCard={droppedCard}
+              getImagePath={getImagePath}
+            />
+          ))}
+          <InvisibleCard droppedLast={droppedLast} />
+        </div>
+        <div style={{ position: "relative", margin: "5% 0 0 45%" }}>
+          {bottomCards.map((card, index) => (
+            <div
+              draggable
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              id={card.id}
+              key={card.id}
+              className="bottom-cards card card-container"
+              style={{
+                opacity: card.id == draggedCard?.id ? 0.2 : 1.0,
+                position: "absolute",
+                left: `${index * 15}px`,
+                top: `${index * 15}px`,
+                backgroundColor: card.id === touchedCard ? "lightgray" : "",
+              }}
+            >
+              <p className="product-item">{card.name}</p>
+              <p className="product-item guess-co2">{card.co2}</p>
+              <img src={getImagePath(card.img)} />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
