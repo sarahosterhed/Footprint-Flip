@@ -22,7 +22,9 @@ const Home = () => {
           Let start
         </button>
         <button onClick={instructionsPage}>Instructions</button>
-        <p className="instruction-text">CHECKOUT INSTRUCTIONS</p>
+        <p className="instruction-text" onClick={instructionsPage}>
+          CHECKOUT INSTRUCTIONS
+        </p>
         <Footer />
       </section>
     </div>
