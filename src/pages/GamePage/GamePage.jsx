@@ -19,7 +19,7 @@ import TopCard from "../../components/TopCard/TopCard";
 import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
 import BackButton from "../../components/BackButton/BackButton";
 
-import 'drag-drop-touch';
+// import 'drag-drop-touch';
 
 const GamePage = () => {
   // Initialize state variables
@@ -147,7 +147,8 @@ const GamePage = () => {
     e.preventDefault();
     const touchedId = e.target.id;
     setTouchedCard(touchedId);
-    handleDragStart(e.touches[0]);
+    const touchedCard = bottomCards.find((card) => card.id === touchedId);
+    handleDragStart(touchedCard);
   };
 
   const handleTouchMove = (e) => {
