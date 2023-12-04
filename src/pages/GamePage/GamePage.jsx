@@ -214,7 +214,7 @@ const GamePage = () => {
                 position: "absolute",
                 left: `${index * 5}px`,
                 top: `${index * 5}px`,
-                backgroundColor: card.id === touchedCard ? "lightgray" : "",
+                backgroundColor: card.id === touchedCard ? "lightgray" : "white",
               }}
             >
               <p className="card-heading">{card.name}</p>
