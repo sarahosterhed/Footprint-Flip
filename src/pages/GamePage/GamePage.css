@@ -1,17 +1,21 @@
 body {
   background-color: #b4d6cc;
 }
+
 .game-page {
   margin: 2%;
 }
+
 .top-section {
   display: flex;
   justify-content: space-between;
 }
+
 .top-item {
   font-weight: 700;
   font-size: 15px;
 }
+
 .item-color {
   color: #1d4e89;
 }
@@ -22,7 +26,9 @@ body {
 
 .bottom-cards {
   border: 1px solid;
+  padding: 8px 10px;
 }
+
 .board-container {
   background-color: #7dcfb6;
   margin-top: 1%;
@@ -33,14 +39,38 @@ body {
   border: 1px solid black;
   width: 100px;
   height: 170px;
-  padding-left: 4%;
-  padding-bottom: 1%;
+  /* padding-left: 4%;
+  padding-bottom: 1%; */
   background-color: #e6d5b9;
   border-style: solid none none solid;
   border-color: gray;
   box-shadow: -1px -1px 3px lightgray;
   border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: grab;
 }
+
 .card-container:hover {
   background-color: #e0e0e0;
+}
+
+.card-heading {
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  margin: 0;
+}
+
+.card-text {
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0;
+}
+
+.card-container img {
+  max-height: 50px;
 }
