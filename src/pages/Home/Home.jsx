@@ -21,7 +21,6 @@ const Home = () => {
         <button className="start-button" onClick={handleNavigation}>
           Let start
         </button>
-        <button onClick={instructionsPage}>Instructions</button>
         <p className="instruction-text" onClick={instructionsPage}>
           CHECKOUT INSTRUCTIONS
         </p>
