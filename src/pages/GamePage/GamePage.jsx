@@ -210,7 +210,7 @@ const GamePage = () => {
               key={card.id}
               className="bottom-cards card card-container"
               style={{
-                opacity: card.id == draggedCard?.id ? 0.2 : 1.0,
+                opacity: card.id == draggedCard?.id || card.id === touchedCard ? 0.2 : 1.0,
                 position: "absolute",
                 left: `${index * 5}px`,
                 top: `${index * 5}px`,
