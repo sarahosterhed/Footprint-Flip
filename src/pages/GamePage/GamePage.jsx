@@ -10,6 +10,7 @@ import busImage from "../../assets/bus.svg";
 import carImage from "../../assets/car.svg";
 import flightImage from "../../assets/flight.svg";
 import meatImage from "../../assets/meat.svg";
+import vegoImage from "../../assets/vegetarian.svg";
 import sneakersImage from "../../assets/sneakers.svg";
 import tShirtImage from "../../assets/t-shirt.svg";
 import trainImage from "../../assets/train.svg";
@@ -24,11 +25,11 @@ const GamePage = () => {
   // Initialize state variables
   const cards = useSelector((state) => state.game.products);
 
-   //random cards
-   const randomCards = [...cards].sort(() => Math.random() - 0.5);
+  //random cards
+  const randomCards = [...cards].sort(() => Math.random() - 0.5);
 
-   const [bottomCards, setBottomCards] = useState(randomCards.slice(1, 10));
-   const [topCards, setTopCards] = useState(randomCards.slice(0, 1));
+  const [bottomCards, setBottomCards] = useState(randomCards.slice(1, 10));
+  const [topCards, setTopCards] = useState(randomCards.slice(0, 1));
 
   const [draggedCard, setDraggedCard] = useState();
   const [droppedCard, setDroppedCard] = useState();
@@ -55,6 +56,8 @@ const GamePage = () => {
         return sneakersImage;
       case "../assets/meat.svg":
         return meatImage;
+      case "../assets/vegetarian.svg":
+        return vegoImage;
       case "../assets/train.svg":
         return trainImage;
       case "../assets/t-shirt.svg":
