@@ -31,7 +31,7 @@ const GamePage = () => {
 
   // Function to retrieve image path based on card's image
   const getImagePath = (img) => {
-    // console.log("Image Path:", img);
+
     switch (img) {
       case "../assets/smartphone.svg":
         return busImage;
@@ -101,6 +101,7 @@ const GamePage = () => {
 
       // Determine the updated list of top cards after dragging ends
       if (droppedLast) {
+        setTopCards([...topCards, { ...draggedCard, hidden: false }]);
         // If dropped at the last position, add the card to the end
         updatedTopCards = [...topCards, draggedCard];
         // Update state immediately to display the new card
@@ -110,7 +111,7 @@ const GamePage = () => {
         const i = topCards.indexOf(droppedCard);
         updatedTopCards = [
           ...topCards.slice(0, i),
-          draggedCard,
+          { ...draggedCard, hidden: false },
           ...topCards.slice(i),
         ];
         // Update state immediately to display the new card
@@ -146,6 +147,7 @@ const GamePage = () => {
     setTouchedCard(null);
   };
 
+
   return (
     <div className="game-page">
       <BackButton />
@@ -164,6 +166,7 @@ const GamePage = () => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+
       >
         <div
           style={{
@@ -203,7 +206,7 @@ const GamePage = () => {
               }}
             >
               <p className="product-item">{card.name}</p>
-              <p className="product-item guess-co2">{card.co2}</p>
+              {card.hidden ? <p>CO₂ ?</p> : <p>{card.co2} kg</p>}
               <img src={getImagePath(card.img)} />
             </div>
           ))}
