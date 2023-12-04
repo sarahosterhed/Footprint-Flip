@@ -18,11 +18,11 @@ function App() {
     <>
       <Provider store={store}>
         <BrowserRouter>
+          <NavBar />
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/gamepage" element={<GamePage />}></Route>
             <Route path="/instructions" element={<Instructions />}></Route>
-            <NavBar />
           </Routes>
         </BrowserRouter>
       </Provider>
