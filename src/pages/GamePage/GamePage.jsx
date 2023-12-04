@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import "./GamePage.css";
-// import smartphoneImage from "../../assets/smartphone.svg";
+import smartphoneImage from "../../assets/mobile.svg";
 import jeansImage from "../../assets/jeans.svg";
 
 import bicycleImage from "../../assets/bicycle.svg";
@@ -33,7 +33,7 @@ const GamePage = () => {
   const getImagePath = (img) => {
     switch (img) {
       case "../assets/smartphone.svg":
-        return busImage;
+        return smartphoneImage;
       case "../assets/jeans.svg":
         return jeansImage;
       case "../assets/bicycle.svg":
