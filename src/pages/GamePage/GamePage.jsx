@@ -173,9 +173,9 @@ const GamePage = () => {
       </div>
       <hr className="horizontal-line" />
       <div
-        // onDragStart={handleDragStart}
-        // onDragOver={handleDragOver}
-        // onDragEnd={handleDragEnd}
+        onDragStart={handleDragStart}
+        onDragOver={handleDragOver}
+        onDragEnd={handleDragEnd}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
