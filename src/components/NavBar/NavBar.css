@@ -1,7 +1,7 @@
 nav {
     display: flex;
     justify-content: flex-end;
-    padding: 20px;
+    margin: 2%;
 }
 
 nav div {
@@ -12,6 +12,8 @@ nav div {
 
 nav li {
     list-style-type: none;
+    font-size: 1em;
+    margin: 0;
 }
 
 nav a {

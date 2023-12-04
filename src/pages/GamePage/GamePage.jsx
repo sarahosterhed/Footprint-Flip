@@ -4,13 +4,14 @@ import "./GamePage.css";
 import smartphoneImage from "../../assets/mobile.svg";
 import jeansImage from "../../assets/jeans.svg";
 
+import coffee from "../../assets/coffee.svg";
 import bicycleImage from "../../assets/bicycle.svg";
 import busImage from "../../assets/bus.svg";
 import carImage from "../../assets/car.svg";
 import flightImage from "../../assets/flight.svg";
 import meatImage from "../../assets/meat.svg";
 import sneakersImage from "../../assets/sneakers.svg";
-import tShirtImage from "../../assets/tShirt.svg";
+import tShirtImage from "../../assets/t-shirt.svg";
 import trainImage from "../../assets/train.svg";
 import defaultImage from "../../assets/qmark.svg"; // Note: put a question mark image here later
 import TopCard from "../../components/TopCard/TopCard";
@@ -50,8 +51,10 @@ const GamePage = () => {
         return meatImage;
       case "../assets/train.svg":
         return trainImage;
-      case "../assets/tShirt.svg":
+      case "../assets/t-shirt.svg":
         return tShirtImage;
+      case "../assets/coffee.svg":
+        return coffee;
       default:
         return defaultImage;
     }
@@ -202,9 +205,9 @@ const GamePage = () => {
                 backgroundColor: card.id === touchedCard ? "lightgray" : "",
               }}
             >
-              <p className="product-item">{card.name}</p>
-              {card.hidden ? <p>CO₂ ?</p> : <p>{card.co2}</p>}
+              <p className="card-heading">{card.name}</p>
               <img src={getImagePath(card.img)} />
+              {card.hidden ? <p className="card-text">CO₂ ?</p> : <p className="card-text">{card.co2}</p>}
             </div>
           ))}
         </div>
