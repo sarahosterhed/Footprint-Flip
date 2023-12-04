@@ -197,8 +197,8 @@ const GamePage = () => {
               style={{
                 opacity: card.id == draggedCard?.id ? 0.2 : 1.0,
                 position: "absolute",
-                left: `${index * 15}px`,
-                top: `${index * 15}px`,
+                left: `${index * 5}px`,
+                top: `${index * 5}px`,
                 backgroundColor: card.id === touchedCard ? "lightgray" : "",
               }}
             >
