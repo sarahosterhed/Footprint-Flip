@@ -144,19 +144,16 @@ const GamePage = () => {
 
   // for mobile version
   const handleTouchStart = (e) => {
-    // e.preventDefault();
     const touchedId = e.target.id;
     setTouchedCard(touchedId);
     handleDragStart(e.touches[0]);
   };
 
   const handleTouchMove = (e) => {
-    // e.preventDefault();
     handleDragOver(e.touches[0]);
   };
 
   const handleTouchEnd = (e) => {
-    // e.preventDefault();
     handleDragEnd(e.changedTouches[0]);
     setTouchedCard(null);
   };
