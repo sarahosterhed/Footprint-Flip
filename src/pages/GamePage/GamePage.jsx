@@ -219,7 +219,7 @@ const GamePage = () => {
             >
               <p className="card-heading">{card.name}</p>
               <img src={getImagePath(card.img)} />
-              {card.hidden ? <p className="card-text">CO₂ ?</p> : <p className="card-text">{card.co2}</p>}
+              {card.hidden ? <p className="card-text">CO₂ <span>?</span></p> : <p className="card-text">{card.co2}</p>}
             </div>
           ))}
         </div>
