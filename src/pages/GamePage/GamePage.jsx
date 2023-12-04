@@ -18,7 +18,7 @@ import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
 import BackButton from "../../components/BackButton/BackButton";
 
 const GamePage = () => {
-  //const products = useSelector((state) => state.game.products);
+  // Initialize state variables
   const cards = useSelector((state) => state.game.products);
   const [bottomCards, setBottomCards] = useState(cards.slice(1, 5));
   const [topCards, setTopCards] = useState(cards.slice(0, 1));
@@ -27,8 +27,11 @@ const GamePage = () => {
   const [droppedCard, setDroppedCard] = useState();
   const [droppedLast, setDroppedLast] = useState(false);
 
+  const [touchedCard, setTouchedCard] = useState(null);
+
+  // Function to retrieve image path based on card's image
   const getImagePath = (img) => {
-    console.log("Image Path:", img);
+
     switch (img) {
       case "../assets/smartphone.svg":
         return busImage;
@@ -55,41 +58,96 @@ const GamePage = () => {
     }
   };
 
+  // Function triggered when dragging starts
   const handleDragStart = (e) => {
+    // Find the card being dragged based on the ID
     const card = bottomCards.find((card) => card.id == e.target.id);
     console.log("Drag Start:", card);
+    // Set the dragged card and reset dropped indicators
     setDraggedCard(card);
     setDroppedCard(null);
     setDroppedLast(false);
   };
 
+  // Function triggered when dragging over a target
   const handleDragOver = (e) => {
+    // Find the card being dragged over based on the ID
     const card = topCards.find((card) => card.id == e.target.id);
     console.log("Drag over:", e.target.id);
+    // Set the dropped card and update indicators
     setDroppedCard(card);
     setDroppedLast(e.target.id == "invisible");
     e.preventDefault();
   };
 
+  // Function triggered when dragging ends
   const handleDragEnd = (e) => {
     // console.log("END", e.target.className);
+
+    // Function for delayed sorting after a 2-second delay
+    const sortTopCardsWithDelay = (cardsToSort) => {
+      // Sorts the cards after a 2-second delay
+      setTimeout(() => {
+        // Sort the cards by CO2 property in ascending order
+        const sortedCards = cardsToSort.slice().sort((a, b) => a.co2 - b.co2);
+        // Update the state with the sorted cards
+        setTopCards(sortedCards);
+      }, 2000); // 2-second delay before sorting
+    };
+
+    // Check if a card is being dragged and dropped over a target
     if (draggedCard && (droppedCard || droppedLast)) {
-      e.preventDefault();
+      let updatedTopCards = [];
+
+      // Determine the updated list of top cards after dragging ends
       if (droppedLast) {
         setTopCards([...topCards, { ...draggedCard, hidden: false }]);
+        // If dropped at the last position, add the card to the end
+        updatedTopCards = [...topCards, draggedCard];
+        // Update state immediately to display the new card
+        setTopCards(updatedTopCards);
       } else {
+        // Calculate the index where the card is dropped
         const i = topCards.indexOf(droppedCard);
-        setTopCards([
+        updatedTopCards = [
           ...topCards.slice(0, i),
           { ...draggedCard, hidden: false },
           ...topCards.slice(i),
-        ]);
+        ];
+        // Update state immediately to display the new card
+        setTopCards(updatedTopCards);
       }
+
+      // Initiate sorting of top cards after a delay
+      sortTopCardsWithDelay(updatedTopCards);
+      // Filter out the dragged card from bottom cards
       setBottomCards(bottomCards.filter((card) => card != draggedCard));
     }
+    // Reset dragged and dropped cards
     setDraggedCard(null);
     setDroppedCard(null);
   };
+
+  console.log("Top Card:", topCards)
+  console.log("Bottom Card:", bottomCards)
+
+  // for mobile version
+  const handleTouchStart = (e) => {
+    const touchedId = e.target.id;
+    setTouchedCard(touchedId);
+    handleDragStart(e.touches[0]);
+  };
+
+  const handleTouchMove = (e) => {
+    handleDragOver(e.touches[0]);
+  };
+
+  const handleTouchEnd = (e) => {
+    handleDragEnd(e.changedTouches[0]);
+    setTouchedCard(null);
+  };
+
+
   return (
     <div className="game-page">
       <BackButton />
@@ -105,6 +163,10 @@ const GamePage = () => {
         onDragStart={handleDragStart}
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+
       >
         <div
           style={{
@@ -129,6 +191,9 @@ const GamePage = () => {
           {bottomCards.map((card, index) => (
             <div
               draggable
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
               id={card.id}
               key={card.id}
               className="bottom-cards card card-container"
@@ -137,10 +202,11 @@ const GamePage = () => {
                 position: "absolute",
                 left: `${index * 15}px`,
                 top: `${index * 15}px`,
+                backgroundColor: card.id === touchedCard ? "lightgray" : "",
               }}
             >
               <p className="product-item">{card.name}</p>
-              {card.hidden ? <p>CO₂ ?</p> : <p>{card.co2}</p>}
+              {card.hidden ? <p>CO₂ ?</p> : <p>{card.co2} kg</p>}
               <img src={getImagePath(card.img)} />
             </div>
           ))}
