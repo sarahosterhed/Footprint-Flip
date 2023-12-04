@@ -176,9 +176,9 @@ const GamePage = () => {
         onDragStart={handleDragStart}
         onDragOver={handleDragOver}
         onDragEnd={handleDragEnd}
-        // onTouchStart={handleTouchStart}
-        // onTouchMove={handleTouchMove}
-        // onTouchEnd={handleTouchEnd}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
       >
         <div
           style={{
@@ -203,9 +203,9 @@ const GamePage = () => {
           {bottomCards.map((card, index) => (
             <div
               draggable
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
+              // onTouchStart={handleTouchStart}
+              // onTouchMove={handleTouchMove}
+              // onTouchEnd={handleTouchEnd}
               id={card.id}
               key={card.id}
               className="bottom-cards card card-container"
