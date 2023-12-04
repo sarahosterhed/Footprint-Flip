@@ -17,6 +17,8 @@ import TopCard from "../../components/TopCard/TopCard";
 import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
 import BackButton from "../../components/BackButton/BackButton";
 
+import 'drag-drop-touch';
+
 const GamePage = () => {
   // Initialize state variables
   const cards = useSelector((state) => state.game.products);
@@ -197,7 +199,7 @@ const GamePage = () => {
               draggable
               onTouchStart={(e) => handleTouchStart(e)}
               onTouchMove={(e) => handleTouchMove(e)}
-              onTouchEnd={(e) => handleTouchEnd (e)}
+              onTouchEnd={(e) => handleTouchEnd(e)}
               id={card.id}
               key={card.id}
               className="bottom-cards card card-container"
