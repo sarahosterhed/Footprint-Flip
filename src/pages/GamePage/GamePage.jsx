@@ -20,8 +20,12 @@ import BackButton from "../../components/BackButton/BackButton";
 const GamePage = () => {
   // Initialize state variables
   const cards = useSelector((state) => state.game.products);
-  const [bottomCards, setBottomCards] = useState(cards.slice(1, 10));
-  const [topCards, setTopCards] = useState(cards.slice(0, 1));
+
+   //random cards
+   const randomCards = [...cards].sort(() => Math.random() - 0.5);
+
+   const [bottomCards, setBottomCards] = useState(randomCards.slice(1, 10));
+   const [topCards, setTopCards] = useState(randomCards.slice(0, 1));
 
   const [draggedCard, setDraggedCard] = useState();
   const [droppedCard, setDroppedCard] = useState();
