@@ -7,6 +7,7 @@ const InvisibleCard = ({ droppedLast }) => (
     style={{
       width: '50px',
       borderLeft: droppedLast ? '30px dashed black' : '',
+
     }}
   >
     INVISIBLE CARD

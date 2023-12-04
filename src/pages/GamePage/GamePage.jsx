@@ -144,19 +144,16 @@ const GamePage = () => {
 
   // for mobile version
   const handleTouchStart = (e) => {
-    e.preventDefault();
     const touchedId = e.target.id;
     setTouchedCard(touchedId);
     handleDragStart(e.touches[0]);
   };
 
   const handleTouchMove = (e) => {
-    e.preventDefault();
     handleDragOver(e.touches[0]);
   };
 
   const handleTouchEnd = (e) => {
-    e.preventDefault();
     handleDragEnd(e.changedTouches[0]);
     setTouchedCard(null);
   };
@@ -203,18 +200,14 @@ const GamePage = () => {
           {bottomCards.map((card, index) => (
             <div
               draggable
-              onTouchStart={(e) => handleTouchStart(e)}
-              onTouchMove={(e) => handleTouchMove(e)}
-              onTouchEnd={(e) => handleTouchEnd(e)}
               id={card.id}
               key={card.id}
               className="bottom-cards card card-container"
               style={{
-                opacity: card.id == draggedCard?.id ? 0.2 : 1.0,
+                opacity: card.id == draggedCard?.id || card.id === touchedCard ? 0.2 : 1.0,
                 position: "absolute",
                 left: `${index * 5}px`,
                 top: `${index * 5}px`,
-                backgroundColor: card.id === touchedCard ? "lightgray" : "",
               }}
             >
               <p className="card-heading">{card.name}</p>
