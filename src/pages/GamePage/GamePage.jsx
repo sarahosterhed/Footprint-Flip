@@ -140,7 +140,7 @@ const GamePage = () => {
               }}
             >
               <p className="product-item">{card.name}</p>
-              {card.hidden ? <p>??</p> : <p>{card.co2}</p>}
+              {card.hidden ? <p>CO₂ ?</p> : <p>{card.co2}</p>}
               <img src={getImagePath(card.img)} />
             </div>
           ))}
