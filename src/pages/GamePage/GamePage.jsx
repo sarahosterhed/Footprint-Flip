@@ -31,7 +31,6 @@ const GamePage = () => {
 
   // Function to retrieve image path based on card's image
   const getImagePath = (img) => {
-
     switch (img) {
       case "../assets/smartphone.svg":
         return busImage;
@@ -128,8 +127,8 @@ const GamePage = () => {
     setDroppedCard(null);
   };
 
-  console.log("Top Card:", topCards)
-  console.log("Bottom Card:", bottomCards)
+  console.log("Top Card:", topCards);
+  console.log("Bottom Card:", bottomCards);
 
   // for mobile version
   const handleTouchStart = (e) => {
@@ -146,7 +145,6 @@ const GamePage = () => {
     handleDragEnd(e.changedTouches[0]);
     setTouchedCard(null);
   };
-
 
   return (
     <div className="game-page">
@@ -166,7 +164,6 @@ const GamePage = () => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-
       >
         <div
           style={{
@@ -206,7 +203,7 @@ const GamePage = () => {
               }}
             >
               <p className="product-item">{card.name}</p>
-              {card.hidden ? <p>CO₂ ?</p> : <p>{card.co2} kg</p>}
+              {card.hidden ? <p>CO₂ ?</p> : <p>{card.co2}</p>}
               <img src={getImagePath(card.img)} />
             </div>
           ))}
