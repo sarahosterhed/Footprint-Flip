@@ -215,6 +215,7 @@ const GamePage = () => {
                 left: `${index * 5}px`,
                 top: `${index * 5}px`,
                 // backgroundColor: card.id === touchedCard ? "lightgray" : "",
+                zIndex: card.id === draggedCard?.id ? 100 : "auto",
               }}
             >
               <p className="card-heading">{card.name}</p>
