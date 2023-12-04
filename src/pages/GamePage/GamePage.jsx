@@ -200,9 +200,6 @@ const GamePage = () => {
           {bottomCards.map((card, index) => (
             <div
               draggable
-              // onTouchStart={handleTouchStart}
-              // onTouchMove={handleTouchMove}
-              // onTouchEnd={handleTouchEnd}
               id={card.id}
               key={card.id}
               className="bottom-cards card card-container"
@@ -211,8 +208,6 @@ const GamePage = () => {
                 position: "absolute",
                 left: `${index * 5}px`,
                 top: `${index * 5}px`,
-                // backgroundColor: card.id === touchedCard ? "lightgray" : "",
-                zIndex: card.id === draggedCard?.id ? 100 : "auto",
               }}
             >
               <p className="card-heading">{card.name}</p>
