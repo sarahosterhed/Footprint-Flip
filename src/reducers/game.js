@@ -95,27 +95,11 @@ export const game = createSlice({
   name: "game",
   initialState,
   reducers: {
-    moveCard: (state, action) => {
-      const { from, to } = action.payload;
-      const updatedProducts = [...state.products];
-      const [moveCard] = updatedProducts.splice(from, 1);
-      updatedProducts.splice(to, 0, moveCard);
-
-      return {
-        ...state,
-        products: updatedProducts,
-      };
-    },
-
-    updateCards: (state, action) => {
-      state.products = action.payload;
-    },
-
     restart: () => {
       return initialState;
     },
   },
 });
 
-export const { moveCard, updateCards } = game.actions;
+export const { moveCard, updateCards, restart } = game.actions;
 export default game.reducer;

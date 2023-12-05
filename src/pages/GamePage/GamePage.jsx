@@ -1,5 +1,6 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
+import { restart } from "../../reducers/game";
 import "./GamePage.css";
 import smartphoneImage from "../../assets/mobile.svg";
 import jeansImage from "../../assets/jeans.svg";
@@ -20,10 +21,12 @@ import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
 import BackButton from "../../components/BackButton/BackButton";
 
 import "drag-drop-touch";
+import Modal from "../../components/Modal/Modal";
 
 const GamePage = () => {
   // Initialize state variables
   const cards = useSelector((state) => state.game.products);
+  const dispatch = useDispatch();
 
   //random cards
   const randomCards = [...cards].sort(() => Math.random() - 0.5);
@@ -38,9 +41,11 @@ const GamePage = () => {
   const [touchedCard, setTouchedCard] = useState(null);
 
   const [correctPlacedId, setCorrectPlacedId] = useState();
-  const [wrongPlacedId, setWrongPlacedId] = useState();
+  const [wrongPlacedId, setWrongPlacedId] = useState([]);
   const [correctCount, setCorrectCount] = useState(0);
   const totalCards = 12; // Total number of cards
+
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   // Function to retrieve image path based on card's image
   const getImagePath = (img) => {
@@ -108,8 +113,13 @@ const GamePage = () => {
       setTimeout(() => {
         // Update the state with the sorted cards
         setTopCards(sortedCards);
-        setCorrectPlacedId("");
-        setWrongPlacedId("");
+        setTimeout(() => {
+          setCorrectPlacedId("");
+          setWrongPlacedId("");
+          if (bottomCards.length === 1) {
+            setIsOpenModal(true);
+          }
+        }, 2000);
       }, 2000); // 2-second delay before sorting
       return sortedCards;
     };
@@ -176,6 +186,12 @@ const GamePage = () => {
     setTouchedCard(null);
   };
 
+  const handleRestart = () => {
+    dispatch(restart());
+    setBottomCards(randomCards.slice(1, 10)); // Reset the bottom cards
+    setTopCards(randomCards.slice(0, 1)); // Reset the top cards
+  };
+
   return (
     <div className="game-page">
       <BackButton />
@@ -184,6 +200,14 @@ const GamePage = () => {
         <p className="top-item score-color">
           Score 🏁 <span>{`${correctCount}/${totalCards}`}</span>
         </p>
+
+        {isOpenModal && (
+          <Modal
+            setIsOpen={setIsOpenModal}
+            correctCount={correctCount}
+            totalCards={totalCards}
+          />
+        )}
         <p className="top-item item-color">Highest Emission</p>
       </div>
       <hr className="horizontal-line" />
@@ -239,7 +263,7 @@ const GamePage = () => {
               }}
             >
               <p className="card-heading">{card.name}</p>
-              <img src={getImagePath(card.img)} />
+              <img draggable={false} src={getImagePath(card.img)} />
 
               {card.hidden ? (
                 <p className="card-text">
@@ -250,6 +274,11 @@ const GamePage = () => {
               )}
             </div>
           ))}
+          {bottomCards.length === 0 && (
+            <button className="restartBtn" onClick={handleRestart}>
+              Restart
+            </button>
+          )}
         </div>
       </div>
     </div>

@@ -22,6 +22,10 @@
   max-width: 100%;
 }
 
+.top-container * {
+  pointer-events: none;
+}
+
 /* .top-container:hover {
   background-color: #e0e0e0;
 
