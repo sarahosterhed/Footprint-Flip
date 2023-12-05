@@ -15,7 +15,7 @@ import vegoImage from "../../assets/vegetarian.svg";
 import sneakersImage from "../../assets/sneakers.svg";
 import tShirtImage from "../../assets/t-shirt.svg";
 import trainImage from "../../assets/train.svg";
-import defaultImage from "../../assets/qmark.svg"; // Note: put a question mark image here later
+import defaultImage from "../../assets/qmark.svg"; 
 import TopCard from "../../components/TopCard/TopCard";
 import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
 import BackButton from "../../components/BackButton/BackButton";
@@ -253,10 +253,10 @@ const GamePage = () => {
               key={card.id}
               className="bottom-cards card card-container"
               style={{
-                opacity:
-                  card.id == draggedCard?.id || card.id === touchedCard
-                    ? 0.2
-                    : 1.0,
+                // opacity:
+                //   card.id == draggedCard?.id || card.id === touchedCard
+                //     ? 0.2
+                //     : 1.0,
                 position: "absolute",
                 left: `${index * 5}px`,
                 top: `${index * 5}px`,

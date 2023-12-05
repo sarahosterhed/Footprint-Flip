@@ -1,5 +1,3 @@
-// InvisibleCard.js
-import React from "react";
 
 const InvisibleCard = ({ droppedLast }) => (
   <div

@@ -1,4 +1,3 @@
-import React from "react";
 import "./Modal.css";
 import { RiCloseLine } from "react-icons/ri";
 

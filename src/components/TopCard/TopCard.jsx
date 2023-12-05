@@ -1,9 +1,6 @@
-// TopCard.js
-import React from "react";
 import "./TopCard.css";
 
 const TopCard = ({ card, droppedCard, getImagePath, color }) => (
-  // <div className="top-container">
   <div
     id={card.id}
     className="top-container"
@@ -17,7 +14,6 @@ const TopCard = ({ card, droppedCard, getImagePath, color }) => (
     <img draggable={false} src={getImagePath(card.img)} alt={card.name} />
     <p className="card-text">{card.co2} kg</p>
   </div>
-  // </div>
 );
 
 export default TopCard;
