@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import GamePage from "./pages/GamePage/GamePage";
 import Instructions from "./components/Instructions/Instructions";
 import NavBar from "./components/NavBar/NavBar";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 const reducer = combineReducers({
   game: game.reducer,
