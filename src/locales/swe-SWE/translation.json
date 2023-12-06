@@ -1,8 +1,8 @@
 {
-  "welcome_message": "Välkommen Till Kortspel",
+  "welcome_message": "Välkommen till Footprint Flip Card Game",
   "play_learn": "Lek och lär dig om produkters påverkan på miljön!",
   "start": "Låt oss börja",
-  "check_instruction": "KASSAINSTRUKTIONER",
+  "check_instruction": "SPELREGLER",
 
   "low_emission": "Lägsta Utsläpp",
   "high_emission": "Högsta Utsläpp",
@@ -37,9 +37,9 @@
   "des_meat":"Veckokonsumtion av mat för en person på en köttbaserad diet",
 
   "how_to_play": "Hur man spelar",
-  "step_1": "Dra och släpp korten för att ordna dem i rätt ordning för ökande CO2-utsläpp",
-  "step_2": "När du tror att du har rätt beställning, skicka in ditt arrangemang.",
-  "step_3": "Jämför din ranking med rätt ordning för att se hur bra du gjorde!",
+  "step_1": "Dra och släpp korten till toppen och ordna dem på rätt sätt ökade CO2-utsläpp. Gissa rätt position för kort baserade på produkten från lägsta till högsta CO2-utsläpp.",
+  "step_2": "När du tror att du har en idé om var det specifika produktkortet kommer placeras, släpp kortet. Bakgrundsfärgen på ditt tappade kort blir grönt om placeringen var korrekt eller röd om placeringsnätet var felaktig.",
+  "step_3": "När alla kort är tomma från bottenhögen och alla 12 korten placeras högst upp kommer du att få en poäng.",
   "note": "Tänk på miljöpåverkan från varje produkt och gör miljövänliga val!",
   "play_button": "Spela spel",
 

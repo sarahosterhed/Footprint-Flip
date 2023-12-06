@@ -25,9 +25,9 @@ const Home = () => {
       </div>
       <div className="home-container home-page">
         <section>
-          <h1 className="heading">Welcome to Footprint Flip Card Game</h1>
+          <h1 className="heading">{t('welcome_message')}</h1>
           <h1 className="heading">
-            Play and Learn about different products impact on the environment!
+            {t('play_learn')}
           </h1>
           <button className="start-button" onClick={handleNavigation}>
             {t('start')}

@@ -1,6 +1,6 @@
 {
-  "welcome_message": "Welcome to Card Game",
-  "play_learn": "Play and Learn about products impact to environment!",
+  "welcome_message": "Welcome to Footprint Flip Card Game",
+  "play_learn": "Play and Learn about products impact on the environment!",
   "start": "Let's start",
   "check_instruction": "CHECKOUT INSTRUCTIONS",
 
@@ -38,9 +38,9 @@
   "des_meat": "Weekly food consumption for one person on a meat based diet",
 
   "how_to_play": "How to play",
-  "step_1": "Drag and drop the cards to arrange them in the correct order of increasing CO2 emissions,",
-  "step_2": " Once you think you have the correct order, submit your arrangement.",
-  "step_3": "Compare your ranking with the correct order to see how well you did!",
+  "step_1": "Drag and drop the cards to the top and arrange them in the correct order of increasing CO2 emissions. Guess the correct position of the cards based on the product from lowest to highest CO2 emissions.",
+  "step_2": " Once you think you have an idea where the specific product card will be placed, drop the card. The background color of your dropped card will turn green if the placement was correct or red if the placement was incorrect.",
+  "step_3": "When all the cards are empty from the bottom pile and all 12 cards are placed at the top, you will recieve a score.",
   "note": " Keep in mind the environmental impact of each product, and make environmentally friendly choices!",
   "play_button": "Play Game",
 
