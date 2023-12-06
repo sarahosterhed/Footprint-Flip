@@ -7,6 +7,7 @@ const products = [
     co2: 18,
     img: "../assets/smartphone.svg",
     hidden: true,
+    description: "Manufacturing of a smartphone",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const products = [
     co2: 22,
     img: "../assets/jeans.svg",
     hidden: true,
+    description: "The carbon footprint for a pair of jeans",
   },
   {
     id: 3,
@@ -21,13 +23,15 @@ const products = [
     co2: 6,
     img: "../assets/t-shirt.svg",
     hidden: true,
+    description: "Production of a typical cotton T-shirt",
   },
   {
     id: 4,
-    name: "Bicycle",
-    co2: 7.5,
-    img: "../assets/bicycle.svg",
+    name: "Textile Bag",
+    co2: 2,
+    img: "../assets/bag.svg",
     hidden: true,
+    description: "Production of a typical textile bag",
   },
   {
     id: 5,
@@ -35,13 +39,15 @@ const products = [
     co2: 11.5,
     img: "../assets/sneakers.svg",
     hidden: true,
+    description: "Production of a pair of sneakers",
   },
   {
     id: 6,
-    name: "Air travel within Europe",
+    name: "Air travel",
     co2: 150,
     img: "../assets/flight.svg",
     hidden: true,
+    description: "One way, short-haul flights per passenger",
   },
   {
     id: 7,
@@ -49,6 +55,7 @@ const products = [
     co2: 0.2,
     img: "../assets/bus.svg",
     hidden: true,
+    description: "Travling by bus per kilometer and passenger",
   },
   {
     id: 8,
@@ -56,6 +63,7 @@ const products = [
     co2: 0.1,
     img: "../assets/train.svg",
     hidden: true,
+    description: "Traveling by train per kilometer and passenger",
   },
   {
     id: 9,
@@ -63,6 +71,7 @@ const products = [
     co2: 0.3,
     img: "../assets/car.svg",
     hidden: true,
+    description: "Traveling by car per kilometer",
   },
   {
     id: 10,
@@ -70,6 +79,7 @@ const products = [
     co2: 1.5,
     img: "../assets/coffee.svg",
     hidden: true,
+    description: "Two cups of coffee a day per week",
   },
   {
     id: 11,
@@ -77,6 +87,7 @@ const products = [
     co2: 48,
     img: "../assets/vegetarian.svg",
     hidden: true,
+    description: "Weekly food consumption for one person on a vegetarian diet"
   },
   {
     id: 12,
@@ -84,6 +95,7 @@ const products = [
     co2: 77,
     img: "../assets/meat.svg",
     hidden: true,
+    description: "Weekly food consumption for one person on a meat based diet"
   },
 ];
 

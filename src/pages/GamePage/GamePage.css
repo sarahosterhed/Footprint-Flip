@@ -122,8 +122,39 @@ body {
   box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
 }
 
+.bottom-container {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.description-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.description-box {
+  background-color: white;
+  height: 210px;
+  width: 170px;
+  padding: 8px 20px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  hyphens: auto;
+}
+
 @media only screen and (max-width: 768px) {
   .top-item {
     font-size: 15px;
   }
 }
+
