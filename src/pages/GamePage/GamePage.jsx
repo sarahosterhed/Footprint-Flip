@@ -130,8 +130,8 @@ const GamePage = () => {
           if (bottomCards.length === 1) {
             setIsOpenModal(true);
           }
-        }, 2000);
-      }, 2000); // 2-second delay before sorting
+        }, 1000);
+      }, 1000);
       return sortedCards;
     };
 
@@ -261,12 +261,12 @@ const GamePage = () => {
         </div>
         <div className="bottom-container">
           <div className="deck-container">
-            {bottomCards.map((card, index) => (
+            {bottomCards.map((card, index, array) => (
               <div
-                draggable
+                {...(index === array.length - 1 ? { draggable: true } : {})}
                 id={card.id}
                 key={card.id}
-                className="bottom-cards card-container"
+                className={`bottom-cards card-container ${index === array.length - 1 ? 'current-card' : ''}`}
                 style={{
                   position: "absolute",
                   marginLeft: `${index * 5}px`,
