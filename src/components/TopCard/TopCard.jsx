@@ -1,11 +1,10 @@
 import "./TopCard.css";
 
-const TopCard = ({ card, droppedCard, getImagePath, color }) => (
+const TopCard = ({ card, getImagePath, color }) => (
   <div
     id={card.id}
     className="top-container"
     style={{
-      borderLeft: card.id === droppedCard?.id ? "30px dashed black" : "",
       backgroundColor:
         color === "green" ? "green" : color === "red" ? "red" : "",
     }}
