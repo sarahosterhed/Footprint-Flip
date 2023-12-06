@@ -95,6 +95,9 @@ const GamePage = () => {
 
     // Set the dragged card and reset dropped indicators
     setDraggedCard(card);
+    setTimeout(() => {
+      e.target.style.visibility = "hidden";
+    }, 1);
     setDropzone();
   };
 
@@ -236,16 +239,15 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                    ? "red"
-                    : "default"
+                      ? "red"
+                      : "default"
                 }
               />
             </>
           ))}
           <div
-            className={`dropzone ${
-              topCards.length == dropzone ? "selected" : ""
-            }`}
+            className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+              }`}
           >
             {topCards.length}
           </div>
