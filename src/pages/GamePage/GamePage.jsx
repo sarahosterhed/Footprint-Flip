@@ -6,7 +6,7 @@ import smartphoneImage from "../../assets/mobile.svg";
 import jeansImage from "../../assets/jeans.svg";
 
 import coffee from "../../assets/coffee.svg";
-import bicycleImage from "../../assets/bicycle.svg";
+import textileBag from "../../assets/bag.svg";
 import busImage from "../../assets/bus.svg";
 import carImage from "../../assets/car.svg";
 import flightImage from "../../assets/flight.svg";
@@ -15,7 +15,7 @@ import vegoImage from "../../assets/vegetarian.svg";
 import sneakersImage from "../../assets/sneakers.svg";
 import tShirtImage from "../../assets/t-shirt.svg";
 import trainImage from "../../assets/train.svg";
-import defaultImage from "../../assets/qmark.svg"; 
+import defaultImage from "../../assets/qmark.svg";
 import TopCard from "../../components/TopCard/TopCard";
 import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
 import BackButton from "../../components/BackButton/BackButton";
@@ -74,6 +74,8 @@ const GamePage = () => {
         return tShirtImage;
       case "../assets/coffee.svg":
         return coffee;
+      case "../assets/bag.svg":
+        return textileBag;
       default:
         return defaultImage;
     }
@@ -200,14 +202,6 @@ const GamePage = () => {
         <p className="top-item score-color">
           Score 🏁 <span>{`${correctCount}/${totalCards}`}</span>
         </p>
-
-        {isOpenModal && (
-          <Modal
-            setIsOpen={setIsOpenModal}
-            correctCount={correctCount}
-            totalCards={totalCards}
-          />
-        )}
         <p className="top-item item-color">Highest Emission</p>
       </div>
       <hr className="horizontal-line" />
@@ -238,50 +232,64 @@ const GamePage = () => {
                 card.id == correctPlacedId
                   ? "green"
                   : card.id == wrongPlacedId
-                  ? "red"
-                  : "default"
+                    ? "red"
+                    : "default"
               }
             />
           ))}
           <InvisibleCard droppedLast={droppedLast} />
         </div>
-        <div style={{ position: "relative", margin: "5% 0 0 45%" }}>
-          {bottomCards.map((card, index) => (
-            <div
-              draggable
-              id={card.id}
-              key={card.id}
-              className="bottom-cards card card-container"
-              style={{
-                // opacity:
-                //   card.id == draggedCard?.id || card.id === touchedCard
-                //     ? 0.2
-                //     : 1.0,
-                position: "absolute",
-                left: `${index * 5}px`,
-                top: `${index * 5}px`,
-              }}
-            >
-              <p className="card-heading">{card.name}</p>
-              <img draggable={false} src={getImagePath(card.img)} />
+        <div className="bottom-container">
+          <div className="deck-container">
+            {bottomCards.map((card, index) => (
+              <div
+                draggable
+                id={card.id}
+                key={card.id}
+                className="bottom-cards card-container"
+                style={{
+                  position: "absolute",
+                  marginLeft: `${index * 5}px`,
+                  marginTop: `${index * 5}px`,
+                }}
+              >
+                <p className="card-heading">{card.name}</p>
+                <img draggable={false} src={getImagePath(card.img)} />
 
-              {card.hidden ? (
-                <p className="card-text">
-                  CO₂ <span>?</span>
-                </p>
-              ) : (
-                <p className="card-text">{card.co2}</p>
-              )}
-            </div>
-          ))}
+                {card.hidden ? (
+                  <p className="card-text">
+                    CO₂ <span>?</span>
+                  </p>
+                ) : (
+                  <p className="card-text">{card.co2}</p>
+                )}
+              </div>
+
+            ))}
+          </div>
           {bottomCards.length === 0 && (
             <button className="restartBtn" onClick={handleRestart}>
               Restart
             </button>
           )}
+          <div className="description-container">
+            {bottomCards.map((card) => (
+              <div key={card.id} className="description-box">
+                <p className="description">{card.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
+
       </div>
-    </div>
+      {isOpenModal && (
+        <Modal
+          setIsOpen={setIsOpenModal}
+          correctCount={correctCount}
+          totalCards={totalCards}
+        />
+      )}
+    </div >
   );
 };
 
