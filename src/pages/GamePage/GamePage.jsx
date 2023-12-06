@@ -26,10 +26,15 @@ import BackButton from "../../components/BackButton/BackButton";
 import "drag-drop-touch";
 import Modal from "../../components/Modal/Modal";
 
+import { useTranslation } from 'react-i18next';
+import i18next from "../../i18n";
+
 const GamePage = () => {
   // Initialize state variables
   const cards = useSelector((state) => state.game.products);
   const dispatch = useDispatch();
+
+  const { t } = useTranslation();
 
   //random cards
   const randomCards = [...cards].sort(() => Math.random() - 0.5);
@@ -201,18 +206,18 @@ const GamePage = () => {
     <div className="game-page">
       <BackButton />
       <div className="top-section">
-        <p className="top-item item-color">Lowest Emission</p>
+        <p className="top-item item-color">{t('low_emission')}</p>
 
         <p
           className="top-item score-color score"
           style={{ alignItems: "center", margin: "0" }}
         >
-          Score <Lottie animationData={flag} style={style} />{" "}
+          {t('score')} <Lottie animationData={flag} style={style} />{" "}
           <span
             style={{ alignSelf: "center" }}
           >{`${correctCount}/${totalCards}`}</span>
         </p>
-        <p className="top-item item-color">Highest Emission</p>
+        <p className="top-item item-color">{t('high_emission')}</p>
       </div>
       <hr className="horizontal-line" />
       <div
@@ -273,7 +278,7 @@ const GamePage = () => {
                   marginTop: `${index * 5}px`,
                 }}
               >
-                <p className="card-heading">{card.name}</p>
+                <p className="card-heading">{t(card.name)}</p>
                 <img draggable={false} src={getImagePath(card.img)} />
 
                 {card.hidden ? (
@@ -288,13 +293,13 @@ const GamePage = () => {
           </div>
           {bottomCards.length === 0 && (
             <button className="restartBtn" onClick={handleRestart}>
-              Restart
+             {t('restart')}
             </button>
           )}
           <div className="description-container">
             {bottomCards.map((card) => (
               <div key={card.id} className="description-box">
-                <p className="description">{card.description}</p>
+                <p className="description">{t(card.description)}</p>
               </div>
             ))}
           </div>

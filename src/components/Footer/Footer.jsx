@@ -1,11 +1,14 @@
 import "./Footer.css";
+import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 
+
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <footer className="copyright">
       <p>
-        ©Copy Right 2023{" "}
+        ©{t('copy_right')} 2023{" "}
         <Link
           to="https://github.com/Priya-Pdh"
           className="footer-item"
@@ -33,5 +36,6 @@ const Footer = () => {
     </footer>
   );
 };
+
 
 export default Footer;

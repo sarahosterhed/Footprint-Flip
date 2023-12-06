@@ -14,6 +14,7 @@ const reducer = combineReducers({
 const store = configureStore({ reducer });
 
 function App() {
+
   return (
     <>
       <Provider store={store}>

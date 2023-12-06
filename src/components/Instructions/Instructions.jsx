@@ -2,9 +2,12 @@ import { useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import instructions from "../../animations/instructions.json";
 import "./Instructions.css";
+import { useTranslation } from 'react-i18next';
 
 const Instructions = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
 
   const playGame = () => {
     navigate("/gamepage");
@@ -17,28 +20,20 @@ const Instructions = () => {
         <Lottie animationData={instructions} style={style} />
         <ol>
           <li>
-            Drag and drop the cards to the top and arrange them in the correct
-            order of increasing CO2 emissions. Guess the correct position of the
-            cards based on the product from lowest to highest CO2 emissions.
+           {t('step_1')}
           </li>
           <li>
-            Once you think you have an idea where the specific product card will
-            be placed, drop the card. The background color of your dropped card
-            will turn green if the placement was correct or red if the placemnet
-            was incorrect.
+          {t('step_2')}
           </li>
           <li>
-            When all the cards are empty from the bottom pile and all 12 cards
-            are placed at the top, you will recieve a score.
+          {t('step_3')}
           </li>
         </ol>
-
         <p>
-          Keep in mind the environmental impact of each product, and make
-          environmentally friendly choices!
+        {t('note')}
         </p>
         <button className="start-button" onClick={playGame}>
-          Play Game
+        {t('play_button')}
         </button>
       </div>
     </>
