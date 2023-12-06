@@ -1,5 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
+import Lottie from "lottie-react";
+import flag from "../../animations/flag.json";
+
 import { restart } from "../../reducers/game";
 import "./GamePage.css";
 import smartphoneImage from "../../assets/mobile.svg";
@@ -15,7 +18,7 @@ import vegoImage from "../../assets/vegetarian.svg";
 import sneakersImage from "../../assets/sneakers.svg";
 import tShirtImage from "../../assets/t-shirt.svg";
 import trainImage from "../../assets/train.svg";
-import defaultImage from "../../assets/qmark.svg"; 
+import defaultImage from "../../assets/qmark.svg";
 import TopCard from "../../components/TopCard/TopCard";
 import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
 import BackButton from "../../components/BackButton/BackButton";
@@ -46,6 +49,11 @@ const GamePage = () => {
   const totalCards = 12; // Total number of cards
 
   const [isOpenModal, setIsOpenModal] = useState(false);
+
+  //Styles for animation
+  const style = {
+    height: 70,
+  };
 
   // Function to retrieve image path based on card's image
   const getImagePath = (img) => {
@@ -197,8 +205,15 @@ const GamePage = () => {
       <BackButton />
       <div className="top-section">
         <p className="top-item item-color">Lowest Emission</p>
-        <p className="top-item score-color">
-          Score 🏁 <span>{`${correctCount}/${totalCards}`}</span>
+
+        <p
+          className="top-item score-color score"
+          style={{ alignItems: "center", margin: "0" }}
+        >
+          Score <Lottie animationData={flag} style={style} />{" "}
+          <span
+            style={{ alignSelf: "center" }}
+          >{`${correctCount}/${totalCards}`}</span>
         </p>
 
         {isOpenModal && (
@@ -229,21 +244,23 @@ const GamePage = () => {
           className="board-container"
         >
           {topCards.map((card) => (
-            <TopCard
-              key={card.id}
-              card={card}
-              droppedCard={droppedCard}
-              getImagePath={getImagePath}
-              color={
-                card.id == correctPlacedId
-                  ? "green"
-                  : card.id == wrongPlacedId
-                  ? "red"
-                  : "default"
-              }
-            />
+            <>
+              <TopCard
+                key={card.id}
+                card={card}
+                droppedCard={droppedCard}
+                getImagePath={getImagePath}
+                color={
+                  card.id == correctPlacedId
+                    ? "green"
+                    : card.id == wrongPlacedId
+                    ? "red"
+                    : "default"
+                }
+              />
+            </>
           ))}
-          <InvisibleCard droppedLast={droppedLast} />
+          s
         </div>
         <div style={{ position: "relative", margin: "5% 0 0 45%" }}>
           {bottomCards.map((card, index) => (
