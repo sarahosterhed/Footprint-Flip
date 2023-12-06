@@ -23,6 +23,7 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/gamepage" element={<GamePage />}></Route>
             <Route path="/instructions" element={<Instructions />}></Route>
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
       </Provider>
