@@ -45,7 +45,7 @@ const GamePage = () => {
   const [correctPlacedId, setCorrectPlacedId] = useState();
   const [wrongPlacedId, setWrongPlacedId] = useState([]);
   const [correctCount, setCorrectCount] = useState(0);
-  const totalCards = 12; // Total number of cards
+  const totalCards = 10; // Total number of cards
 
   const [isOpenModal, setIsOpenModal] = useState(false);
 
@@ -241,7 +241,6 @@ const GamePage = () => {
                 }
               />
             </>
-
           ))}
           <div
             className={`dropzone ${
@@ -276,7 +275,6 @@ const GamePage = () => {
                   <p className="card-text">{card.co2}</p>
                 )}
               </div>
-
             ))}
           </div>
           {bottomCards.length === 0 && (
@@ -292,7 +290,6 @@ const GamePage = () => {
             ))}
           </div>
         </div>
-
       </div>
       {isOpenModal && (
         <Modal
@@ -301,7 +298,7 @@ const GamePage = () => {
           totalCards={totalCards}
         />
       )}
-    </div >
+    </div>
   );
 };
 
