@@ -26,7 +26,7 @@ import BackButton from "../../components/BackButton/BackButton";
 import "drag-drop-touch";
 import Modal from "../../components/Modal/Modal";
 
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import i18next from "../../i18n";
 
 const GamePage = () => {
@@ -204,18 +204,18 @@ const GamePage = () => {
     <div className="game-page">
       <BackButton />
       <div className="top-section">
-        <p className="top-item item-color">{t('low_emission')}</p>
+        <p className="top-item item-color">{t("low_emission")}</p>
 
-        <p
+        <div
           className="top-item score-color score"
           style={{ alignItems: "center", margin: "0" }}
         >
-          {t('score')} <Lottie animationData={flag} style={style} />{" "}
+          {t("score")} <Lottie animationData={flag} style={style} />{" "}
           <span
             style={{ alignSelf: "center" }}
           >{`${correctCount}/${totalCards}`}</span>
-        </p>
-        <p className="top-item item-color">{t('high_emission')}</p>
+        </div>
+        <p className="top-item item-color">{t("high_emission")}</p>
       </div>
       <hr className="horizontal-line" />
       <div
@@ -249,15 +249,16 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                      ? "red"
-                      : "default"
+                    ? "red"
+                    : "default"
                 }
               />
             </>
           ))}
           <div
-            className={`dropzone ${topCards.length == dropzone ? "selected" : ""
-              }`}
+            className={`dropzone ${
+              topCards.length == dropzone ? "selected" : ""
+            }`}
           >
             {topCards.length}
           </div>
@@ -269,7 +270,9 @@ const GamePage = () => {
                 {...(index === array.length - 1 ? { draggable: true } : {})}
                 id={card.id}
                 key={card.id}
-                className={`bottom-cards card-container ${index === array.length - 1 ? 'current-card' : ''}`}
+                className={`bottom-cards card-container ${
+                  index === array.length - 1 ? "current-card" : ""
+                }`}
                 style={{
                   position: "absolute",
                   marginLeft: `${index * 5}px`,
@@ -291,7 +294,7 @@ const GamePage = () => {
           </div>
           {bottomCards.length === 0 && (
             <button className="restartBtn" onClick={handleRestart}>
-              {t('restart')}
+              {t("restart")}
             </button>
           )}
           <div className="description-container">
