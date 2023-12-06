@@ -12,6 +12,7 @@
   "jeans": "Jeans",
   "t-shirt": "T-shirt",
   "bicycle": "Cykel",
+  "bag": "Textilpåse",
   "sneakers": "Sneakers",
   "air_travel_within_europe": "Flygresa inom Europa",
   "travel_by_bus": "Bussresa",
@@ -20,6 +21,20 @@
   "coffee_consumption": "Kaffe",
   "veg_diet": "Vegetarisk kost",
   "meat_diet": "Köttbaserad mat",
+
+
+  "des_smartphone": "Tillverkning av en smartphone",
+  "des_jeans":"Koldioxidavtrycket för ett par jeans",
+  "des_shirt": "Tillverkning av en typisk bomullströja",
+  "des_bag": "Tillverkning av en typisk textilpåse",
+  "des_sneakers": "Tillverkning av ett par sneakers",
+  "des_air":"Enkel resa, kortdistansflyg per passagerare",
+  "des_bus": "Att resa med buss per kilometer och passagerare",
+  "des_train": "Att resa med tåg per kilometer och passagerare",
+  "des_car":"Resa med bil per kilometer",
+  "des_coffee": "Två koppar kaffe om dagen i veckan",
+  "des_veg":"Veckokonsumtion av mat för en person på vegetarisk kost",
+  "des_meat":"Veckokonsumtion av mat för en person på en köttbaserad diet",
 
   "how_to_play": "Hur man spelar",
   "step_1": "Dra och släpp korten för att ordna dem i rätt ordning för ökande CO2-utsläpp",
