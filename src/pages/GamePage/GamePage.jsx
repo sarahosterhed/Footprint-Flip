@@ -1,5 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
+import Lottie from "lottie-react";
+import flag from "../../animations/flag.json";
+
 import { restart } from "../../reducers/game";
 import "./GamePage.css";
 import smartphoneImage from "../../assets/mobile.svg";
@@ -45,6 +48,11 @@ const GamePage = () => {
   const totalCards = 12; // Total number of cards
 
   const [isOpenModal, setIsOpenModal] = useState(false);
+
+  //Styles for animation
+  const style = {
+    height: 70,
+  };
 
   // Function to retrieve image path based on card's image
   const getImagePath = (img) => {
@@ -182,8 +190,15 @@ const GamePage = () => {
       <BackButton />
       <div className="top-section">
         <p className="top-item item-color">Lowest Emission</p>
-        <p className="top-item score-color">
-          Score 🏁 <span>{`${correctCount}/${totalCards}`}</span>
+
+        <p
+          className="top-item score-color score"
+          style={{ alignItems: "center", margin: "0" }}
+        >
+          Score <Lottie animationData={flag} style={style} />{" "}
+          <span
+            style={{ alignSelf: "center" }}
+          >{`${correctCount}/${totalCards}`}</span>
         </p>
 
         {isOpenModal && (

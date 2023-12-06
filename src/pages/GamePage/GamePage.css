@@ -13,11 +13,15 @@ body {
 
 .top-item {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .item-color {
   color: #1d4e89;
+}
+
+.score {
+  display: flex;
 }
 
 .score-color {
@@ -116,4 +120,10 @@ body {
 .primaryBtn:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+}
+
+@media only screen and (max-width: 768px) {
+  .top-item {
+    font-size: 15px;
+  }
 }
