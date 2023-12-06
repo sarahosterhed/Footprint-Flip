@@ -23,10 +23,15 @@ import BackButton from "../../components/BackButton/BackButton";
 import "drag-drop-touch";
 import Modal from "../../components/Modal/Modal";
 
+import { useTranslation } from 'react-i18next';
+import i18next from "../../i18n";
+
 const GamePage = () => {
   // Initialize state variables
   const cards = useSelector((state) => state.game.products);
   const dispatch = useDispatch();
+
+  const { t } = useTranslation();
 
   //random cards
   const randomCards = [...cards].sort(() => Math.random() - 0.5);
@@ -196,9 +201,9 @@ const GamePage = () => {
     <div className="game-page">
       <BackButton />
       <div className="top-section">
-        <p className="top-item item-color">Lowest Emission</p>
+        <p className="top-item item-color">{t('low_emission')}</p>
         <p className="top-item score-color">
-          Score 🏁 <span>{`${correctCount}/${totalCards}`}</span>
+          {t('score')} 🏁 <span>{`${correctCount}/${totalCards}`}</span>
         </p>
 
         {isOpenModal && (
@@ -208,7 +213,7 @@ const GamePage = () => {
             totalCards={totalCards}
           />
         )}
-        <p className="top-item item-color">Highest Emission</p>
+        <p className="top-item item-color">{t('high_emission')}</p>
       </div>
       <hr className="horizontal-line" />
       <div
@@ -247,6 +252,7 @@ const GamePage = () => {
         </div>
         <div style={{ position: "relative", margin: "5% 0 0 45%" }}>
           {bottomCards.map((card, index) => (
+             
             <div
               draggable
               id={card.id}
@@ -262,7 +268,7 @@ const GamePage = () => {
                 top: `${index * 5}px`,
               }}
             >
-              <p className="card-heading">{card.name}</p>
+              <p className="card-heading">{t(card.name)}</p>
               <img draggable={false} src={getImagePath(card.img)} />
 
               {card.hidden ? (
@@ -276,7 +282,7 @@ const GamePage = () => {
           ))}
           {bottomCards.length === 0 && (
             <button className="restartBtn" onClick={handleRestart}>
-              Restart
+             {t('restart')}
             </button>
           )}
         </div>

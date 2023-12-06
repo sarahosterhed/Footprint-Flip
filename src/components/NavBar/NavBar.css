@@ -4,18 +4,16 @@ nav {
     margin: 2%;
 }
 
-nav div {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+.lang_switcher {
+  width: 100px;
+  height: 40px;
+  border-radius: 13px;
+  border: none;
+  color:  #1d4e89;
+  font-weight: 650;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-nav li {
-    list-style-type: none;
-    font-size: 1em;
-    margin: 0;
-}
-
-nav a {
-    text-decoration: none;
-}
+.lang_switcher:hover {
+    background-color:  lightgray;
+  }

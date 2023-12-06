@@ -1,35 +1,36 @@
 import { useNavigate } from "react-router-dom";
 import "./Instructions.css";
+import { useTranslation } from 'react-i18next';
 
 const Instructions = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
+
 
   const playGame = () => {
     navigate("/gamepage");
   };
   return (
     <>
-      <h1>How to play</h1>
+      <h1>{t('how_to_play')}</h1>
       <div className="instructions">
         <ol>
           <li>
-            Drag and drop the cards to arrange them in the correct order of
-            increasing CO2 emissions.
+           {t('step_1')}
           </li>
           <li>
-            Once you think you have the correct order, submit your arrangement.
+          {t('step_2')}
           </li>
           <li>
-            Compare your ranking with the correct order to see how well you did!
+          {t('step_3')}
           </li>
         </ol>
 
         <p>
-          Keep in mind the environmental impact of each product, and make
-          environmentally friendly choices!
+        {t('note')}
         </p>
         <button className="start-button" onClick={playGame}>
-          Play Game
+        {t('play_button')}
         </button>
       </div>
     </>
