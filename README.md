@@ -1,10 +1,10 @@
-Card Game
+Card Game 🃏
 Code buddies Sarah Östehed 👩🏻‍💻,  Priya Pradhan 👩🏻‍💻 and Naima Malik 👩🏻‍💻
 Technigo Final Project Week 11 - Nov 30th to Dec 12 2023
 
 The game presents several impressive features, ensuring an engaging user experience.
 
-Key Features:
+Key Features 🙌
 
 1.Interactive Drag-and-Drop:
 
@@ -28,7 +28,7 @@ Users can enjoy the game in both English and Swedish, catering to diverse langua
 Score flags feature captivating animations, enhancing the overall visual appeal.
 A celebratory React-confetti effect at the end adds a delightful touch to the gaming experience.
 
-Problem-Solving Approach:
+Problem-Solving Approach 😈
 
 Research and Learning:
 
@@ -40,16 +40,16 @@ Fostered effective teamwork by actively discussing ideas within the team.
 Engaged with the Technigo community on platforms like Stack Overflow and utilized ChatGPT for troubleshooting and clarification.
 
 
-Tech Stack:
+Tech Stack 💻
 Frontend: React.js, Redux, React-router, React-i18next.
 
 UI/UX: HTML Drag and Drop API, React-lottie for animations, React-confetti for the celebratory effect.
 
-Project Planning:
+Project Planning 📝
 
 - Used Trello for project management, starting with basic requirements and progressing to intermediate and advanced goals.
 - Facilitated communication through Slack and Discord.
 - Leveraged external resources such as Stack Overflow and ChatGPT for guidance.
 
-View it live
+View it live 🎉
 https://card-game-learn-and-play.netlify.app 
