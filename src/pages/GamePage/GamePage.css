@@ -13,11 +13,15 @@ body {
 
 .top-item {
   font-weight: 700;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .item-color {
   color: #1d4e89;
+}
+
+.score {
+  display: flex;
 }
 
 .score-color {
@@ -84,6 +88,21 @@ body {
   max-width: 100%;
 }
 
+/* Dropzone */
+.dropzone {
+  width: 20px;
+  color: transparent;
+  background-color: gray;
+  transform: scaleX(5);
+  opacity: 0;
+}
+
+.dropzone.selected {
+  width: 100px;
+  transform: scaleX(1);
+  opacity: 0.5;
+}
+
 /* MODAL */
 .restartBtn {
   margin: 20px 10px;
@@ -132,3 +151,10 @@ body {
   font-size: 16px;
   hyphens: auto;
 }
+
+@media only screen and (max-width: 768px) {
+  .top-item {
+    font-size: 15px;
+  }
+}
+

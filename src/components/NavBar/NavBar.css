@@ -1,21 +1,22 @@
 nav {
-    display: flex;
-    justify-content: flex-end;
-    margin: 2%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 2%;
 }
 
 nav div {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 nav li {
-    list-style-type: none;
-    font-size: 1em;
-    margin: 0;
+  list-style-type: none;
+  font-size: 20px;
+  margin: 0;
 }
 
 nav a {
-    text-decoration: none;
+  text-decoration: none;
+  color: #ea1c00;
 }
