@@ -84,6 +84,21 @@ body {
   max-width: 100%;
 }
 
+/* Dropzone */
+.dropzone {
+  width: 20px;
+  color: transparent;
+  background-color: gray;
+  transform: scaleX(5);
+  opacity: 0;
+}
+
+.dropzone.selected {
+  width: 100px;
+  transform: scaleX(1);
+  opacity: 0.5;
+}
+
 /* MODAL */
 .restartBtn {
   margin: 20px 10px;

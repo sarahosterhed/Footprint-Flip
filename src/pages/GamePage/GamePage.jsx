@@ -15,7 +15,7 @@ import vegoImage from "../../assets/vegetarian.svg";
 import sneakersImage from "../../assets/sneakers.svg";
 import tShirtImage from "../../assets/t-shirt.svg";
 import trainImage from "../../assets/train.svg";
-import defaultImage from "../../assets/qmark.svg"; 
+import defaultImage from "../../assets/qmark.svg";
 import TopCard from "../../components/TopCard/TopCard";
 import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
 import BackButton from "../../components/BackButton/BackButton";
@@ -35,8 +35,7 @@ const GamePage = () => {
   const [topCards, setTopCards] = useState(randomCards.slice(0, 1));
 
   const [draggedCard, setDraggedCard] = useState();
-  const [droppedCard, setDroppedCard] = useState();
-  const [droppedLast, setDroppedLast] = useState(false);
+  const [dropzone, setDropzone] = useState();
 
   const [touchedCard, setTouchedCard] = useState(null);
 
@@ -86,23 +85,22 @@ const GamePage = () => {
 
     // Set the dragged card and reset dropped indicators
     setDraggedCard(card);
-    setDroppedCard(null);
-    setDroppedLast(false);
+    setDropzone();
   };
 
   // Function triggered when dragging over a target
   const handleDragOver = (e) => {
-    // Find the card being dragged over based on the ID
-    const card = topCards.find((card) => card.id == e.target.id);
-
-    // Set the dropped card and update indicators
-    setDroppedCard(card);
-    setDroppedLast(e.target.id == "invisible");
-    e.preventDefault();
+    //Find the card being dragged based on the divs that have a classname called "dropzone"
+    if (e.target.className.includes("dropzone")) {
+      setDropzone(e.target.textContent);
+      e.preventDefault();
+    } else {
+      setDropzone();
+    }
   };
 
   // Function triggered when dragging ends
-  const handleDragEnd = (e) => {
+  const handleDrop = (e) => {
     // Function for delayed sorting after a 2-second delay
     const sortTopCardsWithDelay = (cardsToSort) => {
       // Sorts the cards after a 2-second delay
@@ -125,27 +123,14 @@ const GamePage = () => {
     };
 
     // Check if a card is being dragged and dropped over a target
-    if (draggedCard && (droppedCard || droppedLast)) {
-      let updatedTopCards = [];
-
+    if (draggedCard && dropzone) {
       // Determine the updated list of top cards after dragging ends
-      if (droppedLast) {
-        //setTopCards([...topCards, { ...draggedCard, hidden: false }]);
-        // If dropped at the last position, add the card to the end
-        updatedTopCards = [...topCards, draggedCard];
-        // Update state immediately to display the new card
-        setTopCards(updatedTopCards);
-      } else {
-        // Calculate the index where the card is dropped
-        const i = topCards.indexOf(droppedCard);
-        updatedTopCards = [
-          ...topCards.slice(0, i),
-          { ...draggedCard, hidden: false },
-          ...topCards.slice(i),
-        ];
-        // Update state immediately to display the new card
-        setTopCards(updatedTopCards);
-      }
+      let updatedTopCards = [
+        ...topCards.slice(0, dropzone),
+        draggedCard,
+        ...topCards.slice(dropzone),
+      ];
+      setTopCards(updatedTopCards);
 
       // Initiate sorting of top cards after a delay
       const sortedCards = sortTopCardsWithDelay(updatedTopCards);
@@ -167,7 +152,7 @@ const GamePage = () => {
     }
     // Reset dragged and dropped cards
     setDraggedCard(null);
-    setDroppedCard(null);
+    setDropzone();
   };
 
   // for mobile version
@@ -182,7 +167,7 @@ const GamePage = () => {
   };
 
   const handleTouchEnd = (e) => {
-    handleDragEnd(e.changedTouches[0]);
+    handleDrop(e.changedTouches[0]);
     setTouchedCard(null);
   };
 
@@ -214,7 +199,7 @@ const GamePage = () => {
       <div
         onDragStart={handleDragStart}
         onDragOver={handleDragOver}
-        onDragEnd={handleDragEnd}
+        onDrop={handleDrop}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -223,27 +208,38 @@ const GamePage = () => {
           style={{
             display: "flex",
             flexWrap: "wrap",
-            gap: "20px",
             justifyContent: "center",
           }}
           className="board-container"
         >
-          {topCards.map((card) => (
-            <TopCard
-              key={card.id}
-              card={card}
-              droppedCard={droppedCard}
-              getImagePath={getImagePath}
-              color={
-                card.id == correctPlacedId
-                  ? "green"
-                  : card.id == wrongPlacedId
-                  ? "red"
-                  : "default"
-              }
-            />
+          {topCards.map((card, index) => (
+            <>
+              <div
+                className={`dropzone ${dropzone == index ? "selected" : ""}`}
+              >
+                {index}
+              </div>
+              <TopCard
+                key={card.id}
+                card={card}
+                getImagePath={getImagePath}
+                color={
+                  card.id == correctPlacedId
+                    ? "green"
+                    : card.id == wrongPlacedId
+                    ? "red"
+                    : "default"
+                }
+              />
+            </>
           ))}
-          <InvisibleCard droppedLast={droppedLast} />
+          <div
+            className={`dropzone ${
+              topCards.length == dropzone ? "selected" : ""
+            }`}
+          >
+            {topCards.length}
+          </div>
         </div>
         <div style={{ position: "relative", margin: "5% 0 0 45%" }}>
           {bottomCards.map((card, index) => (
