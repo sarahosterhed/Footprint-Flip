@@ -1,5 +1,10 @@
 Card Game 🃏
-Code buddies Sarah Östehed 👩🏻‍💻,  Priya Pradhan 👩🏻‍💻 and Naima Malik 👩🏻‍💻
+
+
+Code buddies
+
+Sarah Östehed 👩🏻‍💻,  Priya Pradhan 👩🏻‍💻 and Naima Malik 👩🏻‍💻
+
 Technigo Final Project Week 11 - Nov 30th to Dec 12 2023
 
 The game presents several impressive features, ensuring an engaging user experience.
@@ -52,4 +57,5 @@ Project Planning 📝
 - Leveraged external resources such as Stack Overflow and ChatGPT for guidance.
 
 View it live 🎉
+
 https://card-game-learn-and-play.netlify.app 
