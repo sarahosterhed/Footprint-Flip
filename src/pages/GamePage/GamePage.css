@@ -59,7 +59,11 @@ body {
 }
 
 .card-container:hover {
-  background-color: #e0e0e0;
+  /* background-color: #e8dbc8; */
+}
+
+.current-card:hover {
+  background-color: #e8dbc8;
 }
 
 .card-heading {
@@ -155,6 +159,10 @@ body {
   font-weight: 400;
   font-size: 16px;
   hyphens: auto;
+}
+
+.dragged:hover {
+  cursor: grabbing;
 }
 
 
