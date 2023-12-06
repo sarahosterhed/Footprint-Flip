@@ -66,8 +66,6 @@ const GamePage = () => {
         return smartphoneImage;
       case "../assets/jeans.svg":
         return jeansImage;
-      case "../assets/bicycle.svg":
-        return bicycleImage;
       case "../assets/bus.svg":
         return busImage;
       case "../assets/car.svg":
@@ -293,7 +291,7 @@ const GamePage = () => {
           </div>
           {bottomCards.length === 0 && (
             <button className="restartBtn" onClick={handleRestart}>
-             {t('restart')}
+              {t('restart')}
             </button>
           )}
           <div className="description-container">
