@@ -185,6 +185,13 @@ const GamePage = () => {
     dispatch(restart());
     setBottomCards(randomCards.slice(1, 10)); // Reset the bottom cards
     setTopCards(randomCards.slice(0, 1)); // Reset the top cards
+    setDraggedCard(null);
+    setDropzone();
+    setTouchedCard(null); // Reset touched card
+    setCorrectPlacedId(null); // Reset correct placed ID
+    setWrongPlacedId([]); // Reset wrong placed IDs
+    setCorrectCount(0); // Reset correct count
+    setIsOpenModal(false); // Close the modal if open
   };
 
   return (
