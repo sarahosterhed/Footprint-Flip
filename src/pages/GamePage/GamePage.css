@@ -125,7 +125,8 @@ body {
 .bottom-container {
   margin-top: 5%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 250px;
 }
 
 .description-container {
@@ -157,4 +158,3 @@ body {
     font-size: 15px;
   }
 }
-
