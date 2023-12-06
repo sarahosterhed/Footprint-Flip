@@ -1,6 +1,5 @@
 Card Game 🃏
 
-
 Code buddies
 
 Sarah Östehed 👩🏻‍💻,  Priya Pradhan 👩🏻‍💻 and Naima Malik 👩🏻‍💻
@@ -11,12 +10,12 @@ The game presents several impressive features, ensuring an engaging user experie
 
 Key Features 🙌
 
-1.Interactive Drag-and-Drop:
+1. Interactive Drag-and-Drop:
 
 Users can click and drag cards onto the board.
 Cards automatically sort in ascending order based on emissions, promoting a dynamic game play experience.
 
-2.Score System:
+2. Score System:
 
 Dropping cards in the correct position earns users a +1 score.
 Incorrect placements prompt visual feedback, guiding users to the right spot.
@@ -24,22 +23,23 @@ Responsive Design:
 
 The game is designed to be seamlessly responsive across all devices, ensuring accessibility for a wide audience.
 
-3.Multilingual Support:
+3. Multilingual Support:
 
 Users can enjoy the game in both English and Swedish, catering to diverse language preferences.
 
-4.Animations and Visual Delight:
+4. Animations and Visual Delight:
 
 Score flags feature captivating animations, enhancing the overall visual appeal.
 A celebratory React-confetti effect at the end adds a delightful touch to the gaming experience.
 
 Problem-Solving Approach 😈
 
-Research and Learning:
+1. Research and Learning:
 
 Utilized various learning resources such as company blogs, videos, and educational websites like W3Schools.
 Demonstrated flexibility by considering different approaches, shifting from the initially planned dnd-kit to the HTML Drag and Drop API.
-Collaboration and Communication:
+
+2. Collaboration and Communication:
 
 Fostered effective teamwork by actively discussing ideas within the team.
 Engaged with the Technigo community on platforms like Stack Overflow and utilized ChatGPT for troubleshooting and clarification.
