@@ -7,7 +7,7 @@ const Footer = () => {
   const { t } = useTranslation();
   return (
     <footer className="copyright">
-      <p>
+      <p className="copyright_text">
         ©{t('copy_right')} 2023{" "}
         <Link
           to="https://github.com/Priya-Pdh"
