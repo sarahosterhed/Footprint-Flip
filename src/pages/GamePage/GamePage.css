@@ -2,6 +2,22 @@ body {
   background-color: #b4d6cc;
 }
 
+.rotate-device {
+  background-color: transparent;
+  min-width: 100svw;
+  min-width: 100vw;
+  min-height: 100svh;
+  min-height: 100vh;
+  z-index: -10;
+  position: unset;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .game-page {
   margin: 2%;
 }
@@ -170,23 +186,41 @@ body {
   width: 100%;
 }
 
+.phone {
+  height: 50px;
+  width: 100px;
+  border: 3px solid white;
+  border-radius: 10px;
+  animation: rotate 1.5s ease-in-out infinite alternate;
+  display: none;
+}
+
+.message {
+  color: white;
+  font-size: 1em;
+  margin-top: 40px;
+  display: none;
+}
+
 
 @media (min-width: 280px) and (max-width: 653px) {
 
   .card_and_description_container {
     width: 100%;
   }
- 
- 
+
+
 }
 
 @media only screen and (max-width: 768px) {
   .top-item {
     font-size: 12px;
   }
+
   .top-section {
     margin-top: 25px;
   }
+
   .card-container {
     border: 1px solid black;
     width: 50px;
@@ -196,6 +230,7 @@ body {
     box-shadow: -1px -1px 3px lightgray;
     overflow: hidden;
   }
+
   .card-container img {
     width: 65%;
     margin-top: 7%;
@@ -206,28 +241,34 @@ body {
     justify-content: flex-start;
     margin-top: 30px;
   }
+
   .card-heading {
     margin-top: 1.5rem;
     margin-left: 10%;
   }
+
   .card-heading,
   .card-text {
     font-size: 12px;
   }
+
   .card-text span {
     font-size: 25px;
   }
+
   .bottom-container {
     display: flex;
     margin-left: 45%;
     width: 10%;
   }
+
   .description-box {
     width: 70px;
     height: 80px;
     padding: 10px;
     margin-top: 32px;
   }
+
   .description {
     font-size: 10px;
   }
@@ -237,13 +278,16 @@ body {
   .top-item {
     font-size: 10px;
   }
+
   .top-section {
     margin-top: 40px;
   }
+
   .card-container {
    width: 40px;
    height: 65px;
   }
+
   .card-container img {
     width: 40%;
   }
@@ -259,19 +303,60 @@ body {
   .card-text {
     font-size: 8px;
   }
+
   .card-text span {
     font-size: 15px;
   }
+
   .bottom-container {
     display: flex;
     gap: 130px;
   }
+  
   .description-box {
     width: 70px;
     height: 80px;
     padding: 0;
   }
+
   .description {
     font-size: 8px;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg)
+  }
+
+  50% {
+    transform: rotate(-90deg)
+  }
+
+  100% {
+    transform: rotate(-90deg)
+  }
+}
+
+@media only screen and (max-device-width: 812px) and (orientation: portrait) {
+  .rotate-device {
+    background-color: #7dcfb6;
+    min-width: 100svw;
+    min-width: 100vw;
+    min-height: 100svh;
+    min-height: 100vh;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .phone,
+  .message {
+    display: block;
   }
 }
