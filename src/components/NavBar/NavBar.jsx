@@ -8,7 +8,7 @@ const NavBar = () => {
   const [lang, setLang] = useState(i18n.language);
 
   const changeLang = () => {
-    const newLang = i18n.language !== "English" ? "Swedish" : "English";
+    const newLang = i18n.language === "English" ? "Swedish" : "English";
     i18n.changeLanguage(newLang);
     setLang(newLang);
   };
