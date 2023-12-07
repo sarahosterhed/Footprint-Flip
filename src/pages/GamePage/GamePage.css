@@ -24,16 +24,8 @@ body {
 
 .top-section {
   display: flex;
-  justify-content: space-between;
-}
-
-.top-item {
-  font-weight: 700;
-  font-size: 20px;
-}
-
-.item-color {
-  color: #1d4e89;
+  justify-content: center;
+  margin-bottom: -65px;
 }
 
 .score {
@@ -284,13 +276,14 @@ body {
   }
 
   .card-container {
-   width: 40px;
-   height: 65px;
+    width: 40px;
+    height: 65px;
   }
 
   .card-container img {
     width: 40%;
   }
+
   #co_text {
     margin-top: 0px;
   }
@@ -312,7 +305,7 @@ body {
     display: flex;
     gap: 130px;
   }
-  
+
   .description-box {
     width: 70px;
     height: 80px;
