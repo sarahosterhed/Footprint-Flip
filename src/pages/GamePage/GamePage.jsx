@@ -99,9 +99,9 @@ const GamePage = () => {
 
     // Set the dragged card and reset dropped indicators
     setDraggedCard(card);
-    setTimeout(() => {
-      e.target.style.visibility = "hidden";
-    }, 1);
+    // setTimeout(() => {
+    //   e.target.style.visibility = "hidden";
+    // }, 1);
     setDropzone();
   };
 
@@ -250,62 +250,64 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                      ? "red"
-                      : "default"
+                    ? "red"
+                    : "default"
                 }
               />
             </React.Fragment>
           ))}
           <div
-            className={`dropzone ${topCards.length == dropzone ? "selected" : ""
-              }`}
+            className={`dropzone ${
+              topCards.length == dropzone ? "selected" : ""
+            }`}
           >
             {topCards.length}
           </div>
         </div>
         <div className="card_and_description_container">
-        <div className="bottom-container">
-          <div className="deck-container">
-            {bottomCards.map((card, index, array) => (
-              <div
-                {...(index === array.length - 1 ? { draggable: true } : {})}
-                id={card.id}
-                key={`${card.id}-${index}`}
-                className={`bottom-cards card-container ${index === array.length - 1 ? "current-card" : ""
+          <div className="bottom-container">
+            <div className="deck-container">
+              {bottomCards.map((card, index, array) => (
+                <div
+                  {...(index === array.length - 1 ? { draggable: true } : {})}
+                  id={card.id}
+                  key={`${card.id}-${index}`}
+                  className={`bottom-cards card-container ${
+                    index === array.length - 1 ? "current-card" : ""
                   }`}
-                style={{
-                  position: "absolute",
-                  marginLeft: `${index * 5}px`,
-                  marginTop: `${index * 5}px`,
-                }}
-              >
-                <p className="card-heading">{t(card.name)}</p>
-                <img draggable={false} src={getImagePath(card.img)} />
+                  style={{
+                    position: "absolute",
+                    marginLeft: `${index * 5}px`,
+                    marginTop: `${index * 5}px`,
+                  }}
+                >
+                  <p className="card-heading">{t(card.name)}</p>
+                  <img draggable={false} src={getImagePath(card.img)} />
 
-                {card.hidden ? (
-                  <p className="card-text">
-                    CO₂ <span>?</span>
-                  </p>
-                ) : (
-                  <p className="card-text">{card.co2}</p>
-                )}
-              </div>
-            ))}
-          </div>
-          {bottomCards.length === 0 && (
-            <button className="restartBtn" onClick={handleRestart}>
-              {t("restart")}
-            </button>
-          )}
-          <div className="description-container">
-            {bottomCards.map((card) => (
-              <div key={card.id} className="description-box">
-                <p className="description">{t(card.description)}</p>
-              </div>
-            ))}
+                  {card.hidden ? (
+                    <p className="card-text">
+                      CO₂ <span>?</span>
+                    </p>
+                  ) : (
+                    <p className="card-text">{card.co2}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+            {bottomCards.length === 0 && (
+              <button className="restartBtn" onClick={handleRestart}>
+                {t("restart")}
+              </button>
+            )}
+            <div className="description-container">
+              {bottomCards.map((card) => (
+                <div key={card.id} className="description-box">
+                  <p className="description">{t(card.description)}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
       </div>
       {isOpenModal && (
         <Modal
