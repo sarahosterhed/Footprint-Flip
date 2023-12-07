@@ -23,6 +23,7 @@ import defaultImage from "../../assets/qmark.svg";
 import TopCard from "../../components/TopCard/TopCard";
 import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
 import BackButton from "../../components/BackButton/BackButton";
+import EmissionScale from "../../components/EmissionScale/EmissionScale"
 
 import "drag-drop-touch";
 import Modal from "../../components/Modal/Modal";
@@ -212,8 +213,6 @@ const GamePage = () => {
       </div>
       <BackButton />
       <div className="top-section">
-        <p className="top-item item-color">{t("low_emission")}</p>
-
         <div
           className="top-item score-color score"
           style={{ alignItems: "center", margin: "0" }}
@@ -223,9 +222,8 @@ const GamePage = () => {
             style={{ alignSelf: "center" }}
           >{`${correctCount}/${totalCards}`}</span>
         </div>
-        <p className="top-item item-color">{t("high_emission")}</p>
       </div>
-      <hr className="horizontal-line" />
+      <EmissionScale />
       <div
         onDragStart={handleDragStart}
         onDragOver={handleDragOver}
