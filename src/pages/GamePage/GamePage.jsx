@@ -263,6 +263,7 @@ const GamePage = () => {
             {topCards.length}
           </div>
         </div>
+        <div className="card_and_description_container">
         <div className="bottom-container">
           <div className="deck-container">
             {bottomCards.map((card, index, array) => (
@@ -304,6 +305,7 @@ const GamePage = () => {
             ))}
           </div>
         </div>
+      </div>
       </div>
       {isOpenModal && (
         <Modal

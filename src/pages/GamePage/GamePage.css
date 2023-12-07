@@ -134,7 +134,8 @@ body {
   margin-top: 5%;
   display: flex;
   justify-content: center;
-  gap: 250px;
+  gap: 200px;
+  width: 100%;
 }
 
 .description-container {
@@ -165,14 +166,42 @@ body {
   cursor: grabbing;
 }
 
+.card_and_description_container {
+  width: 100%;
+}
+
+
 
 @media only screen and (max-width: 768px) {
   .top-item {
     font-size: 15px;
   }
 
-  .bottom-container {
+  /* .bottom-container {
     flex-direction: column;
     align-items: center;
+  } */
+
+  .card_and_description_container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+    
   }
+  .bottom-container {
+    /* margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    gap: 250px; */
+    display: flex;
+    margin-left: 15%;
+    width: 70%;
+    
+  }
+  .description-box {
+font-size: 12px;
+    width: 100px;
+    height: 150px;
+  }
+
 }
