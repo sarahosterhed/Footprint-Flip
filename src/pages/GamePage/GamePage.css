@@ -258,8 +258,8 @@ body {
 
   .bottom-container {
     display: flex;
-    margin-left: 10%;
-    width: 70%;
+    margin-left: 45%;
+    width: 10%;
   }
 
   .description-box {
@@ -276,7 +276,7 @@ body {
 
 @media only screen and (max-width: 1024px) {
   .top-item {
-    font-size: 17px;
+    font-size: 10px;
   }
 
   .top-section {
@@ -284,39 +284,43 @@ body {
   }
 
   .card-container {
-    width: 100px;
-    height: 160px;
+   width: 40px;
+   height: 65px;
   }
 
   .card-container img {
-    width: 75%;
+    width: 40%;
+  }
+  #co_text {
+    margin-top: 0px;
   }
 
   .card_and_description_container {
     margin-top: 3rem;
   }
 
-  /* .card-heading {
-    margin-top: 0.5rem;
-    margin-left: 10%;
-  } */
   .card-heading,
   .card-text {
-    font-size: 14px;
+    font-size: 8px;
   }
 
   .card-text span {
-    font-size: 28px;
+    font-size: 15px;
   }
 
+  .bottom-container {
+    display: flex;
+    gap: 130px;
+  }
+  
   .description-box {
-    width: 100px;
-    height: 150px;
+    width: 70px;
+    height: 80px;
     padding: 0;
   }
 
   .description {
-    font-size: 12px;
+    font-size: 8px;
   }
 }
 

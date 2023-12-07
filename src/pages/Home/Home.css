@@ -34,6 +34,9 @@
   border: none;
   margin: 5%;
 }
+.start-button:hover  {
+  background-color: #EF9C6A;
+}
 
 .instruction-info {
   color: #ea1c00;
