@@ -13,7 +13,7 @@ const TopCard = ({ card, droppedCard, getImagePath, color }) => {
     }}
   >
     <p className="card-heading">{t(card.name)}</p>
-    <img draggable={false} src={getImagePath(card.img)} alt={card.name} />
+    <img className="top-image" draggable={false} src={getImagePath(card.img)} alt={card.name} />
     <p className="card-text">{card.co2} kg</p>
   </div>
 

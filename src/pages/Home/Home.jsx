@@ -24,7 +24,7 @@ const Home = () => {
     <div>
      
       <div className="home-container home-page">
-        <section>
+        <section className="title_container">
           <h1 className="title">{t('welcome_message')}</h1>
           <h1 className="title">
             {t('play_learn')}

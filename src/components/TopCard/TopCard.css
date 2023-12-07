@@ -30,3 +30,27 @@
   background-color: #e0e0e0;
 
 } */
+@media only screen and (max-width: 768px) {
+  .top-container {
+    width: 50px;
+    height: 100px;
+  }
+  .card-heading, .card-text {
+    margin-top: 10px;
+    font-size: 10px;
+  }
+  .top-image {
+    width: 35%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+
+  .top-container {
+    width: 100px;
+    height: 160px;
+  }
+  .card-heading, .card-text {
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

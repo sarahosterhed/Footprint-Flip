@@ -1,23 +1,12 @@
-.instructions-container {
-  /* display: flex;
-  justify-content: space-between;
-  width: 50vw;
-  margin: auto;
-  margin-top: 30px; */
-  display: flex;
-  justify-content: center;
-}
-
 .instructions {
   display: flex;
   flex-direction: column;
-  /* margin: auto; */
-  margin-top: 5rem;
-  margin-left: 18rem;
   padding: 1rem;
+  margin-top: 6rem;
+  margin-left: 17rem;
   border: 1px solid;
   border-radius: 2rem;
-  width: 800px;
+  width: 60%;
   height: fit-content;
   font-weight: 700;
   background-color: #e6d5b9;
@@ -42,7 +31,6 @@
   text-align: center;
   text-decoration: none;
   color: #1d4e89;
-  padding-bottom: 1rem;
 }
 
 li {
@@ -56,9 +44,170 @@ p {
   font-weight: bold;
 }
 
-/* Extra small devices (phones, 768px and down) */
-@media only screen and (max-width: 768px) {
+@media (min-width: 280px) and (max-width: 653px) {
+  .instructions{
+    margin-left: 0;
+    font-size: 12px;
+    width: 90%;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 667px) {
+  .instructions{
+    margin-top: 5rem;
+    font-size: 12px;
+    width: 90%;
+    height: 30rem;
+  }
+
+  li {
+    font-size: 12px; 
+  }
+  p {
+
+    font-size: 12px;
+  
+  }
+  .start-button {
+    width: 6rem;
+    height: 20px;
+    font-size: 14px;
+    
+  }
+}
+@media (min-width: 360px) and (max-width: 740px) {
+  .instructions{
+    margin-left: 0.1rem;
+    padding-top: 1rem;
+    font-size: 12px;
+    width: 90%;
+    height: 35rem;
+  }
+  li {
+    font-size: 14px; 
+  }
+  p {
+    
+    font-size: 12px;
+   margin: 10px;
+  }
+  .start-button{
+    width: 7rem;
+    height: 30px;
+    font-size: 14px;
+  }
+}
+@media (min-width: 412px) and (max-width: 915px) {
+  .instructions-container {
+    width: 20%;
+    height: 50rem;
+  }
+  .start-button{
+    width: 8rem;
+    height: 35px;
+    font-size: 16px;
+  }
+  li {
+    font-size: 16px; 
+  }
+  p {
+    
+    font-size: 16px;
+   margin: 10px;
+  }
+  
+}
+@media (min-width: 412px) and (max-width: 915px) {
+  li {
+    font-size: 16px;
+  }
   .instructions {
-    width: fit-content;
+    height: 42rem;
+  }
+  .start-button {
+    height: 35px;
+  }
+  
+}
+@media (min-width: 414px) and (max-width: 896px) {
+
+  
+}
+@media (min-width: 430px) and (max-width: 932px) {
+  
+}
+@media (min-width: 540px) and (max-width: 720px) {
+  .instructions {
+    height: 35rem;
+    margin-left: 0.5rem;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  
+  .instructions{
+    margin: 6rem 0 0 6rem;
+    padding: 2rem 0 2rem 0;
+    font-size: 16px;
+    width: 75%;
+  }
+  li {
+    font-size: 18px; 
+  }
+  p {
+    
+    font-size: 18px;
+   margin: 20px;
+  }
+  .start-button {
+    height: 40px;
+  }
+  
+}
+@media (min-width: 820px) and (max-width: 1180px) {
+  .instructions{
+    margin: 7rem 0 0 4.2rem;
+    padding: 2rem;
+    font-size: 20px;
+    width: 75%;
+    height: 50rem;
+  }
+  li {
+    font-size: 22px; 
+  }
+  p {
+    
+    font-size: 22px;
+   margin: 20px;
+  }
+  .start-button {
+    height: 40px;
+    width: 10rem;
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+   
+  .instructions{
+    margin: 10rem 0 0 5rem;
+    padding: 2rem 1rem 0 1rem;
+    font-size: 22px;
+    width: 80%;
+    height: 60rem;
+  }
+  li {
+    font-size: 26px; 
+  }
+  p {
+    
+    font-size: 26px;
+   margin: 20px;
+  }
+  .start-button {
+    font-size: 26px;
+    width: 30%;
   }
 }

@@ -12,3 +12,8 @@
     margin-left: -3px;
     transition: all ease-out 0.2s;
 }
+@media only screen and (max-width: 1024px) {
+    .back-btn {
+        margin-top: 5%;
+    }
+}
