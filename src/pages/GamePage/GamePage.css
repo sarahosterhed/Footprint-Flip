@@ -219,7 +219,7 @@ body {
   }
   .bottom-container {
     display: flex;
-    margin-left: 40%;
+    margin-left: 45%;
     width: 10%;
   }
   .description-box {
@@ -245,16 +245,16 @@ body {
    height: 65px;
   }
   .card-container img {
-    width:40%;
+    width: 40%;
+  }
+  #co_text {
+    margin-top: 0px;
   }
 
   .card_and_description_container {
     margin-top: 3rem;
   }
-  /* .card-heading {
-    margin-top: 0.5rem;
-    margin-left: 10%;
-  } */
+
   .card-heading,
   .card-text {
     font-size: 8px;

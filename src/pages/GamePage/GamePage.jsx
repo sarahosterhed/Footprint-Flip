@@ -285,7 +285,7 @@ const GamePage = () => {
                   <img draggable={false} src={getImagePath(card.img)} />
 
                   {card.hidden ? (
-                    <p className="card-text">
+                    <p className="card-text" id="co_text">
                       CO₂ <span>?</span>
                     </p>
                   ) : (
