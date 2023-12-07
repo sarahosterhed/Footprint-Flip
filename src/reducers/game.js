@@ -31,7 +31,7 @@ const products = [
     id: 4,
     name: "bag",
     co2: 7.5,
-    img: "../assets/bicycle.svg",
+    img: "../assets/bag.svg",
     hidden: true,
     description: "des_bag",
   },
@@ -46,14 +46,6 @@ const products = [
   {
     id: 6,
     name: "air_travel",
-    co2: 150,
-    img: "../assets/flight.svg",
-    hidden: true,
-    description: "des_air",
-  },
-  {
-    id: 6,
-    name: "Air travel",
     co2: 150,
     img: "../assets/flight.svg",
     hidden: true,
@@ -126,5 +118,5 @@ export const game = createSlice({
   },
 });
 
-export const {  restart } = game.actions;
+export const { restart } = game.actions;
 export default game.reducer;

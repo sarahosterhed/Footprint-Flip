@@ -250,16 +250,15 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                    ? "red"
-                    : "default"
+                      ? "red"
+                      : "default"
                 }
               />
             </React.Fragment>
           ))}
           <div
-            className={`dropzone ${
-              topCards.length == dropzone ? "selected" : ""
-            }`}
+            className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+              }`}
           >
             {topCards.length}
           </div>
@@ -271,9 +270,8 @@ const GamePage = () => {
                 {...(index === array.length - 1 ? { draggable: true } : {})}
                 id={card.id}
                 key={`${card.id}-${index}`}
-                className={`bottom-cards card-container ${
-                  index === array.length - 1 ? "current-card" : ""
-                }`}
+                className={`bottom-cards card-container ${index === array.length - 1 ? "current-card" : ""
+                  }`}
                 style={{
                   position: "absolute",
                   marginLeft: `${index * 5}px`,
