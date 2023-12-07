@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./NavBar.css";
 import { useTranslation } from "react-i18next";
 import languageIcon from "../../assets/language.svg";
@@ -6,6 +6,11 @@ import languageIcon from "../../assets/language.svg";
 const NavBar = () => {
   const { i18n } = useTranslation();
   const [lang, setLang] = useState(i18n.language);
+
+
+  useEffect(() => {
+    setLang(i18n.language === "English" ? "Swedish" : "English");
+  }, [i18n.language]);
 
   const changeLang = () => {
     const newLang = i18n.language === "English" ? "Swedish" : "English";
