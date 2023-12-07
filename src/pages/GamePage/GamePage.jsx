@@ -41,7 +41,7 @@ const GamePage = () => {
   const randomCards = [...cards].sort(() => Math.random() - 0.5);
 
   const [bottomCards, setBottomCards] = useState(randomCards.slice(1, 10));
-  const [topCards, setTopCards] = useState(randomCards.slice(0, 1));
+  const [topCards, setTopCards] = useState(cards.slice(0, 1));
 
   const [draggedCard, setDraggedCard] = useState();
   const [dropzone, setDropzone] = useState();
