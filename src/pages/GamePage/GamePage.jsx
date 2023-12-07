@@ -1,3 +1,4 @@
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import Lottie from "lottie-react";
@@ -235,7 +236,7 @@ const GamePage = () => {
           className="board-container"
         >
           {topCards.map((card, index) => (
-            <>
+            <React.Fragment key={`${card.name}-${index}`}>
               <div
                 className={`dropzone ${dropzone == index ? "selected" : ""}`}
               >
@@ -253,7 +254,7 @@ const GamePage = () => {
                     : "default"
                 }
               />
-            </>
+            </React.Fragment>
           ))}
           <div
             className={`dropzone ${
@@ -269,7 +270,7 @@ const GamePage = () => {
               <div
                 {...(index === array.length - 1 ? { draggable: true } : {})}
                 id={card.id}
-                key={card.id}
+                key={`${card.id}-${index}`}
                 className={`bottom-cards card-container ${
                   index === array.length - 1 ? "current-card" : ""
                 }`}
