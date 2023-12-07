@@ -17,7 +17,7 @@
   text-align: center;
 }
 
-.heading {
+.title {
   color: #1d4e89;
   font-weight: 500;
   font-size: 25px;
@@ -35,11 +35,18 @@
   margin: 5%;
 }
 
-.instruction-text {
+.instruction-info {
   color: #ea1c00;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 20px;
 }
-.instruction-text:hover {
-  text-decoration: underline;
+.instruction-info:hover {
+ text-decoration: underline;
 }
+
+.home_animation {
+  transform: none;
+  position: relative;
+}
+
+

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./NavBar.css";
 import { useTranslation } from "react-i18next";
 import languageIcon from "../../assets/language.svg";
+import BackButton from "../BackButton/BackButton";
 
 const NavBar = () => {
   const { i18n } = useTranslation();
@@ -17,6 +18,7 @@ const NavBar = () => {
     i18n.changeLanguage(newLang);
     setLang(newLang);
   };
+
   return (
     <>
       <nav>
@@ -30,7 +32,7 @@ const NavBar = () => {
             {lang}
           </button>
         </div>
-      </nav>
+        </nav>
     </>
   );
 };

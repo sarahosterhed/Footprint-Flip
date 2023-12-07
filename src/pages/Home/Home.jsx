@@ -7,6 +7,7 @@ import Lottie from "lottie-react";
 import footprint from "../../animations/footprint_co2.json";
 
 
+
 const Home = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -20,23 +21,27 @@ const Home = () => {
   };
   return (
     <>
-      <div style={{ marginBottom: "-14rem" }}>
-        <Lottie animationData={footprint} style={style} />
-      </div>
+    <div>
+     
       <div className="home-container home-page">
         <section>
-          <h1 className="heading">{t('welcome_message')}</h1>
-          <h1 className="heading">
+          <h1 className="title">{t('welcome_message')}</h1>
+          <h1 className="title">
             {t('play_learn')}
           </h1>
-          <button className="start-button" onClick={handleNavigation}>
+         
+          <div >
+        <Lottie animationData={footprint} style={style} className="home-animation"/>
+      </div>
+      <button className="start-button" onClick={handleNavigation}>
             {t('start')}
           </button>
-          <Link to="/instructions">
-            <p className="instruction-text">{t('check_instruction')}</p>
+          <Link to="/instructions" style={{ textDecoration: 'none' }}>
+            <p className="instruction-info" >{t('check_instruction')}</p>
           </Link>
           <Footer />
         </section>
+      </div>
       </div>
     </>
   );

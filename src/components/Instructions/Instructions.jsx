@@ -1,6 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import Lottie from "lottie-react";
-import instructions from "../../animations/instructions.json";
 import "./Instructions.css";
 import { useTranslation } from 'react-i18next';
 
@@ -13,11 +11,10 @@ const Instructions = () => {
     navigate("/gamepage");
   };
 
-  const style = { height: 200 };
   return (
     <>
       <div className="instructions">
-        <Lottie animationData={instructions} style={style} />
+    <h1 className="instruction-heading">{t('instr')}</h1>
         <ol>
           <li>
            {t('step_1')}

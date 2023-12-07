@@ -15,6 +15,7 @@
   "bag": "Textilpåse",
   "sneakers": "Sneakers",
   "air_travel_within_europe": "Flygresa inom Europa",
+  "air_travel":"Flygresor",
   "travel_by_bus": "Bussresa",
   "travel_by_train": "Tågresa",
   "travel_by_car": "Bilresa",
@@ -37,6 +38,7 @@
   "des_meat":"Veckokonsumtion av mat för en person på en köttbaserad diet",
 
   "how_to_play": "Hur man spelar",
+  "instr": "INSTRUKTIONER",
   "step_1": "Dra och släpp korten till toppen och ordna dem på rätt sätt ökade CO2-utsläpp. Gissa rätt position för kort baserade på produkten från lägsta till högsta CO2-utsläpp.",
   "step_2": "När du tror att du har en idé om var det specifika produktkortet kommer placeras, släpp kortet. Bakgrundsfärgen på ditt tappade kort blir grönt om placeringen var korrekt eller röd om placeringsnätet var felaktig.",
   "step_3": "När alla kort är tomma från bottenhögen och alla 12 korten placeras högst upp kommer du att få en poäng.",
