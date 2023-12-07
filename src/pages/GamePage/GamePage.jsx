@@ -1,10 +1,17 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Lottie from "lottie-react";
 import flag from "../../animations/flag.json";
 
-import { restart } from "../../reducers/game";
+import {
+  initializeCards,
+  restart,
+  setTopCards,
+  setBottomCards,
+  setDraggedCard,
+  setDropzone,
+} from "../../reducers/game";
 import "./GamePage.css";
 import smartphoneImage from "../../assets/mobile.svg";
 import jeansImage from "../../assets/jeans.svg";
@@ -32,19 +39,16 @@ import i18next from "../../i18n";
 
 const GamePage = () => {
   // Initialize state variables
-  const cards = useSelector((state) => state.game.products);
+  // const cards = useSelector((state) => state.game.products);
+  const bottomCards = useSelector((state) => state.game.bottomCards);
+  const topCards = useSelector((state) => state.game.topCards);
+  const draggedCard = useSelector((state) => state.game.draggedCard);
+  const dropzone = useSelector((state) => state.game.dropzone);
   const dispatch = useDispatch();
 
   const { t } = useTranslation();
 
-  //random cards
-  const randomCards = [...cards].sort(() => Math.random() - 0.5);
-
-  const [bottomCards, setBottomCards] = useState(randomCards.slice(2, 10));
-  const [topCards, setTopCards] = useState(cards.slice(0, 1));
-
-  const [draggedCard, setDraggedCard] = useState();
-  const [dropzone, setDropzone] = useState();
+  // const [dropzone, setDropzone] = useState();
 
   const [touchedCard, setTouchedCard] = useState(null);
 
@@ -59,6 +63,11 @@ const GamePage = () => {
   const style = {
     height: 70,
   };
+
+  useEffect(() => {
+    // Dispatch the initializeCards action when the component mounts
+    dispatch(initializeCards());
+  }, []);
 
   // Function to retrieve image path based on card's image
   const getImagePath = (img) => {
@@ -98,21 +107,21 @@ const GamePage = () => {
     const card = bottomCards.find((card) => card.id == e.target.id);
 
     // Set the dragged card and reset dropped indicators
-    setDraggedCard(card);
+    dispatch(setDraggedCard(card));
     // setTimeout(() => {
     //   e.target.style.visibility = "hidden";
     // }, 1);
-    setDropzone();
+    dispatch(setDropzone(null));
   };
 
   // Function triggered when dragging over a target
   const handleDragOver = (e) => {
     //Find the card being dragged based on the divs that have a classname called "dropzone"
     if (e.target.className.includes("dropzone")) {
-      setDropzone(e.target.textContent);
+      dispatch(setDropzone(e.target.textContent));
       e.preventDefault();
     } else {
-      setDropzone();
+      dispatch(setDropzone(null));
     }
   };
 
@@ -127,7 +136,7 @@ const GamePage = () => {
 
       setTimeout(() => {
         // Update the state with the sorted cards
-        setTopCards(sortedCards);
+        dispatch(setTopCards(sortedCards));
         setTimeout(() => {
           setCorrectPlacedId("");
           setWrongPlacedId("");
@@ -147,7 +156,8 @@ const GamePage = () => {
         draggedCard,
         ...topCards.slice(dropzone),
       ];
-      setTopCards(updatedTopCards);
+      // Dispatch the setTopCards action with the updatedTopCards
+      dispatch(setTopCards(updatedTopCards));
 
       // Initiate sorting of top cards after a delay
       const sortedCards = sortTopCardsWithDelay(updatedTopCards);
@@ -164,12 +174,14 @@ const GamePage = () => {
         setWrongPlacedId(draggedCard.id);
       }
 
-      // Filter out the dragged card from bottom cards
-      setBottomCards(bottomCards.filter((card) => card != draggedCard));
+      // Dispatch the setBottomCards action with the updated bottomCards
+      dispatch(
+        setBottomCards(bottomCards.filter((card) => card !== draggedCard))
+      );
     }
     // Reset dragged and dropped cards
-    setDraggedCard(null);
-    setDropzone();
+    dispatch(setDraggedCard(null));
+    dispatch(setDropzone(null));
   };
 
   // for mobile version
@@ -189,11 +201,11 @@ const GamePage = () => {
   };
 
   const handleRestart = () => {
-    dispatch(restart());
-    setBottomCards(randomCards.slice(1, 10)); // Reset the bottom cards
-    setTopCards(randomCards.slice(0, 1)); // Reset the top cards
-    setDraggedCard(null);
-    setDropzone();
+    // Dispatch the initializeCards action to get a new random order
+    dispatch(initializeCards());
+    dispatch(setDraggedCard(null));
+    dispatch(setDropzone(null));
+
     setTouchedCard(null); // Reset touched card
     setCorrectPlacedId(null); // Reset correct placed ID
     setWrongPlacedId([]); // Reset wrong placed IDs

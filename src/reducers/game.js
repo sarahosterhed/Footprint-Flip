@@ -8,7 +8,6 @@ const products = [
     img: "../assets/smartphone.svg",
     hidden: true,
     description: "des_smartphone",
-
   },
   {
     id: 2,
@@ -17,7 +16,6 @@ const products = [
     img: "../assets/jeans.svg",
     hidden: true,
     description: "des_jeans",
-
   },
   {
     id: 3,
@@ -58,7 +56,6 @@ const products = [
     img: "../assets/bus.svg",
     hidden: true,
     description: "des_bus",
-
   },
   {
     id: 8,
@@ -75,7 +72,6 @@ const products = [
     img: "../assets/car.svg",
     hidden: true,
     description: "des_car",
-
   },
   {
     id: 10,
@@ -84,7 +80,6 @@ const products = [
     img: "../assets/coffee.svg",
     hidden: true,
     description: "des_coffee",
-
   },
   {
     id: 11,
@@ -101,11 +96,15 @@ const products = [
     img: "../assets/meat.svg",
     hidden: true,
     description: "des_meat",
-  }
+  },
 ];
 
 const initialState = {
   products,
+  bottomCards: [], // Add bottomCards to the initial state
+  topCards: [], // Add topCards to the initial state
+  draggedCard: null,
+  dropzone: null,
 };
 
 export const game = createSlice({
@@ -113,10 +112,46 @@ export const game = createSlice({
   initialState,
   reducers: {
     restart: () => {
-      return initialState;
+      // Reset the state, including bottomCards and topCards
+      return {
+        ...initialState,
+      };
+    },
+
+    initializeCards: (state) => {
+      // Initialize bottomCards and topCards based on the random order
+      const randomCards = [...state.products].sort(() => Math.random() - 0.5);
+      return {
+        ...state,
+        bottomCards: randomCards.slice(2, 10),
+        topCards: randomCards.slice(0, 1),
+      };
+    },
+
+    setBottomCards: (state, action) => {
+      // Set bottomCards directly in the state
+      state.bottomCards = action.payload;
+    },
+    setTopCards: (state, action) => {
+      // Set topCards directly in the state
+      state.topCards = action.payload;
+    },
+
+    setDraggedCard: (state, action) => {
+      state.draggedCard = action.payload;
+    },
+    setDropzone: (state, action) => {
+      state.dropzone = action.payload;
     },
   },
 });
 
-export const { restart } = game.actions;
+export const {
+  restart,
+  initializeCards,
+  setTopCards,
+  setBottomCards,
+  setDraggedCard,
+  setDropzone,
+} = game.actions;
 export default game.reducer;
