@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../PageNotFound/PageNotFound.css";
-import minion from "../../assets/minion.png";
+import minion from "../../assets/minions.png";
 const PageNotFound = () => {
   return (
     <div className="page-not-found">
