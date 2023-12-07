@@ -134,7 +134,7 @@ body {
   margin-top: 5%;
   display: flex;
   justify-content: center;
-  gap: 200px;
+  gap: 130px;
   width: 100%;
 }
 
@@ -219,8 +219,8 @@ body {
   }
   .bottom-container {
     display: flex;
-    margin-left: 10%;
-    width: 70%;
+    margin-left: 40%;
+    width: 10%;
   }
   .description-box {
     width: 70px;
@@ -235,17 +235,17 @@ body {
 
 @media only screen and (max-width: 1024px) {
   .top-item {
-    font-size: 17px;
+    font-size: 10px;
   }
   .top-section {
     margin-top: 40px;
   }
   .card-container {
-   width: 100px;
-   height: 160px;
+   width: 40px;
+   height: 65px;
   }
   .card-container img {
-    width: 75%;
+    width:40%;
   }
 
   .card_and_description_container {
@@ -257,10 +257,10 @@ body {
   } */
   .card-heading,
   .card-text {
-    font-size: 14px;
+    font-size: 8px;
   }
   .card-text span {
-    font-size: 28px;
+    font-size: 15px;
   }
   /* .bottom-container {
     display: flex;
@@ -268,11 +268,11 @@ body {
     width: 60%;
   } */
   .description-box {
-    width: 100px;
-    height: 150px;
+    width: 70px;
+    height: 80px;
     padding: 0;
   }
   .description {
-    font-size: 12px;
+    font-size: 8px;
   }
 }
