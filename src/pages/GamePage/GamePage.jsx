@@ -3,61 +3,46 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import Lottie from "lottie-react";
 import flag from "../../animations/flag.json";
+import { getImagePath } from "../../assets/getImagePath";
 
 import {
   initializeCards,
-  restart,
   setTopCards,
   setBottomCards,
   setDraggedCard,
   setDropzone,
+  setCorrectPlacedId,
+  setWrongPlacedId,
+  setCorrectCount,
+  setIsOpenModal,
 } from "../../reducers/game";
 import "./GamePage.css";
-import smartphoneImage from "../../assets/mobile.svg";
-import jeansImage from "../../assets/jeans.svg";
 
-import coffee from "../../assets/coffee.svg";
-import textileBag from "../../assets/bag.svg";
-import busImage from "../../assets/bus.svg";
-import carImage from "../../assets/car.svg";
-import flightImage from "../../assets/flight.svg";
-import meatImage from "../../assets/meat.svg";
-import vegoImage from "../../assets/vegetarian.svg";
-import sneakersImage from "../../assets/sneakers.svg";
-import tShirtImage from "../../assets/t-shirt.svg";
-import trainImage from "../../assets/train.svg";
-import defaultImage from "../../assets/qmark.svg";
 import TopCard from "../../components/TopCard/TopCard";
-import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
 import BackButton from "../../components/BackButton/BackButton";
-
-import "drag-drop-touch";
 import Modal from "../../components/Modal/Modal";
 
+import "drag-drop-touch";
 import { useTranslation } from "react-i18next";
 import i18next from "../../i18n";
 
 const GamePage = () => {
-  // Initialize state variables
   // const cards = useSelector((state) => state.game.products);
+
+  // Select states from Redux
   const bottomCards = useSelector((state) => state.game.bottomCards);
   const topCards = useSelector((state) => state.game.topCards);
   const draggedCard = useSelector((state) => state.game.draggedCard);
   const dropzone = useSelector((state) => state.game.dropzone);
+  const correctPlacedId = useSelector((state) => state.game.correctPlacedId);
+  const wrongPlacedId = useSelector((state) => state.game.wrongPlacedId);
+  const correctCount = useSelector((state) => state.game.correctCount);
+  const isOpenModal = useSelector((state) => state.game.isOpenModal);
+  const totalCards = 10; // Total number of cards
   const dispatch = useDispatch();
 
   const { t } = useTranslation();
-
-  // const [dropzone, setDropzone] = useState();
-
   const [touchedCard, setTouchedCard] = useState(null);
-
-  const [correctPlacedId, setCorrectPlacedId] = useState();
-  const [wrongPlacedId, setWrongPlacedId] = useState([]);
-  const [correctCount, setCorrectCount] = useState(0);
-  const totalCards = 10; // Total number of cards
-
-  const [isOpenModal, setIsOpenModal] = useState(false);
 
   //Styles for animation
   const style = {
@@ -68,38 +53,6 @@ const GamePage = () => {
     // Dispatch the initializeCards action when the component mounts
     dispatch(initializeCards());
   }, []);
-
-  // Function to retrieve image path based on card's image
-  const getImagePath = (img) => {
-    switch (img) {
-      case "../assets/smartphone.svg":
-        return smartphoneImage;
-      case "../assets/jeans.svg":
-        return jeansImage;
-      case "../assets/bus.svg":
-        return busImage;
-      case "../assets/car.svg":
-        return carImage;
-      case "../assets/flight.svg":
-        return flightImage;
-      case "../assets/sneakers.svg":
-        return sneakersImage;
-      case "../assets/meat.svg":
-        return meatImage;
-      case "../assets/vegetarian.svg":
-        return vegoImage;
-      case "../assets/train.svg":
-        return trainImage;
-      case "../assets/t-shirt.svg":
-        return tShirtImage;
-      case "../assets/coffee.svg":
-        return coffee;
-      case "../assets/bag.svg":
-        return textileBag;
-      default:
-        return defaultImage;
-    }
-  };
 
   // Function triggered when dragging starts
   const handleDragStart = (e) => {
@@ -138,10 +91,11 @@ const GamePage = () => {
         // Update the state with the sorted cards
         dispatch(setTopCards(sortedCards));
         setTimeout(() => {
-          setCorrectPlacedId("");
-          setWrongPlacedId("");
+          dispatch(setCorrectPlacedId(""));
+          dispatch(setWrongPlacedId([]));
+
           if (bottomCards.length === 1) {
-            setIsOpenModal(true);
+            dispatch(setIsOpenModal(true));
           }
         }, 1000);
       }, 1000);
@@ -168,10 +122,11 @@ const GamePage = () => {
       );
 
       if (isCorrectPlacement) {
-        setCorrectPlacedId(draggedCard.id);
-        setCorrectCount((prevCount) => prevCount + 1);
+        dispatch(setCorrectPlacedId(draggedCard.id));
+        // Update correct count
+        dispatch(setCorrectCount(correctCount + 1));
       } else {
-        setWrongPlacedId(draggedCard.id);
+        dispatch(setWrongPlacedId(draggedCard.id));
       }
 
       // Dispatch the setBottomCards action with the updated bottomCards
@@ -205,12 +160,12 @@ const GamePage = () => {
     dispatch(initializeCards());
     dispatch(setDraggedCard(null));
     dispatch(setDropzone(null));
+    dispatch(setCorrectPlacedId(null)); // Reset correct placed ID
+    dispatch(setWrongPlacedId([])); // Reset wrong placed IDs
+    dispatch(setCorrectCount(0)); // Reset correct count
+    dispatch(setIsOpenModal(false)); // Close the modal if open
 
     setTouchedCard(null); // Reset touched card
-    setCorrectPlacedId(null); // Reset correct placed ID
-    setWrongPlacedId([]); // Reset wrong placed IDs
-    setCorrectCount(0); // Reset correct count
-    setIsOpenModal(false); // Close the modal if open
   };
 
   return (
@@ -323,7 +278,7 @@ const GamePage = () => {
       </div>
       {isOpenModal && (
         <Modal
-          setIsOpen={setIsOpenModal}
+          setIsOpen={() => dispatch(setIsOpenModal(false))}
           correctCount={correctCount}
           totalCards={totalCards}
         />

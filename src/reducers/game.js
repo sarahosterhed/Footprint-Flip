@@ -105,6 +105,10 @@ const initialState = {
   topCards: [], // Add topCards to the initial state
   draggedCard: null,
   dropzone: null,
+  correctPlacedId: null,
+  wrongPlacedId: [],
+  correctCount: 0,
+  isOpenModal: false,
 };
 
 export const game = createSlice({
@@ -143,6 +147,21 @@ export const game = createSlice({
     setDropzone: (state, action) => {
       state.dropzone = action.payload;
     },
+
+    setCorrectPlacedId: (state, action) => {
+      state.correctPlacedId = action.payload;
+    },
+    setWrongPlacedId: (state, action) => {
+      state.wrongPlacedId = action.payload;
+    },
+
+    setCorrectCount: (state, action) => {
+      state.correctCount = action.payload;
+    },
+
+    setIsOpenModal: (state, action) => {
+      state.isOpenModal = action.payload;
+    },
   },
 });
 
@@ -153,5 +172,9 @@ export const {
   setBottomCards,
   setDraggedCard,
   setDropzone,
+  setCorrectPlacedId,
+  setWrongPlacedId,
+  setCorrectCount,
+  setIsOpenModal,
 } = game.actions;
 export default game.reducer;
