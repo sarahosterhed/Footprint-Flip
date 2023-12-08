@@ -1,8 +1,10 @@
 import "./TopCard.css";
-import { useTranslation } from 'react-i18next';
+import { getImagePath } from "../../assets/getImagePath";
+import { useTranslation } from "react-i18next";
 
-const TopCard = ({ card, droppedCard, getImagePath, color }) => {
+const TopCard = ({ card, color }) => {
   const { t } = useTranslation();
+
  return (
   <div
     id={card.id}
@@ -18,6 +20,7 @@ const TopCard = ({ card, droppedCard, getImagePath, color }) => {
   </div>
 
  ) 
+
 };
 
 export default TopCard;
