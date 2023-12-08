@@ -12,6 +12,7 @@
   border-radius: 4px;
   overflow: hidden;
   display: flex;
+  flex: 0 0 auto;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
