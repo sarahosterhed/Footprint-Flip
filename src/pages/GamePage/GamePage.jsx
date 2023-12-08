@@ -236,8 +236,8 @@ const GamePage = () => {
               {showDescription && (
                 <div className="description-container">
                   {topCards.map((card) => (
-                    <div key={card.id} className="description-box">
-                      <p className="description">{t(card.description)}</p>
+                    <div key={card.id} className="description-box top-description-box">
+                      <p className="description top-description">{t(card.description)}</p>
                     </div>
                   ))}
                 </div>
@@ -273,7 +273,7 @@ const GamePage = () => {
                   <img draggable={false} src={getImagePath(card.img)} />
 
                   {card.hidden ? (
-                    <p className="card-text" id="co_text">
+                    <p className="card-text carbon" id="co_text">
                       CO₂ <span>?</span>
                     </p>
                   ) : (
