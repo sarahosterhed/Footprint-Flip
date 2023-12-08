@@ -178,12 +178,20 @@ const GamePage = () => {
     setShowDescription(true);
   };
 
+  const handleRemoveScreen = () => {
+    const rotateScreen = document.querySelector('.rotate-device');
+    if (rotateScreen) {
+      rotateScreen.style.display = 'none';
+    }
+  };
+
   return (
     <div className="game-page">
-      <div className="rotate-device">
+      <div className="rotate-device" onClick={handleRemoveScreen}>
         <div className="phone"></div>
         <div className="message">
-          <p>Please rotate your device to play the game!</p>
+          <h3 className="rotate-heading">Please rotate your device!</h3>
+          <p>For this game you will get the best experience in landscape mode. Still want to play in portrait? Just tap the screen to continue playing.</p>
         </div>
       </div>
       <BackButton />
@@ -230,15 +238,14 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                    ? "red"
-                    : "default"
+                      ? "red"
+                      : "default"
                 }
               />
               {showDescription && (
                 <div
-                  className={`dropzone ${
-                    topCards.length == dropzone ? "selected" : ""
-                  }`}
+                  className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+                    }`}
                 >
                   {topCards.length}
                 </div>
@@ -256,9 +263,8 @@ const GamePage = () => {
           ))}
           {!showDescription && (
             <div
-              className={`dropzone ${
-                topCards.length == dropzone ? "selected" : ""
-              }`}
+              className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+                }`}
             >
               {topCards.length}
             </div>
@@ -272,9 +278,8 @@ const GamePage = () => {
                   {...(index === array.length - 1 ? { draggable: true } : {})}
                   id={card.id}
                   key={`${card.id}-${index}`}
-                  className={`bottom-cards card-container ${
-                    index === array.length - 1 ? "current-card" : ""
-                  }`}
+                  className={`bottom-cards card-container ${index === array.length - 1 ? "current-card" : ""
+                    }`}
                   style={{
                     position: "absolute",
                     marginLeft: `${index * 5}px`,
@@ -309,14 +314,16 @@ const GamePage = () => {
           </div>
         </div>
       </div>
-      {isOpenModal && (
-        <Modal
-          setIsOpen={() => dispatch(setIsOpenModal(false))}
-          correctCount={correctCount}
-          totalCards={totalCards}
-        />
-      )}
-    </div>
+      {
+        isOpenModal && (
+          <Modal
+            setIsOpen={() => dispatch(setIsOpenModal(false))}
+            correctCount={correctCount}
+            totalCards={totalCards}
+          />
+        )
+      }
+    </div >
   );
 };
 
