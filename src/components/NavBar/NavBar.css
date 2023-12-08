@@ -41,7 +41,7 @@ nav {
 @media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
   nav {
     top: unset;
-    bottom: 14px;
+    bottom: 8px;
   }
 
 }
