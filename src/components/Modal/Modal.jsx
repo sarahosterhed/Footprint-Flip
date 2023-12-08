@@ -1,11 +1,35 @@
+
+
+
+import { useState, useEffect } from "react";
 import "./Modal.css";
 import { RiCloseLine } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
+import Confetti from "react-confetti";
 
 const Modal = ({ setIsOpen, correctCount, totalCards }) => {
   const { t } = useTranslation();
+  const [isConfettiActive, setIsConfettiActive] = useState(true);
+
+  useEffect(() => {
+    const confettiTimeout = setTimeout(() => {
+      setIsConfettiActive(false);
+    }, 6000);
+
+    return () => clearTimeout(confettiTimeout);
+  }, []);
+
   return (
     <>
+      {isConfettiActive && (
+        <div className="confetti-container">
+          <Confetti
+            width={window.innerWidth}
+            height={window.innerHeight}
+            style={{ width: "100vw", height: "100vh" }}
+          />
+        </div>
+      )}
       <div className="darkBG" onClick={() => setIsOpen(false)} />
       <div className="centered">
         <div className="modal">
@@ -25,3 +49,4 @@ const Modal = ({ setIsOpen, correctCount, totalCards }) => {
 };
 
 export default Modal;
+
