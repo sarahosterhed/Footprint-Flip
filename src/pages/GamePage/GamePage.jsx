@@ -149,6 +149,7 @@ const GamePage = () => {
     const touchedId = e.target.id;
     setTouchedCard(touchedId);
     handleDragStart(e.touches[0]);
+    handleDragEnd(e);
   };
 
   const handleTouchMove = (e) => {
