@@ -280,7 +280,7 @@ const GamePage = () => {
                   }}
                 >
                   <p className="card-heading">{t(card.name)}</p>
-                  <img draggable={false} src={getImagePath(card.img)} />
+                  <img className="bottom-image" draggable={false} src={getImagePath(card.img)} />
 
                   {card.hidden ? (
                     <p className="card-text carbon" id="co_text">

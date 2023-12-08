@@ -1,5 +1,6 @@
 .score {
     display: flex;
+    align-items: center;
 }
 
 .score-color {
@@ -13,5 +14,15 @@
 @media only screen and (max-width: 768px) {
     .flags {
         height: 50px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
+    .flags {
+        height: 40px;
+    }
+
+    .score {
+        align-items: flex-end;
     }
 }

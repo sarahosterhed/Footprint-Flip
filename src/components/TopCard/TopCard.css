@@ -17,7 +17,7 @@
   align-items: center;
 }
 
-.top-container img {
+.top-image {
   max-height: 50px;
   max-width: 100%;
 }
@@ -38,14 +38,18 @@
     width: 45px;
     height: 80px;
   }
+
   .top-card-heading, .top-card-text {
     margin-top: 8px;
     font-size: 8px;
+
   }
+
   .top-image {
     width: 75%;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
 
   .top-container {
@@ -56,8 +60,31 @@
     font-size: 8px;
     font-weight: 400;
   }
+
   .top-image {
     width: 40%;
     margin-top: 10%;
   }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
+
+  .top-container {
+    width: 60px;
+    height: 100px;
+    padding: 6px 8px;
+  }
+
+  .top-image {
+    max-height: 35px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .top-card-heading,
+  .top-card-text {
+    margin-top: 0;
+    font-size: 11px;
+  }
+
 }

@@ -14,7 +14,7 @@ const reducer = combineReducers({
 
 const store = configureStore({ reducer });
 
-function App() {
+const App = () => {
 
   return (
     <>

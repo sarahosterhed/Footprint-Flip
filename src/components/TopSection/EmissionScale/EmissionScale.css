@@ -30,3 +30,5 @@
     height: 2px;
     background-color: #1d4e89;
 }
+
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {}
