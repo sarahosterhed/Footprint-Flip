@@ -31,14 +31,14 @@ const GamePage = () => {
   // const cards = useSelector((state) => state.game.products);
 
   const addMetaTags = () => {
-    const mobileWebAppCapable = document.createElement('meta');
-    mobileWebAppCapable.name = 'mobile-web-app-capable';
-    mobileWebAppCapable.content = 'yes';
+    const mobileWebAppCapable = document.createElement("meta");
+    mobileWebAppCapable.name = "mobile-web-app-capable";
+    mobileWebAppCapable.content = "yes";
     document.head.appendChild(mobileWebAppCapable);
 
-    const appleMobileWebAppCapable = document.createElement('meta');
-    appleMobileWebAppCapable.name = 'apple-mobile-web-app-capable';
-    appleMobileWebAppCapable.content = 'yes';
+    const appleMobileWebAppCapable = document.createElement("meta");
+    appleMobileWebAppCapable.name = "apple-mobile-web-app-capable";
+    appleMobileWebAppCapable.content = "yes";
     document.head.appendChild(appleMobileWebAppCapable);
 
     return () => {
@@ -178,6 +178,11 @@ const GamePage = () => {
   const handleTouchEnd = (e) => {
     handleDrop(e.changedTouches[0]);
     setTouchedCard(null);
+    handleDragEnd(e);
+  };
+
+  const handleTouchCancel = (e) => {
+    handleDragEnd(e);
   };
 
   const handleRestart = () => {
@@ -224,6 +229,7 @@ const GamePage = () => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        onTouchCancel={handleTouchCancel}
       >
         <div
           style={{
@@ -248,14 +254,15 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                      ? "red"
-                      : "default"
+                    ? "red"
+                    : "default"
                 }
               />
               {showDescription && (
                 <div
-                  className={`dropzone ${topCards.length == dropzone ? "selected" : ""
-                    }`}
+                  className={`dropzone ${
+                    topCards.length == dropzone ? "selected" : ""
+                  }`}
                 >
                   {topCards.length}
                 </div>
@@ -263,8 +270,13 @@ const GamePage = () => {
               {showDescription && (
                 <div className="description-container">
                   {topCards.map((card) => (
-                    <div key={card.id} className="description-box top-description-box">
-                      <p className="description top-description">{t(card.description)}</p>
+                    <div
+                      key={card.id}
+                      className="description-box top-description-box"
+                    >
+                      <p className="description top-description">
+                        {t(card.description)}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -273,8 +285,9 @@ const GamePage = () => {
           ))}
           {!showDescription && (
             <div
-              className={`dropzone ${topCards.length == dropzone ? "selected" : ""
-                }`}
+              className={`dropzone ${
+                topCards.length == dropzone ? "selected" : ""
+              }`}
             >
               {topCards.length}
             </div>
@@ -288,8 +301,9 @@ const GamePage = () => {
                   {...(index === array.length - 1 ? { draggable: true } : {})}
                   id={card.id}
                   key={`${card.id}-${index}`}
-                  className={`bottom-cards card-container ${index === array.length - 1 ? "current-card" : ""
-                    }`}
+                  className={`bottom-cards card-container ${
+                    index === array.length - 1 ? "current-card" : ""
+                  }`}
                   style={{
                     position: "absolute",
                     marginLeft: `${index * 5}px`,
@@ -297,7 +311,11 @@ const GamePage = () => {
                   }}
                 >
                   <p className="card-heading">{t(card.name)}</p>
-                  <img className="bottom-image" draggable={false} src={getImagePath(card.img)} />
+                  <img
+                    className="bottom-image"
+                    draggable={false}
+                    src={getImagePath(card.img)}
+                  />
 
                   {card.hidden ? (
                     <p className="card-text carbon" id="co_text">
