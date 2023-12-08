@@ -109,7 +109,7 @@ const initialState = {
   wrongPlacedId: [],
   correctCount: 0,
   isOpenModal: false,
-  totalCards: 10,
+  totalCards: 12,
 };
 
 export const game = createSlice({
@@ -128,7 +128,7 @@ export const game = createSlice({
       const randomCards = [...state.products].sort(() => Math.random() - 0.5);
       return {
         ...state,
-        bottomCards: randomCards.slice(2, 10),
+        bottomCards: randomCards.slice(2, totalCards),
         topCards: randomCards.slice(0, 1),
       };
     },

@@ -225,14 +225,7 @@ const GamePage = () => {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-          }}
-          className="board-container"
-        >
+        <div className="board-container">
           {topCards.map((card, index) => (
             <React.Fragment key={`${card.name}-${index}`}>
               <div
@@ -292,8 +285,8 @@ const GamePage = () => {
                     }`}
                   style={{
                     position: "absolute",
-                    marginLeft: `${index * 5}px`,
-                    marginTop: `${index * 5}px`,
+                    marginLeft: `${index * 2}px`,
+                    marginTop: `${index * 1}px`,
                   }}
                 >
                   <p className="card-heading">{t(card.name)}</p>
