@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { getImagePath } from "../../assets/getImagePath";
 
 import {
@@ -18,8 +18,6 @@ import {
 import "./GamePage.css";
 
 import TopCard from "../../components/TopCard/TopCard";
-import BackButton from "../../components/BackButton/BackButton";
-
 import Modal from "../../components/Modal/Modal";
 
 import "drag-drop-touch";
@@ -29,6 +27,15 @@ import TopSection from "../../components/TopSection/TopSection";
 
 const GamePage = () => {
   // const cards = useSelector((state) => state.game.products);
+
+  const gamePageRef = useRef(null);
+
+  useEffect(() => {
+    // Scroll to the board-container when the component mounts
+    if (gamePageRef.current) {
+      gamePageRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []); // Empty dependency array ensures this effect runs only once on mount
 
   // Select states from Redux
   const bottomCards = useSelector((state) => state.game.bottomCards);
@@ -188,7 +195,7 @@ const GamePage = () => {
   };
 
   return (
-    <div className="game-page">
+    <div className="game-page" ref={gamePageRef}>
       <div className="rotate-device" onClick={handleRemoveScreen}>
         <div className="phone"></div>
         <div className="message">
@@ -228,15 +235,14 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                    ? "red"
-                    : "default"
+                      ? "red"
+                      : "default"
                 }
               />
               {showDescription && (
                 <div
-                  className={`dropzone ${
-                    topCards.length == dropzone ? "selected" : ""
-                  }`}
+                  className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+                    }`}
                 >
                   {topCards.length}
                 </div>
@@ -259,9 +265,8 @@ const GamePage = () => {
           ))}
           {!showDescription && (
             <div
-              className={`dropzone ${
-                topCards.length == dropzone ? "selected" : ""
-              }`}
+              className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+                }`}
             >
               {topCards.length}
             </div>
@@ -275,9 +280,8 @@ const GamePage = () => {
                   {...(index === array.length - 1 ? { draggable: true } : {})}
                   id={card.id}
                   key={`${card.id}-${index}`}
-                  className={`bottom-cards card-container ${
-                    index === array.length - 1 ? "current-card" : ""
-                  }`}
+                  className={`bottom-cards card-container ${index === array.length - 1 ? "current-card" : ""
+                    }`}
                   style={{
                     position: "absolute",
                     marginLeft: `${index * 2}px`,
