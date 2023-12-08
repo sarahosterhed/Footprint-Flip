@@ -109,6 +109,7 @@ const initialState = {
   wrongPlacedId: [],
   correctCount: 0,
   isOpenModal: false,
+  totalCards: 10,
 };
 
 export const game = createSlice({
@@ -176,5 +177,6 @@ export const {
   setWrongPlacedId,
   setCorrectCount,
   setIsOpenModal,
+  totalCards,
 } = game.actions;
 export default game.reducer;

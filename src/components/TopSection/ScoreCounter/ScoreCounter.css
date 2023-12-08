@@ -1,0 +1,17 @@
+.score {
+    display: flex;
+}
+
+.score-color {
+    color: #fb6105;
+}
+
+.flags {
+    height: 70px;
+}
+
+@media only screen and (max-width: 768px) {
+    .flags {
+        height: 50px;
+    }
+}

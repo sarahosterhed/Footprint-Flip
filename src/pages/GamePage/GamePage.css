@@ -3,7 +3,7 @@ body {
 }
 
 .rotate-device {
-  background-color: transparent;
+  background-color: #7dcfb6;
   min-width: 100svw;
   min-width: 100vw;
   min-height: 100svh;
@@ -22,7 +22,7 @@ body {
   margin: 2%;
 }
 
-.top-section {
+/* .top-section {
   display: flex;
   justify-content: center;
   margin-bottom: -65px;
@@ -34,7 +34,7 @@ body {
 
 .score-color {
   color: #fb6105;
-}
+} */
 
 .bottom-cards {
   border: 1px solid;
@@ -209,13 +209,13 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  .top-item {
+  /* .top-item {
     font-size: 12px;
   }
 
   .top-section {
     margin-top: 25px;
-  }
+  } */
 
   .card-container {
     border: 1px solid black;
@@ -271,13 +271,13 @@ body {
 }
 
 @media only screen and (max-width: 1024px) {
-  .top-item {
+  /* .top-item {
     font-size: 10px;
   }
 
   .top-section {
     margin-top: 40px;
-  }
+  } */
 
   .card-container {
     width: 40px;
@@ -337,19 +337,8 @@ body {
 
 @media only screen and (max-device-width: 812px) and (orientation: portrait) {
   .rotate-device {
-    background-color: #7dcfb6;
-    min-width: 100svw;
-    min-width: 100vw;
-    min-height: 100svh;
-    min-height: 100vh;
     z-index: 10;
-    position: fixed;
-    top: 0;
-    left: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
   }
 
   .phone,

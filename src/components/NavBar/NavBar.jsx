@@ -22,6 +22,7 @@ const NavBar = () => {
   return (
     <>
       <nav>
+        <BackButton />
         <div className="languages">
           <button className="lang_switcher" onClick={changeLang}>
             <img
@@ -32,7 +33,7 @@ const NavBar = () => {
             {lang}
           </button>
         </div>
-        </nav>
+      </nav>
     </>
   );
 };
