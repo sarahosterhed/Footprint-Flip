@@ -23,7 +23,7 @@ import defaultImage from "../../assets/qmark.svg";
 import TopCard from "../../components/TopCard/TopCard";
 import InvisibleCard from "../../components/InvisibleCard/InvisibleCard";
 import BackButton from "../../components/BackButton/BackButton";
-import EmissionScale from "../../components/EmissionScale/EmissionScale"
+import EmissionScale from "../../components/EmissionScale/EmissionScale";
 
 import "drag-drop-touch";
 import Modal from "../../components/Modal/Modal";
@@ -55,6 +55,8 @@ const GamePage = () => {
   const totalCards = 10; // Total number of cards
 
   const [isOpenModal, setIsOpenModal] = useState(false);
+
+  const [showDescription, setShowDescription] = useState(true);
 
   //Styles for animation
   const style = {
@@ -165,6 +167,11 @@ const GamePage = () => {
         setWrongPlacedId(draggedCard.id);
       }
 
+      // Check if it's the first time a card is being placed at the top
+      if (showDescription) {
+        setShowDescription(false); // Hide the description box
+      }
+
       // Filter out the dragged card from bottom cards
       setBottomCards(bottomCards.filter((card) => card != draggedCard));
     }
@@ -200,13 +207,13 @@ const GamePage = () => {
     setWrongPlacedId([]); // Reset wrong placed IDs
     setCorrectCount(0); // Reset correct count
     setIsOpenModal(false); // Close the modal if open
+    setShowDescription(true);
   };
 
   return (
     <div className="game-page">
       <div className="rotate-device">
-        <div className="phone">
-        </div>
+        <div className="phone"></div>
         <div className="message">
           <p>Please rotate your device to play the game!</p>
         </div>
@@ -255,18 +262,39 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                      ? "red"
-                      : "default"
+                    ? "red"
+                    : "default"
                 }
               />
+              {showDescription && (
+                <div
+                  className={`dropzone ${
+                    topCards.length == dropzone ? "selected" : ""
+                  }`}
+                >
+                  {topCards.length}
+                </div>
+              )}
+              {showDescription && (
+                <div className="description-container">
+                  {topCards.map((card) => (
+                    <div key={card.id} className="description-box">
+                      <p className="description">{t(card.description)}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </React.Fragment>
           ))}
-          <div
-            className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+          {!showDescription && (
+            <div
+              className={`dropzone ${
+                topCards.length == dropzone ? "selected" : ""
               }`}
-          >
-            {topCards.length}
-          </div>
+            >
+              {topCards.length}
+            </div>
+          )}
         </div>
         <div className="card_and_description_container">
           <div className="bottom-container">
@@ -276,8 +304,9 @@ const GamePage = () => {
                   {...(index === array.length - 1 ? { draggable: true } : {})}
                   id={card.id}
                   key={`${card.id}-${index}`}
-                  className={`bottom-cards card-container ${index === array.length - 1 ? "current-card" : ""
-                    }`}
+                  className={`bottom-cards card-container ${
+                    index === array.length - 1 ? "current-card" : ""
+                  }`}
                   style={{
                     position: "absolute",
                     marginLeft: `${index * 5}px`,
