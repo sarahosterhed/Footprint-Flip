@@ -31,7 +31,10 @@ body {
   background-color: #7dcfb6;
   margin-top: 1%;
   padding: 1%;
-  overflow: scroll;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: center;
 }
 
 .card-container {
@@ -86,6 +89,7 @@ body {
 /* Dropzone */
 .dropzone {
   width: 20px;
+  flex: 0 0 auto;
   color: transparent;
   background-color: rgba(0, 0, 0, 0.1);
   transform: scaleX(5);
@@ -94,6 +98,7 @@ body {
 
 .dropzone.selected {
   width: 100px;
+  flex: 0 0 auto;
   margin-left: 20px;
   margin-right: 20px;
   padding: 8px 10px;
@@ -386,9 +391,6 @@ body {
     margin-left: 8px;
     margin-right: 8px;
     padding: 6px 6px;
-    border-radius: 4px;
-    transform: scaleX(1);
-    opacity: 0.5;
   }
 
   .description-box {
