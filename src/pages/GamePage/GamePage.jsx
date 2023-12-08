@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { getImagePath } from "../../assets/getImagePath";
 
 import {
@@ -27,15 +27,6 @@ import TopSection from "../../components/TopSection/TopSection";
 
 const GamePage = () => {
   // const cards = useSelector((state) => state.game.products);
-
-  const gamePageRef = useRef(null);
-
-  useEffect(() => {
-    // Scroll to the board-container when the component mounts
-    if (gamePageRef.current) {
-      gamePageRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, []); // Empty dependency array ensures this effect runs only once on mount
 
   // Select states from Redux
   const bottomCards = useSelector((state) => state.game.bottomCards);
@@ -195,7 +186,7 @@ const GamePage = () => {
   };
 
   return (
-    <div className="game-page" ref={gamePageRef}>
+    <div className="game-page">
       <div className="rotate-device" onClick={handleRemoveScreen}>
         <div className="phone"></div>
         <div className="message">
