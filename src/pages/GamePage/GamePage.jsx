@@ -30,26 +30,6 @@ import TopSection from "../../components/TopSection/TopSection";
 const GamePage = () => {
   // const cards = useSelector((state) => state.game.products);
 
-  const addMetaTags = () => {
-    const mobileWebAppCapable = document.createElement('meta');
-    mobileWebAppCapable.name = 'mobile-web-app-capable';
-    mobileWebAppCapable.content = 'yes';
-    document.head.appendChild(mobileWebAppCapable);
-
-    const appleMobileWebAppCapable = document.createElement('meta');
-    appleMobileWebAppCapable.name = 'apple-mobile-web-app-capable';
-    appleMobileWebAppCapable.content = 'yes';
-    document.head.appendChild(appleMobileWebAppCapable);
-
-    return () => {
-      // Clean up the added meta tags when unmounting
-      document.head.removeChild(mobileWebAppCapable);
-      document.head.removeChild(appleMobileWebAppCapable);
-    };
-  };
-
-  useEffect(addMetaTags, []);
-
   // Select states from Redux
   const bottomCards = useSelector((state) => state.game.bottomCards);
   const topCards = useSelector((state) => state.game.topCards);
