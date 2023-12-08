@@ -46,8 +46,6 @@ const GamePage = () => {
   const { t } = useTranslation();
   const [touchedCard, setTouchedCard] = useState(null);
 
-  const totalCards = 10; // Total number of cards
-
   const [showDescription, setShowDescription] = useState(true);
 
   //Styles for animation
