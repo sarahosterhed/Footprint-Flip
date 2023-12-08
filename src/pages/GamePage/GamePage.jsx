@@ -30,6 +30,26 @@ import TopSection from "../../components/TopSection/TopSection";
 const GamePage = () => {
   // const cards = useSelector((state) => state.game.products);
 
+  const addMetaTags = () => {
+    const mobileWebAppCapable = document.createElement('meta');
+    mobileWebAppCapable.name = 'mobile-web-app-capable';
+    mobileWebAppCapable.content = 'yes';
+    document.head.appendChild(mobileWebAppCapable);
+
+    const appleMobileWebAppCapable = document.createElement('meta');
+    appleMobileWebAppCapable.name = 'apple-mobile-web-app-capable';
+    appleMobileWebAppCapable.content = 'yes';
+    document.head.appendChild(appleMobileWebAppCapable);
+
+    return () => {
+      // Clean up the added meta tags when unmounting
+      document.head.removeChild(mobileWebAppCapable);
+      document.head.removeChild(appleMobileWebAppCapable);
+    };
+  };
+
+  useEffect(addMetaTags, []);
+
   // Select states from Redux
   const bottomCards = useSelector((state) => state.game.bottomCards);
   const topCards = useSelector((state) => state.game.topCards);
@@ -228,15 +248,14 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                    ? "red"
-                    : "default"
+                      ? "red"
+                      : "default"
                 }
               />
               {showDescription && (
                 <div
-                  className={`dropzone ${
-                    topCards.length == dropzone ? "selected" : ""
-                  }`}
+                  className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+                    }`}
                 >
                   {topCards.length}
                 </div>
@@ -254,9 +273,8 @@ const GamePage = () => {
           ))}
           {!showDescription && (
             <div
-              className={`dropzone ${
-                topCards.length == dropzone ? "selected" : ""
-              }`}
+              className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+                }`}
             >
               {topCards.length}
             </div>
@@ -270,9 +288,8 @@ const GamePage = () => {
                   {...(index === array.length - 1 ? { draggable: true } : {})}
                   id={card.id}
                   key={`${card.id}-${index}`}
-                  className={`bottom-cards card-container ${
-                    index === array.length - 1 ? "current-card" : ""
-                  }`}
+                  className={`bottom-cards card-container ${index === array.length - 1 ? "current-card" : ""
+                    }`}
                   style={{
                     position: "absolute",
                     marginLeft: `${index * 5}px`,
