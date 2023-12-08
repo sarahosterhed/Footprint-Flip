@@ -17,7 +17,7 @@
   align-items: center;
 }
 
-.top-container img {
+.top-image {
   max-height: 50px;
   max-width: 100%;
 }
@@ -35,26 +35,55 @@
     width: 50px;
     height: 100px;
   }
-  .card-heading, .card-text {
+
+  .card-heading,
+  .card-text {
     margin-top: 10px;
     font-size: 10px;
   }
+
   .top-image {
     width: 35%;
   }
 }
+
 @media only screen and (max-width: 1024px) {
 
   .top-container {
     width: 40px;
-   height: 65px;
+    height: 65px;
   }
-  .card-heading, .card-text {
+
+  .card-heading,
+  .card-text {
     font-size: 8px;
     font-weight: 400;
   }
+
   .top-image {
     width: 40%;
     margin-top: 10%;
   }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
+
+  .top-container {
+    width: 60px;
+    height: 100px;
+    padding: 6px 8px;
+  }
+
+  .top-image {
+    max-height: 35px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .card-heading,
+  .card-text {
+    margin-top: 0;
+    font-size: 11px;
+  }
+
 }

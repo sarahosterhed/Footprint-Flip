@@ -36,6 +36,19 @@
 
 }
 
-@media only screen and (orientation: landscape) {
-    /* Add your CSS rules here */
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
+    .top-section {
+        margin-top: -10px;
+    }
+
+    .space-between {
+        margin: 0 20px;
+        align-items: flex-end;
+    }
+
+    .top-item {
+        font-size: 14px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
 }

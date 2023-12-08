@@ -12,14 +12,9 @@ const ScoreCounter = () => {
     const { t } = useTranslation();
 
     return (
-        <div
-            className="top-item score-color score"
-            style={{ alignItems: "center", margin: "0" }}
-        >
+        <div className="top-item score-color score">
             {t("score")} <Lottie animationData={flag} className="flags" />{" "}
-            <span
-                style={{ alignSelf: "center" }}
-            >{`${correctCount}/${totalCards}`}</span>
+            <span>{`${correctCount}/${totalCards}`}</span>
         </div>
     )
 }
