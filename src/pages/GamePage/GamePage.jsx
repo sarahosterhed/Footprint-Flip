@@ -65,10 +65,8 @@ const GamePage = () => {
 
     // Set the dragged card and reset dropped indicators
     dispatch(setDraggedCard(card));
-    // setTimeout(() => {
-    //   e.target.style.visibility = "hidden";
-    // }, 1);
     dispatch(setDropzone(null));
+    e.target.style.opacity = 0.01;
   };
 
   // Function triggered when dragging over a target
@@ -148,6 +146,10 @@ const GamePage = () => {
     dispatch(setDropzone(null));
   };
 
+  const handleDragEnd = (e) => {
+    e.target.style.opacity = 1;
+  };
+
   // for mobile version
   const handleTouchStart = (e) => {
     const touchedId = e.target.id;
@@ -179,9 +181,9 @@ const GamePage = () => {
   };
 
   const handleRemoveScreen = () => {
-    const rotateScreen = document.querySelector('.rotate-device');
+    const rotateScreen = document.querySelector(".rotate-device");
     if (rotateScreen) {
-      rotateScreen.style.display = 'none';
+      rotateScreen.style.display = "none";
     }
   };
 
@@ -191,7 +193,11 @@ const GamePage = () => {
         <div className="phone"></div>
         <div className="message">
           <h3 className="rotate-heading">Please rotate your device!</h3>
-          <p>For this game you will get the best experience in landscape mode. Still want to play in portrait? Just tap the screen to continue playing.</p>
+          <p>
+            For this game you will get the best experience in landscape mode.
+            Still want to play in portrait? Just tap the screen to continue
+            playing.
+          </p>
         </div>
       </div>
       <BackButton />
@@ -211,6 +217,7 @@ const GamePage = () => {
         onDragStart={handleDragStart}
         onDragOver={handleDragOver}
         onDrop={handleDrop}
+        onDragEnd={handleDragEnd}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -238,14 +245,15 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                      ? "red"
-                      : "default"
+                    ? "red"
+                    : "default"
                 }
               />
               {showDescription && (
                 <div
-                  className={`dropzone ${topCards.length == dropzone ? "selected" : ""
-                    }`}
+                  className={`dropzone ${
+                    topCards.length == dropzone ? "selected" : ""
+                  }`}
                 >
                   {topCards.length}
                 </div>
@@ -263,8 +271,9 @@ const GamePage = () => {
           ))}
           {!showDescription && (
             <div
-              className={`dropzone ${topCards.length == dropzone ? "selected" : ""
-                }`}
+              className={`dropzone ${
+                topCards.length == dropzone ? "selected" : ""
+              }`}
             >
               {topCards.length}
             </div>
@@ -278,8 +287,9 @@ const GamePage = () => {
                   {...(index === array.length - 1 ? { draggable: true } : {})}
                   id={card.id}
                   key={`${card.id}-${index}`}
-                  className={`bottom-cards card-container ${index === array.length - 1 ? "current-card" : ""
-                    }`}
+                  className={`bottom-cards card-container ${
+                    index === array.length - 1 ? "current-card" : ""
+                  }`}
                   style={{
                     position: "absolute",
                     marginLeft: `${index * 5}px`,
@@ -314,16 +324,14 @@ const GamePage = () => {
           </div>
         </div>
       </div>
-      {
-        isOpenModal && (
-          <Modal
-            setIsOpen={() => dispatch(setIsOpenModal(false))}
-            correctCount={correctCount}
-            totalCards={totalCards}
-          />
-        )
-      }
-    </div >
+      {isOpenModal && (
+        <Modal
+          setIsOpen={() => dispatch(setIsOpenModal(false))}
+          correctCount={correctCount}
+          totalCards={totalCards}
+        />
+      )}
+    </div>
   );
 };
 
