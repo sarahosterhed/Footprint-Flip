@@ -51,8 +51,6 @@ body {
   border: 1px solid black;
   width: 100px;
   height: 170px;
-  /* padding-left: 4%;
-  padding-bottom: 1%; */
   background-color: #e6d5b9;
   border-style: solid none none solid;
   border-color: gray;
@@ -66,9 +64,6 @@ body {
   cursor: grab;
 }
 
-.card-container:hover {
-  /* background-color: #e8dbc8; */
-}
 
 .current-card:hover {
   background-color: #e8dbc8;
@@ -165,8 +160,9 @@ body {
 }
 
 .description {
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
+  color: #1d4e89;
   hyphens: auto;
 }
 
@@ -313,7 +309,7 @@ body {
   }
 
   .description {
-    font-size: 8px;
+    font-size: 5px;
   }
 }
 
