@@ -1,8 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
-import Lottie from "lottie-react";
-import flag from "../../animations/flag.json";
 import { getImagePath } from "../../assets/getImagePath";
 
 import {
@@ -15,18 +13,19 @@ import {
   setWrongPlacedId,
   setCorrectCount,
   setIsOpenModal,
+  totalCards,
 } from "../../reducers/game";
 import "./GamePage.css";
 
 import TopCard from "../../components/TopCard/TopCard";
 import BackButton from "../../components/BackButton/BackButton";
-import EmissionScale from "../../components/EmissionScale/EmissionScale";
 
 import Modal from "../../components/Modal/Modal";
 
 import "drag-drop-touch";
 import { useTranslation } from "react-i18next";
 import i18next from "../../i18n";
+import TopSection from "../../components/TopSection/TopSection";
 
 const GamePage = () => {
   // const cards = useSelector((state) => state.game.products);
@@ -40,18 +39,13 @@ const GamePage = () => {
   const wrongPlacedId = useSelector((state) => state.game.wrongPlacedId);
   const correctCount = useSelector((state) => state.game.correctCount);
   const isOpenModal = useSelector((state) => state.game.isOpenModal);
-  const totalCards = 10; // Total number of cards
+  const totalCards = useSelector((state) => state.game.totalCards);
   const dispatch = useDispatch();
 
   const { t } = useTranslation();
   const [touchedCard, setTouchedCard] = useState(null);
 
   const [showDescription, setShowDescription] = useState(true);
-
-  //Styles for animation
-  const style = {
-    height: 70,
-  };
 
   useEffect(() => {
     // Dispatch the initializeCards action when the component mounts
@@ -194,19 +188,8 @@ const GamePage = () => {
           <p>For this game you will get the best experience in landscape mode. Still want to play in portrait? Just tap the screen to continue playing.</p>
         </div>
       </div>
-      <BackButton />
-      <div className="top-section">
-        <div
-          className="top-item score-color score"
-          style={{ alignItems: "center", margin: "0" }}
-        >
-          {t("score")} <Lottie animationData={flag} style={style} />{" "}
-          <span
-            style={{ alignSelf: "center" }}
-          >{`${correctCount}/${totalCards}`}</span>
-        </div>
-      </div>
-      <EmissionScale />
+      {/* <BackButton /> */}
+      <TopSection />
       <div
         onDragStart={handleDragStart}
         onDragOver={handleDragOver}
