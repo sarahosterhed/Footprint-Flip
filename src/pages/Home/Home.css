@@ -34,6 +34,9 @@
   border: none;
   margin: 5%;
 }
+.start-button:hover  {
+  background-color: #EF9C6A;
+}
 
 .instruction-info {
   color: #ea1c00;
@@ -49,4 +52,51 @@
   position: relative;
 }
 
+@media only screen and (max-width: 667px) {
+  .title {
+    font-size: 17px;
+  }
 
+.instruction-info {
+  font-size: 15px;
+}
+}
+
+@media (min-width: 412px) and (max-width: 915px) {
+  .title {
+    font-size: 20px;
+  }
+
+.instruction-info {
+  font-size: 17px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .title {
+    font-size: 24px;
+  }
+
+.instruction-info {
+  font-size: 20px;
+}
+}
+@media (min-width: 820px) and (max-width: 1180px) {
+  .title {
+    font-size: 25px;
+  }
+
+.instruction-info {
+  font-size: 23px;
+}
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .title {
+    font-size: 32px;
+  }
+
+.instruction-info {
+  font-size: 28px;
+}
+}

@@ -20,6 +20,8 @@ import "./GamePage.css";
 
 import TopCard from "../../components/TopCard/TopCard";
 import BackButton from "../../components/BackButton/BackButton";
+import EmissionScale from "../../components/EmissionScale/EmissionScale";
+
 import Modal from "../../components/Modal/Modal";
 
 import "drag-drop-touch";
@@ -43,6 +45,10 @@ const GamePage = () => {
 
   const { t } = useTranslation();
   const [touchedCard, setTouchedCard] = useState(null);
+
+  const totalCards = 10; // Total number of cards
+
+  const [showDescription, setShowDescription] = useState(true);
 
   //Styles for animation
   const style = {
@@ -133,6 +139,11 @@ const GamePage = () => {
       dispatch(
         setBottomCards(bottomCards.filter((card) => card !== draggedCard))
       );
+
+      // Check if it's the first time a card is being placed at the top
+      if (showDescription) {
+        setShowDescription(false); // Hide the description box
+      }
     }
     // Reset dragged and dropped cards
     dispatch(setDraggedCard(null));
@@ -166,14 +177,19 @@ const GamePage = () => {
     dispatch(setIsOpenModal(false)); // Close the modal if open
 
     setTouchedCard(null); // Reset touched card
+    setShowDescription(true);
   };
 
   return (
     <div className="game-page">
+      <div className="rotate-device">
+        <div className="phone"></div>
+        <div className="message">
+          <p>Please rotate your device to play the game!</p>
+        </div>
+      </div>
       <BackButton />
       <div className="top-section">
-        <p className="top-item item-color">{t("low_emission")}</p>
-
         <div
           className="top-item score-color score"
           style={{ alignItems: "center", margin: "0" }}
@@ -183,9 +199,8 @@ const GamePage = () => {
             style={{ alignSelf: "center" }}
           >{`${correctCount}/${totalCards}`}</span>
         </div>
-        <p className="top-item item-color">{t("high_emission")}</p>
       </div>
-      <hr className="horizontal-line" />
+      <EmissionScale />
       <div
         onDragStart={handleDragStart}
         onDragOver={handleDragOver}
@@ -221,15 +236,35 @@ const GamePage = () => {
                     : "default"
                 }
               />
+              {showDescription && (
+                <div
+                  className={`dropzone ${
+                    topCards.length == dropzone ? "selected" : ""
+                  }`}
+                >
+                  {topCards.length}
+                </div>
+              )}
+              {showDescription && (
+                <div className="description-container">
+                  {topCards.map((card) => (
+                    <div key={card.id} className="description-box">
+                      <p className="description">{t(card.description)}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </React.Fragment>
           ))}
-          <div
-            className={`dropzone ${
-              topCards.length == dropzone ? "selected" : ""
-            }`}
-          >
-            {topCards.length}
-          </div>
+          {!showDescription && (
+            <div
+              className={`dropzone ${
+                topCards.length == dropzone ? "selected" : ""
+              }`}
+            >
+              {topCards.length}
+            </div>
+          )}
         </div>
         <div className="card_and_description_container">
           <div className="bottom-container">
@@ -252,7 +287,7 @@ const GamePage = () => {
                   <img draggable={false} src={getImagePath(card.img)} />
 
                   {card.hidden ? (
-                    <p className="card-text">
+                    <p className="card-text" id="co_text">
                       CO₂ <span>?</span>
                     </p>
                   ) : (

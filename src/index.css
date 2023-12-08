@@ -19,21 +19,5 @@ body {
   padding: 0;
   font-family: 'Nunito', sans-serif;
   color: black;
+  background-color: #b4d6cc;
 }
-
-/* body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-} */
-
-/* .card-board {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-} */
-
-
-/* img {
-  width: 60%;
-} */

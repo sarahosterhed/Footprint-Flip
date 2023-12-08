@@ -4,21 +4,27 @@
 .footer-item:hover {
   text-decoration: underline;
 }
-/* footer {
-  position: fixed;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
 
-} */
 footer {
   position: fixed;
     transform: translateX(-50%);
     left: 50%;
-    margin-top: 5%;
+    margin-top: 4%;
 }
 
 footer a {
   color: #ea1c00;
+}
+
+@media only screen and (max-width: 768px) {
+ footer {
+  margin-top: 10%;
+ }
+}
+@media  (min-width: 769px) and (max-width: 1024px) {
+  footer {
+    margin-top: 25%;
+   }
+  }
+  
 }
