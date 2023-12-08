@@ -75,6 +75,7 @@ body {
   margin-left: 10px;
   font-weight: 200;
   font-size: 35px;
+  line-height: 0.8em;
 }
 
 .bottom-image {
@@ -240,6 +241,7 @@ body {
   .card-text span {
     font-size: 25px;
   }
+
   .carbon {
     margin: 0;
   }
@@ -261,6 +263,7 @@ body {
   .description {
     font-size: 8px;
   }
+
   .top-description-box {
     margin-top: 1px;
   }
@@ -362,14 +365,13 @@ body {
 
   .bottom-image {
     max-height: 35px;
-    width: 100%;
+    max-width: 95%;
     margin: 0;
   }
 
-  .top-card-heading,
-  .top-card-text {
-    margin-top: 0;
-    margin-left: 0;
+  .card-heading,
+  .card-text {
+    margin: 0;
     font-size: 11px;
   }
 

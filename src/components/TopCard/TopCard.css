@@ -25,6 +25,7 @@
 .top-container * {
   pointer-events: none;
 }
+
 .top-card-heading {
   text-align: center;
 }
@@ -39,7 +40,8 @@
     height: 80px;
   }
 
-  .top-card-heading, .top-card-text {
+  .top-card-heading,
+  .top-card-text {
     margin-top: 8px;
     font-size: 8px;
 
@@ -54,9 +56,11 @@
 
   .top-container {
     width: 50px;
-   height: 85px;
+    height: 85px;
   }
-  .top-card-heading, .top-card-text {
+
+  .top-card-heading,
+  .top-card-text {
     font-size: 8px;
     font-weight: 400;
   }
@@ -77,13 +81,13 @@
 
   .top-image {
     max-height: 35px;
-    width: 100%;
+    max-width: 95%;
     margin: 0;
   }
 
   .top-card-heading,
   .top-card-text {
-    margin-top: 0;
+    margin: 0;
     font-size: 11px;
   }
 
