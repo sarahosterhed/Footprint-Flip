@@ -7,9 +7,10 @@
 
 footer {
   position: fixed;
-  transform: translateX(-50%);
-  left: 50%;
-  /* margin-top: 5%; */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
 
 footer a {
@@ -17,25 +18,12 @@ footer a {
 }
 
 @media only screen and (max-width: 767px) {
-  footer {
-    margin-top: 2%;
-  }
   .copyright_text {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  footer {
-    margin-top: 10%;
-  }
   .copyright_text {
     font-size: 18px;
   }
 }
-@media (min-width: 820px) and (max-width: 1180px) {
-  footer {
-    margin-top: 20%;
-  }
- 
-}
-
