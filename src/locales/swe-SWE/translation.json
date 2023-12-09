@@ -48,5 +48,8 @@
   "score": "Resultat",
   "score_text": "Ditt slutresultat är:",
 
-  "copy_right": "Upphovsrätt"
+  "copy_right": "Upphovsrätt",
+
+  "rotate_heading": "Var vänlig rotera din enhet!",
+  "rotate_message": "För det här spelet får du den bästa upplevelsen i liggande läge. Vill du fortfarande spela i porträtt? Tryck bara på skärmen för att fortsätta spelar."
 }
