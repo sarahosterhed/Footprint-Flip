@@ -59,7 +59,7 @@ const GamePage = () => {
     // Set the dragged card and reset dropped indicators
     dispatch(setDraggedCard(card));
     dispatch(setDropzone(null));
-    e.target.style.opacity = 0.01;
+    // e.target.style.opacity = 0.01;
   };
 
   // Function triggered when dragging over a target
