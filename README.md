@@ -1,9 +1,3 @@
-<h1 align="center">
-  <a href="">
-    <img src="/src/assets/redux-quiz.svg" alt="Project Banner Image">
-  </a>
-</h1>
-
 # Footprint Flip edux Food Quiz 🃏
 
 Code buddies
