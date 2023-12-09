@@ -20,7 +20,6 @@
   width: 250px;
   height: 170px;
   background: white;
-  color: white;
   z-index: 10;
   border-radius: 16px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
@@ -37,8 +36,8 @@
 .heading {
   margin: 0;
   padding: 10px;
-  color: #2c3e50;
-  font-weight: 500;
+  color: #1d4e89;;
+  font-weight: 800;
   font-size: 18px;
   text-align: center;
 }
@@ -46,7 +45,8 @@
 .modalContent {
   padding: 10px;
   font-size: 14px;
-  color: #2c3e50;
+  color: #1d4e89;
+  font-weight: 800;
   text-align: center;
 }
 

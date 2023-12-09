@@ -34,7 +34,7 @@ const Modal = ({ setIsOpen, correctCount, totalCards }) => {
       <div className="centered">
         <div className="modal">
           <div className="modalHeader">
-            <h5 className="heading">{t("score")}</h5>
+            <h5 className="heading"> 🎉 {t("score")} 🎉</h5>
           </div>
           <button className="closeBtn" onClick={() => setIsOpen(false)}>
             <RiCloseLine style={{ marginBottom: "-3px" }} />
