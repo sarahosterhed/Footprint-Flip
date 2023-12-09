@@ -34,7 +34,12 @@ body {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  justify-content: center;
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+  }
 }
 
 .card-container {
