@@ -1,4 +1,3 @@
-
 const InvisibleCard = ({ droppedLast }) => (
   <div
     id="invisible"

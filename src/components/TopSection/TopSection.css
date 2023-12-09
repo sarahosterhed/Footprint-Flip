@@ -1,54 +1,96 @@
 .top-section {
-    margin-top: 100px;
+  margin-top: 100px;
 }
 
 .space-between {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .top-item {
-    font-weight: 700;
-    font-size: 20px;
-    margin: 20px 3px;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 20px 3px;
 }
 
 .item-color {
-    color: #1d4e89;
+  color: #1d4e89;
+}
+
+@media (min-width: 280px) and (max-width: 653px) {
+  .top-item {
+    font-size: 9px;
+  }
+}
+@media (min-width: 360px) and (max-width: 740px) {
+  .top-item {
+    font-size: 12px;
+  }
+}
+@media (min-width: 412px) and (max-width: 915px) {
+  .top-item {
+    font-size: 13px;
+  }
+}
+@media (min-width: 414px) and (max-width: 896px) {
+  .top-item {
+    font-size: 14px;
+  }
+}
+@media (min-width: 430px) and (max-width: 932px) {
+  .top-item {
+    font-size: 16px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-    .top-item {
-        font-size: 12px;
-    }
-
-    .top-section {
-        margin-top: 25px;
-    }
+  .top-section {
+    margin-top: 45px;
+  }
 }
 
-@media only screen and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+  .top-item {
+    font-size: 20px;
+  }
 
-    .top-section {
-        margin-top: 60px;
-    }
+  .top-section {
+    margin-top: 60px;
+  }
+}
+@media (min-width: 820px) and (max-width: 1180px) {
+  .top-item {
+    font-size: 22px;
+  }
 
+  .top-section {
+    margin-top: 80px;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+  .top-item {
+    font-size: 26px;
+  }
+
+  .top-section {
+    margin-top: 90px;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
-    .top-section {
-        margin-top: -10px;
-    }
+  .top-section {
+    margin-top: -10px;
+  }
 
-    .space-between {
-        margin: 0 20px;
-        align-items: flex-end;
-    }
+  .space-between {
+    margin: 0 20px;
+    align-items: flex-end;
+  }
 
-    .top-item {
-        font-size: 14px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-    }
+  .top-item {
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 }

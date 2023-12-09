@@ -27,7 +27,7 @@
   align-self: center;
 }
 .start-button:hover {
-    background-color: #EF9C6A;
+  background-color: #ef9c6a;
 }
 .instruction-heading {
   text-align: center;
@@ -47,7 +47,7 @@ li {
 }
 
 @media (min-width: 280px) and (max-width: 653px) {
-  .instructions{
+  .instructions {
     margin-left: 0;
     font-size: 12px;
     width: 90%;
@@ -55,7 +55,7 @@ li {
 }
 
 @media (min-width: 375px) and (max-width: 667px) {
-  .instructions{
+  .instructions {
     margin-top: 5rem;
     font-size: 12px;
     width: 90%;
@@ -63,22 +63,19 @@ li {
   }
 
   li {
-    font-size: 12px; 
+    font-size: 12px;
   }
   .note {
-
     font-size: 12px;
-  
   }
   .start-button {
     width: 6rem;
     height: 20px;
     font-size: 14px;
-    
   }
 }
 @media (min-width: 360px) and (max-width: 740px) {
-  .instructions{
+  .instructions {
     margin-left: 0.1rem;
     padding-top: 1rem;
     font-size: 12px;
@@ -86,14 +83,13 @@ li {
     height: 35rem;
   }
   li {
-    font-size: 14px; 
+    font-size: 14px;
   }
   .note {
-    
     font-size: 12px;
-   margin: 10px;
+    margin: 10px;
   }
-  .start-button{
+  .start-button {
     width: 7rem;
     height: 30px;
     font-size: 14px;
@@ -104,20 +100,18 @@ li {
     width: 20%;
     height: 50rem;
   }
-  .start-button{
+  .start-button {
     width: 8rem;
     height: 35px;
     font-size: 16px;
   }
   li {
-    font-size: 16px; 
+    font-size: 16px;
   }
   .note {
-    
     font-size: 16px;
-   margin: 10px;
+    margin: 10px;
   }
-  
 }
 @media (min-width: 412px) and (max-width: 915px) {
   li {
@@ -129,14 +123,10 @@ li {
   .start-button {
     height: 35px;
   }
-  
 }
 @media (min-width: 414px) and (max-width: 896px) {
-
-  
 }
 @media (min-width: 430px) and (max-width: 932px) {
-  
 }
 @media (min-width: 540px) and (max-width: 720px) {
   .instructions {
@@ -145,31 +135,26 @@ li {
   }
 }
 
-
 @media (min-width: 768px) and (max-width: 1024px) {
-
-  
-  .instructions{
+  .instructions {
     margin: 6rem 0 0 6rem;
     padding: 2rem 0 2rem 0;
     font-size: 16px;
     width: 75%;
   }
   li {
-    font-size: 18px; 
+    font-size: 18px;
   }
   .note {
-    
     font-size: 18px;
-   margin: 20px;
+    margin: 20px;
   }
   .start-button {
     height: 40px;
   }
-  
 }
 @media (min-width: 820px) and (max-width: 1180px) {
-  .instructions{
+  .instructions {
     margin: 7rem 0 0 4.2rem;
     padding: 2rem;
     font-size: 20px;
@@ -177,12 +162,11 @@ li {
     height: 50rem;
   }
   li {
-    font-size: 22px; 
+    font-size: 22px;
   }
   .note {
-    
     font-size: 22px;
-   margin: 20px;
+    margin: 20px;
   }
   .start-button {
     height: 40px;
@@ -192,8 +176,7 @@ li {
 }
 
 @media (min-width: 1024px) and (max-width: 1366px) {
-   
-  .instructions{
+  .instructions {
     margin: 10rem 0 0 5rem;
     padding: 2rem 1rem 0 1rem;
     font-size: 22px;
@@ -201,12 +184,11 @@ li {
     height: 60rem;
   }
   li {
-    font-size: 26px; 
+    font-size: 26px;
   }
   .note {
-    
     font-size: 26px;
-   margin: 20px;
+    margin: 20px;
   }
   .start-button {
     font-size: 26px;

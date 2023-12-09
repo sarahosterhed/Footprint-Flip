@@ -22,7 +22,6 @@ import Modal from "../../components/Modal/Modal";
 
 import "drag-drop-touch";
 import { useTranslation } from "react-i18next";
-import i18next from "../../i18n";
 import TopSection from "../../components/TopSection/TopSection";
 
 const GamePage = () => {
@@ -191,7 +190,7 @@ const GamePage = () => {
         <div className="phone"></div>
         <div className="message">
           <h3 className="rotate-heading">Please rotate your device!</h3>
-          <p>
+          <p className="rotate-message">
             For this game you will get the best experience in landscape mode.
             Still want to play in portrait? Just tap the screen to continue
             playing.
