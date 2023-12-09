@@ -131,9 +131,10 @@ body {
   justify-content: center;
   gap: 200px;
   width: 100%;
-  user-select: none;
+  -webkit-user-drag: none;
   z-index:1000;
   position: absolute;
+  
 }
 
 .description-container {
