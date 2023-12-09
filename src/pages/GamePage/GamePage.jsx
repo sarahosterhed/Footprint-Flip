@@ -51,15 +51,13 @@ const GamePage = () => {
 
   // Function triggered when dragging starts
   const handleDragStart = (e) => {
-  
-
     // Find the card being dragged based on the ID
     const card = bottomCards.find((card) => card.id == e.target.id);
 
     // Set the dragged card and reset dropped indicators
     dispatch(setDraggedCard(card));
     dispatch(setDropzone(null));
-    // e.target.style.opacity = 0.01;
+    e.target.style.opacity = 0.01;
   };
 
   // Function triggered when dragging over a target
@@ -191,10 +189,8 @@ const GamePage = () => {
       <div className="rotate-device" onClick={handleRemoveScreen}>
         <div className="phone"></div>
         <div className="message">
-          <h3 className="rotate-heading">{t('rotate_heading')}</h3>
-          <p className="rotate-message">
-          {t('rotate_message')}
-          </p>
+          <h3 className="rotate-heading">{t("rotate_heading")}</h3>
+          <p className="rotate-message">{t("rotate_message")}</p>
         </div>
       </div>
       {/* <BackButton /> */}
@@ -225,14 +221,15 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                      ? "red"
-                      : "default"
+                    ? "red"
+                    : "default"
                 }
               />
               {showDescription && (
                 <div
-                  className={`dropzone ${topCards.length == dropzone ? "selected" : ""
-                    }`}
+                  className={`dropzone ${
+                    topCards.length == dropzone ? "selected" : ""
+                  }`}
                 >
                   {topCards.length}
                 </div>
@@ -255,8 +252,9 @@ const GamePage = () => {
           ))}
           {!showDescription && (
             <div
-              className={`dropzone ${topCards.length == dropzone ? "selected" : ""
-                }`}
+              className={`dropzone ${
+                topCards.length == dropzone ? "selected" : ""
+              }`}
             >
               {topCards.length}
             </div>
@@ -270,8 +268,9 @@ const GamePage = () => {
                   {...(index === array.length - 1 ? { draggable: true } : {})}
                   id={card.id}
                   key={`${card.id}-${index}`}
-                  className={`bottom-cards card-container ${index === array.length - 1 ? "current-card" : ""
-                    }`}
+                  className={`bottom-cards card-container ${
+                    index === array.length - 1 ? "current-card" : ""
+                  }`}
                   style={{
                     position: "absolute",
                     marginLeft: `${index * 2}px`,
