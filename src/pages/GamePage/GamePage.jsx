@@ -51,7 +51,7 @@ const GamePage = () => {
 
   // Function triggered when dragging starts
   const handleDragStart = (e) => {
-    e.preventDefault();
+  
 
     // Find the card being dragged based on the ID
     const card = bottomCards.find((card) => card.id == e.target.id);
