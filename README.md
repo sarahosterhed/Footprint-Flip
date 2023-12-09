@@ -1,4 +1,4 @@
-# Footprint Flip edux Food Quiz 🃏
+# Footprint Flip 🃏
 
 Code buddies
 
