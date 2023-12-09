@@ -9,7 +9,7 @@ footer {
   position: fixed;
   transform: translateX(-50%);
   left: 50%;
-  margin-top: 5%;
+  /* margin-top: 5%; */
 }
 
 footer a {
