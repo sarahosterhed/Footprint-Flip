@@ -136,6 +136,10 @@ body {
   justify-content: center;
   gap: 200px;
   width: 100%;
+  -webkit-user-drag: none;
+  z-index:1000;
+  position: absolute;
+  
 }
 
 .description-container {
@@ -264,7 +268,7 @@ body {
   }
 
   .description {
-    font-size: 9px;
+    font-size: 8px;
     overflow: hidden;
   }
 

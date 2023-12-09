@@ -189,11 +189,9 @@ const GamePage = () => {
       <div className="rotate-device" onClick={handleRemoveScreen}>
         <div className="phone"></div>
         <div className="message">
-          <h3 className="rotate-heading">Please rotate your device!</h3>
+          <h3 className="rotate-heading">{t('rotate_heading')}</h3>
           <p className="rotate-message">
-            For this game you will get the best experience in landscape mode.
-            Still want to play in portrait? Just tap the screen to continue
-            playing.
+          {t('rotate_message')}
           </p>
         </div>
       </div>

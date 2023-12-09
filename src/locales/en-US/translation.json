@@ -48,5 +48,9 @@
   "score": "Score",
   "score_text": " Your final score is:",
 
-  "copy_right": "Copy Right"
+  "copy_right": "Copy Right",
+
+  "rotate_heading": "Please rotate your device!",
+  "rotate_message": "For this game you will get the best experience in landscape mode. Still want to play in portrait? Just tap the screen to continue playing."
+
 }
