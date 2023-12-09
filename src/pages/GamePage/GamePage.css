@@ -131,6 +131,7 @@ body {
   justify-content: center;
   gap: 200px;
   width: 100%;
+  user-select: none;
 }
 
 .description-container {
