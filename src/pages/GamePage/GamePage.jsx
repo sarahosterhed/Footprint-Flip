@@ -315,7 +315,7 @@ const GamePage = () => {
         <Modal
           setIsOpen={() => dispatch(setIsOpenModal(false))}
           correctCount={correctCount}
-          totalCards={totalCards}
+          totalCards={totalCards - 2}
         />
       )}
     </div>
