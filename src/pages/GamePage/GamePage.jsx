@@ -57,7 +57,16 @@ const GamePage = () => {
     // Set the dragged card and reset dropped indicators
     dispatch(setDraggedCard(card));
     dispatch(setDropzone(null));
+    // e.target.style.opacity = 0.01;
+
+    // Check if the browser is Chrome
+  const isChrome = /chrome/i.test(navigator.userAgent) && /google inc/i.test(navigator.vendor);
+
+  // Conditionally set opacity for Chrome
+  if (isChrome) {
     e.target.style.opacity = 0.01;
+  }
+
   };
 
   // Function triggered when dragging over a target
