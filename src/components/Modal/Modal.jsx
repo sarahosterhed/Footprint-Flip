@@ -19,11 +19,11 @@ const Modal = ({ setIsOpen, correctCount, totalCards }) => {
   let message = "";
 
   if (correctCount < 5) {
-    message = "Not Bad ! 👍";
+    message = t('message_one');
   } else if (correctCount >= 5 && correctCount < totalCards) {
-    message = "Good job 👏";
+    message = t('message_two');
   } else if (correctCount === totalCards) {
-    message = " 🥳 Congratulations you won";
+    message = t('message_three');
   }
 
   return (
