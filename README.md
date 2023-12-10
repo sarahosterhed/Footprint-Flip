@@ -6,6 +6,8 @@ Sarah Östehed 👩🏻‍💻,  Priya Pradhan 👩🏻‍💻 and Naima Malik �
 
 Technigo Final Project Week 11 - Nov 30th to Dec 12 2023
 
+Through our game app we are trying to educate consumer about products's carbon emission in a fun way. Through education and awareness, we aspire to inspire a sustainable shift in consumer behavior, fostering a greener and more responsible future.
+
 The game presents several impressive features, ensuring an engaging user experience.
 
 # Key Features 🙌
