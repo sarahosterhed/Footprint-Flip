@@ -3,19 +3,17 @@
   "play_learn": "Play and Learn about products impact on the environment!",
   "start": "Let's start",
   "check_instruction": "CHECKOUT INSTRUCTIONS",
-
   "low_emission": "Lowest Emission",
   "high_emission": "Highest Emission",
   "purchase_requests": "Purchase requests",
   "restart": "Restart",
-
   "smartphone": "Smartphone",
   "jeans": "Jeans",
   "t-shirt": "T-shirt",
   "bicycle": "Bicycle",
   "bag": "Textile Bag",
   "sneakers": "Sneakers",
-  "air_travel":"Air Travel",
+  "air_travel": "Air Travel",
   "air_travel_within_europe": "Air travel within Europe",
   "travel_by_bus": "Travel by bus",
   "travel_by_train": "Travel by train",
@@ -23,7 +21,6 @@
   "coffee_consumption": "Coffee consumption",
   "veg_diet": "Vegetarian diet",
   "meat_diet": "Meat-based diet",
-
   "des_smartphone": "Manufacturing of a smartphone",
   "des_jeans": "The carbon footprint for a pair of jeans",
   "des_shirt": "Production of a typical cotton T-shirt",
@@ -36,23 +33,19 @@
   "des_coffee": "Two cups of coffee a day per week",
   "des_veg": "Weekly food consumption for one person on a vegetarian diet",
   "des_meat": "Weekly food consumption for one person on a meat based diet",
-
   "how_to_play": "How to play",
   "instr": "INSTRUCTIONS",
   "step_1": "Drag and drop the cards to the top and arrange them in the correct order of increasing CO2 emissions. Guess the correct position of the cards based on the product from lowest to highest CO2 emissions.",
   "step_2": " Once you think you have an idea where the specific product card will be placed, drop the card. The background color of your dropped card will turn green if the placement was correct or red if the placement was incorrect.",
   "step_3": "When all the cards are empty from the bottom pile and all 12 cards are placed at the top, you will recieve a score.",
   "note": " Keep in mind the environmental impact of each product, and make environmentally friendly choices!",
+  "disclaimer": "Note: The measurement of emissions stated on each card for this game are not the exact number of emissions, rather just an average calculation.",
   "play_button": "Play Game",
-
   "score": "Score",
   "score_text": " Your final score is:",
-
-  "copy_right": "Copy Right",
-
+  "copy_right": "Copyright",
   "rotate_heading": "Please rotate your device!",
   "rotate_message": "For this game you will get the best experience in landscape mode. Still want to play in portrait? Just tap the screen to continue playing.",
-
   "message_one": "Not Bad! 👍",
   "message_ two": "Good job 👏",
   "message_ three": " 🥳 Congratulations you won!"

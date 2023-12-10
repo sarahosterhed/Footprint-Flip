@@ -38,14 +38,14 @@
   "step_2": "Gissa rätt position även för kommande kort i relation till de andra korten på brädet. När du placerat ett kort ser du om du lagt rätt eller fel. Om det är fel flyttas kortet till rätt position och mängden koldioxidutsläpp visas.",
   "step_3": "Du får poäng för varje rätt och när du spelat ut alla kort visas totalsumman!",
   "note": "Lär dig mer om vilken inverkan dina handlingar har på miljön så att du kan göra mer miljövänliga val!",
+  "disclaimer": "OBS. Siffrorna för utsläppen är ungefärliga och baseras på ett medelvärde.",
   "play_button": "Spela spel",
   "score": "Resultat",
   "score_text": "Ditt slutresultat är:",
   "copy_right": "Upphovsrätt",
   "rotate_heading": "Var vänlig rotera din enhet!",
   "rotate_message": "Du får bäst spelupplevelse i liggande läge. Om du trots allt vill spela i stående läge, tryck bara på skärmen för att gå vidare.",
-
-  "message_one": "Inte dåligt! 👍",
+  "message_one": "Inte illa! 👍",
   "message_ two": "Bra jobbat 👏",
   "message_ three": " 🥳 Grattis du vann!"
 }

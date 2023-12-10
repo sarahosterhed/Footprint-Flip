@@ -20,11 +20,7 @@ const Instructions = () => {
           <li>{t("step_3")}</li>
         </ol>
         <p className="note">{t("note")}</p>
-        <p className="note" style={{ textAlign: "left", margin: "20px" }}>
-          <span style={{ fontWeight: "bold" }}>Note:</span> The measurement of
-          emissions stated on each card for this game are not the exact number
-          of emissions, rather just an average calculation.
-        </p>
+        <p className="note">{t("disclaimer")}</p>
         <button className="start-button" onClick={playGame}>
           {t("play_button")}
         </button>

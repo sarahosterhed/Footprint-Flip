@@ -11,20 +11,38 @@
   height: 70px;
 }
 
+svg {
+  max-width: 87.5px;
+}
+
 @media (min-width: 280px) and (max-width: 653px) {
   .flags {
     width: 50px;
   }
+
+  svg {
+    max-width: 50px;
+  }
+
 }
+
 @media only screen and (max-width: 768px) {
   .flags {
     height: 50px;
+  }
+
+  svg {
+    max-height: 50px;
   }
 }
 
 @media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
   .flags {
     height: 40px;
+  }
+
+  svg {
+    max-height: 40px;
   }
 
   .score {
