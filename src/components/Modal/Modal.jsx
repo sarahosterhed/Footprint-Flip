@@ -16,7 +16,7 @@ const Modal = ({ setIsOpen, correctCount, totalCards }) => {
     return () => clearTimeout(confettiTimeout);
   }, []);
 
-  let message = [];
+  let message = "";
 
   if (correctCount < 5) {
     message = 'message_one';
