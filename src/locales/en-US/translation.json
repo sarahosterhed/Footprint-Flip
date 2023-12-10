@@ -37,7 +37,7 @@
   "instr": "INSTRUCTIONS",
   "step_1": "Drag and drop the cards to the top and arrange them in the correct order of increasing CO2 emissions. Guess the correct position of the cards based on the product from lowest to highest CO2 emissions.",
   "step_2": " Once you think you have an idea where the specific product card will be placed, drop the card. The background color of your dropped card will turn green if the placement was correct or red if the placement was incorrect.",
-  "step_3": "When all the cards are empty from the bottom pile and all 12 cards are placed at the top, you will recieve a score.",
+  "step_3": "When all the cards are empty from the bottom pile and all 10 cards are placed at the top, you will recieve a score.",
   "note": " Keep in mind the environmental impact of each product, and make environmentally friendly choices!",
   "disclaimer": "Note: The measurement of emissions stated on each card for this game are not the exact number of emissions, rather just an average calculation.",
   "play_button": "Play Game",
