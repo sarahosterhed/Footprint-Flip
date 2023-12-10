@@ -11,7 +11,7 @@
   height: 70px;
 }
 
-svg {
+.score svg {
   max-width: 87.5px;
 }
 
@@ -20,7 +20,7 @@ svg {
     width: 50px;
   }
 
-  svg {
+  .score svg {
     max-width: 50px;
   }
 
@@ -31,7 +31,7 @@ svg {
     height: 50px;
   }
 
-  svg {
+  .score svg {
     max-height: 50px;
   }
 }
@@ -41,7 +41,7 @@ svg {
     height: 40px;
   }
 
-  svg {
+  .score svg {
     max-height: 40px;
   }
 
