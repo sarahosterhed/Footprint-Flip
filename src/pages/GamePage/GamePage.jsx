@@ -96,12 +96,17 @@ const GamePage = () => {
           dispatch(setCorrectPlacedId(""));
           dispatch(setWrongPlacedId([]));
 
-          if (bottomCards.length === 1) {
-            dispatch(setIsOpenModal(true));
-          }
         }, 1000);
       }, 1000);
+
+      setTimeout(() => {
+        if (bottomCards.length === 1) {
+          dispatch(setIsOpenModal(true));
+        }
+      }, 400)
+     
       return sortedCards;
+      
     };
 
     // Check if a card is being dragged and dropped over a target

@@ -1,6 +1,3 @@
-
-
-
 import { useState, useEffect } from "react";
 import "./Modal.css";
 import { RiCloseLine } from "react-icons/ri";
@@ -18,6 +15,16 @@ const Modal = ({ setIsOpen, correctCount, totalCards }) => {
 
     return () => clearTimeout(confettiTimeout);
   }, []);
+
+  let message = "";
+
+  if (correctCount < 5) {
+    message = "Not Bad ! 👍";
+  } else if (correctCount >= 5 && correctCount < totalCards) {
+    message = "Good job 👏";
+  } else if (correctCount === totalCards) {
+    message = " 🥳 Congratulations you won";
+  }
 
   return (
     <>
@@ -41,6 +48,7 @@ const Modal = ({ setIsOpen, correctCount, totalCards }) => {
           </button>
           <div className="modalContent">
             {t("score_text")} <span>{`${correctCount}/${totalCards}`}</span>
+            <p>{message}</p>
           </div>
         </div>
       </div>
@@ -49,4 +57,3 @@ const Modal = ({ setIsOpen, correctCount, totalCards }) => {
 };
 
 export default Modal;
-
