@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { getImagePath } from "../../assets/getImagePath";
 
 import {
@@ -13,19 +14,16 @@ import {
   setWrongPlacedId,
   setCorrectCount,
   setIsOpenModal,
-  totalCards,
 } from "../../reducers/game";
 import "./GamePage.css";
 
 import TopCard from "../../components/TopCard/TopCard";
 import Modal from "../../components/Modal/Modal";
-
-import "drag-drop-touch";
-import { useTranslation } from "react-i18next";
 import TopSection from "../../components/TopSection/TopSection";
 
+import "drag-drop-touch";
+
 const GamePage = () => {
-  // const cards = useSelector((state) => state.game.products);
 
   // Select states from Redux
   const bottomCards = useSelector((state) => state.game.bottomCards);
@@ -57,15 +55,14 @@ const GamePage = () => {
     // Set the dragged card and reset dropped indicators
     dispatch(setDraggedCard(card));
     dispatch(setDropzone(null));
-    // e.target.style.opacity = 0.01;
 
- // Check if the browser is Chrome
- const isChrome = window.chrome !== undefined;
+    // Check if the browser is Chrome
+    const isChrome = window.chrome !== undefined;
 
- // Conditionally set opacity for Chrome
- if (isChrome) {
-   e.target.style.opacity = 0.01;
- }
+    // Conditionally set opacity for Chrome
+    if (isChrome) {
+      e.target.style.opacity = 0.01;
+    }
 
   };
 
@@ -81,7 +78,7 @@ const GamePage = () => {
   };
 
   // Function triggered when dragging ends
-  const handleDrop = (e) => {
+  const handleDrop = () => {
     // Function for delayed sorting after a 2-second delay
     const sortTopCardsWithDelay = (cardsToSort) => {
       // Sorts the cards after a 2-second delay
@@ -95,7 +92,6 @@ const GamePage = () => {
         setTimeout(() => {
           dispatch(setCorrectPlacedId(""));
           dispatch(setWrongPlacedId([]));
-
         }, 1000);
       }, 1000);
 
@@ -104,9 +100,9 @@ const GamePage = () => {
           dispatch(setIsOpenModal(true));
         }
       }, 400)
-     
+
       return sortedCards;
-      
+
     };
 
     // Check if a card is being dragged and dropped over a target
@@ -182,12 +178,11 @@ const GamePage = () => {
     dispatch(initializeCards());
     dispatch(setDraggedCard(null));
     dispatch(setDropzone(null));
-    dispatch(setCorrectPlacedId(null)); // Reset correct placed ID
-    dispatch(setWrongPlacedId([])); // Reset wrong placed IDs
-    dispatch(setCorrectCount(0)); // Reset correct count
-    dispatch(setIsOpenModal(false)); // Close the modal if open
-
-    setTouchedCard(null); // Reset touched card
+    dispatch(setCorrectPlacedId(null));
+    dispatch(setWrongPlacedId([]));
+    dispatch(setCorrectCount(0));
+    dispatch(setIsOpenModal(false));
+    setTouchedCard(null);
     setShowDescription(true);
   };
 
@@ -207,7 +202,6 @@ const GamePage = () => {
           <p className="rotate-message">{t("rotate_message")}</p>
         </div>
       </div>
-      {/* <BackButton /> */}
       <TopSection />
       <div
         onDragStart={handleDragStart}
@@ -235,15 +229,14 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                    ? "red"
-                    : "default"
+                      ? "red"
+                      : "default"
                 }
               />
               {showDescription && (
                 <div
-                  className={`dropzone ${
-                    topCards.length == dropzone ? "selected" : ""
-                  }`}
+                  className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+                    }`}
                 >
                   {topCards.length}
                 </div>
@@ -266,9 +259,8 @@ const GamePage = () => {
           ))}
           {!showDescription && (
             <div
-              className={`dropzone ${
-                topCards.length == dropzone ? "selected" : ""
-              }`}
+              className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+                }`}
             >
               {topCards.length}
             </div>
@@ -282,9 +274,8 @@ const GamePage = () => {
                   {...(index === array.length - 1 ? { draggable: true } : {})}
                   id={card.id}
                   key={`${card.id}-${index}`}
-                  className={`bottom-cards card-container ${
-                    index === array.length - 1 ? "current-card" : ""
-                  }`}
+                  className={`bottom-cards card-container ${index === array.length - 1 ? "current-card" : ""
+                    }`}
                   style={{
                     position: "absolute",
                     marginLeft: `${index * 2}px`,
