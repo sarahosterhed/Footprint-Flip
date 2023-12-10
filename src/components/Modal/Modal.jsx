@@ -16,14 +16,14 @@ const Modal = ({ setIsOpen, correctCount, totalCards }) => {
     return () => clearTimeout(confettiTimeout);
   }, []);
 
-  let message = "";
+  let message = [];
 
   if (correctCount < 5) {
-    message = t('message_one');
+    message = 'message_one';
   } else if (correctCount >= 5 && correctCount < totalCards) {
-    message = t('message_two');
+    message = 'message_two';
   } else if (correctCount === totalCards) {
-    message = t('message_three');
+    message = 'message_three';
   }
 
   return (
@@ -48,7 +48,7 @@ const Modal = ({ setIsOpen, correctCount, totalCards }) => {
           </button>
           <div className="modalContent">
             {t("score_text")} <span>{`${correctCount}/${totalCards}`}</span>
-            <p>{message}</p>
+            <p>{t(message)}</p>
           </div>
         </div>
       </div>
