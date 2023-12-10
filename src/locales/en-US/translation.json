@@ -2,7 +2,7 @@
   "welcome_message": "Welcome to Footprint Flip Card Game",
   "play_learn": "Play and learn about how our actions affect our climate !",
   "start": "Let's start",
-  "check_instruction": "CHECKOUT INSTRUCTIONS",
+  "check_instruction": "CHECKOUT GAME RULES",
   "low_emission": "Lowest Emission",
   "high_emission": "Highest Emission",
   "purchase_requests": "Purchase requests",
@@ -46,7 +46,6 @@
   "copy_right": "Copyright",
   "rotate_heading": "Please rotate your device!",
   "rotate_message": "For this game you will get the best experience in landscape mode. Still want to play in portrait? Just tap the screen to continue playing.",
-
   "message_one": "Not Bad! 👍",
   "message_two": "Good job 👏",
   "message_three": " 🥳 Congratulations you won!"

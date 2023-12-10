@@ -29,12 +29,12 @@ const Home = () => {
             <div >
               <Lottie animationData={footprint} style={style} className="home-animation" />
             </div>
-            <button className="start-button" onClick={handleNavigation}>
-              {t('start')}
-            </button>
             <Link to="/instructions" style={{ textDecoration: 'none' }}>
               <p className="instruction-info" >{t('check_instruction')}</p>
             </Link>
+            <button className="start-button" onClick={handleNavigation}>
+              {t('start')}
+            </button>
             <Footer />
           </section>
         </div>
