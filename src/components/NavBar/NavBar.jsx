@@ -39,8 +39,8 @@ const NavBar = () => {
           <button className="lang_switcher" onClick={changeLang}>
             <img
               src={languageIcon}
-              style={{ width: "20px" }}
-              alt="langaugeIcon"
+              style={{ width: "20%", height: "50%" }}
+              alt="language-Icon"
             />{" "}
             {lang}
           </button>
