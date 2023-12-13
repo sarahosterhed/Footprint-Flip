@@ -14,7 +14,7 @@ const ScoreCounter = () => {
     return (
         <div className="top-item score-color score">
             {t("score")} <Lottie animationData={flag} className="flags" />{" "}
-            <span>{`${correctCount}/${totalCards - 2}`}</span>
+            <span className="total-score">{`${correctCount}/${totalCards - 2}`}</span>
         </div>
     )
 }

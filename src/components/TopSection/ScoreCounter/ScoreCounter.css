@@ -3,8 +3,8 @@
   align-items: center;
 }
 
-.score-color {
-  color: #fb6105;
+.score-color, total-score {
+  color: black;
 }
 
 .flags {
