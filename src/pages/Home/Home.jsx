@@ -11,7 +11,7 @@ const Home = () => {
   const { t } = useTranslation();
 
   const handleNavigation = () => {
-    navigate("/gamepage");
+    navigate("/gamePage");
   };
 
   const style = {
@@ -29,7 +29,7 @@ const Home = () => {
             <div >
               <Lottie animationData={footprint} style={style} className="home-animation" />
             </div>
-            <Link to="/instructions" style={{ textDecoration: 'none' }}>
+            <Link to="/instructionsPage" style={{ textDecoration: 'none' }}>
               <p className="instruction-info" >{t('check_instruction')}</p>
             </Link>
             <button className="start-button" onClick={handleNavigation}>

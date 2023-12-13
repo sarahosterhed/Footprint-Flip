@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import "./Instructions.css";
+import "./InstructionPage.css";
 import { useTranslation } from "react-i18next";
 
-const Instructions = () => {
+const InstructionPage = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
@@ -29,4 +29,4 @@ const Instructions = () => {
   );
 };
 
-export default Instructions;
+export default InstructionPage;
