@@ -7,11 +7,11 @@ import busImage from "../assets/bus.svg";
 import carImage from "../assets/car.svg";
 import flightImage from "../assets/flight.svg";
 import meatImage from "../assets/meat.svg";
-import vegoImage from "../assets/vegetarian.svg";
+import vegImage from "../assets/vegetarian.svg";
 import sneakersImage from "../assets/sneakers.svg";
 import tShirtImage from "../assets/t-shirt.svg";
 import trainImage from "../assets/train.svg";
-import defaultImage from "../assets/qmark.svg";
+import defaultImage from "../assets/questionMark.svg";
 
 export const getImagePath = (img) => {
   switch (img) {
@@ -30,7 +30,7 @@ export const getImagePath = (img) => {
     case "../assets/meat.svg":
       return meatImage;
     case "../assets/vegetarian.svg":
-      return vegoImage;
+      return vegImage;
     case "../assets/train.svg":
       return trainImage;
     case "../assets/t-shirt.svg":
