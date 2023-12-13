@@ -332,6 +332,7 @@ const GamePage = () => {
                     className="bottom-image"
                     draggable={false}
                     src={getImagePath(card.img)}
+                    loading="lazy"
                   />
 
                   {card.hidden ? (

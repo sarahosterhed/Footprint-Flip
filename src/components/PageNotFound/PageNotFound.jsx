@@ -5,7 +5,7 @@ const PageNotFound = () => {
   return (
     <div className="page-not-found">
       <h1>Page Not Found. Error 404</h1>
-      <img src={minion} alt="minion" />
+      <img src={minion} alt="minion" loading="lazy"/>
       <Link to="/">Please Go to Home Page</Link>
     </div>
   );

@@ -65,6 +65,7 @@ const TopCard = ({ card, color }) => {
         draggable={false}
         src={getImagePath(card.img)}
         alt={card.name}
+        loading="lazy"
       />
       <p className=" card-text top-card-text">{card.co2} kg</p>
     </div>
