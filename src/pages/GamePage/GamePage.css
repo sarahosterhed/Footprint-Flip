@@ -37,7 +37,7 @@ body {
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     flex: 1;
   }
 }
@@ -121,10 +121,12 @@ body {
   font-size: 0.8rem;
   border: none;
   color: white;
-  background: #f79256;
+  background: #1d4e89;
   transition: all 0.25s ease;
 }
-
+.restartBtn:hover {
+  background-color: #2a5487;
+}
 .primaryBtn:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
@@ -136,9 +138,10 @@ body {
   justify-content: center;
   gap: 200px;
   width: 100%;
- 
 }
-.card-heading, .bottom-image, .card-text {
+.card-heading,
+.bottom-image,
+.card-text {
   -webkit-user-drag: none;
   user-select: none;
 }

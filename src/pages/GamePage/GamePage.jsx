@@ -41,8 +41,6 @@ const GamePage = () => {
 
   const [showDescription, setShowDescription] = useState(true);
 
-  
-
   useEffect(() => {
     // Dispatch the initializeCards action when the component mounts
     dispatch(initializeCards());
