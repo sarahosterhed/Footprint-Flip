@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { getImagePath } from "../../assets/getImagePath";
 
 import {
   initializeCards,
@@ -23,8 +22,22 @@ import TopSection from "../../components/TopSection/TopSection";
 
 import "drag-drop-touch";
 
-const GamePage = () => {
+import smartphoneImage from "../../assets/mobile.svg";
+import jeansImage from "../../assets/jeans.svg";
 
+import coffee from "../../assets/coffee.svg";
+import textileBag from "../../assets/bag.svg";
+import busImage from "../../assets/bus.svg";
+import carImage from "../../assets/car.svg";
+import flightImage from "../../assets/flight.svg";
+import meatImage from "../../assets/meat.svg";
+import vegImage from "../../assets/vegetarian.svg";
+import sneakersImage from "../../assets/sneakers.svg";
+import tShirtImage from "../../assets/t-shirt.svg";
+import trainImage from "../../assets/train.svg";
+import defaultImage from "../../assets/questionMark.svg";
+
+const GamePage = () => {
   // Select states from Redux
   const bottomCards = useSelector((state) => state.game.bottomCards);
   const topCards = useSelector((state) => state.game.topCards);
@@ -41,6 +54,37 @@ const GamePage = () => {
   const [touchedCard, setTouchedCard] = useState(null);
 
   const [showDescription, setShowDescription] = useState(true);
+
+  const getImagePath = (img) => {
+    switch (img) {
+      case "../assets/smartphone.svg":
+        return smartphoneImage;
+      case "../assets/jeans.svg":
+        return jeansImage;
+      case "../assets/bus.svg":
+        return busImage;
+      case "../assets/car.svg":
+        return carImage;
+      case "../assets/flight.svg":
+        return flightImage;
+      case "../assets/sneakers.svg":
+        return sneakersImage;
+      case "../assets/meat.svg":
+        return meatImage;
+      case "../assets/vegetarian.svg":
+        return vegImage;
+      case "../assets/train.svg":
+        return trainImage;
+      case "../assets/t-shirt.svg":
+        return tShirtImage;
+      case "../assets/coffee.svg":
+        return coffee;
+      case "../assets/bag.svg":
+        return textileBag;
+      default:
+        return defaultImage;
+    }
+  };
 
   useEffect(() => {
     // Dispatch the initializeCards action when the component mounts
@@ -63,7 +107,6 @@ const GamePage = () => {
     if (isChrome) {
       e.target.style.opacity = 0.01;
     }
-
   };
 
   // Function triggered when dragging over a target
@@ -99,10 +142,9 @@ const GamePage = () => {
         if (bottomCards.length === 1) {
           dispatch(setIsOpenModal(true));
         }
-      }, 400)
+      }, 400);
 
       return sortedCards;
-
     };
 
     // Check if a card is being dragged and dropped over a target
@@ -229,14 +271,15 @@ const GamePage = () => {
                   card.id == correctPlacedId
                     ? "green"
                     : card.id == wrongPlacedId
-                      ? "red"
-                      : "default"
+                    ? "red"
+                    : "default"
                 }
               />
               {showDescription && (
                 <div
-                  className={`dropzone ${topCards.length == dropzone ? "selected" : ""
-                    }`}
+                  className={`dropzone ${
+                    topCards.length == dropzone ? "selected" : ""
+                  }`}
                 >
                   {topCards.length}
                 </div>
@@ -259,8 +302,9 @@ const GamePage = () => {
           ))}
           {!showDescription && (
             <div
-              className={`dropzone ${topCards.length == dropzone ? "selected" : ""
-                }`}
+              className={`dropzone ${
+                topCards.length == dropzone ? "selected" : ""
+              }`}
             >
               {topCards.length}
             </div>
@@ -274,8 +318,9 @@ const GamePage = () => {
                   {...(index === array.length - 1 ? { draggable: true } : {})}
                   id={card.id}
                   key={`${card.id}-${index}`}
-                  className={`bottom-cards card-container ${index === array.length - 1 ? "current-card" : ""
-                    }`}
+                  className={`bottom-cards card-container ${
+                    index === array.length - 1 ? "current-card" : ""
+                  }`}
                   style={{
                     position: "absolute",
                     marginLeft: `${index * 2}px`,
