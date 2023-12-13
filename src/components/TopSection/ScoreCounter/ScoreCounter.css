@@ -3,7 +3,8 @@
   align-items: center;
 }
 
-.score-color, total-score {
+.score-color,
+total-score {
   color: black;
 }
 
@@ -23,7 +24,6 @@
   .score svg {
     max-width: 50px;
   }
-
 }
 
 @media only screen and (max-width: 768px) {
