@@ -1,10 +1,5 @@
 .home-page {
-  background: linear-gradient(
-    to left,
-    rgb(0, 178, 202),
-    rgb(125, 207, 182),
-    rgb(140, 226, 200)
-  );
+  background: #E8EAD6;
 }
 
 .home-container {
@@ -13,6 +8,7 @@
   align-items: center;
   height: 100vh;
 }
+
 .home-container section {
   text-align: center;
 }
@@ -34,6 +30,7 @@
   border: none;
   margin: 5%;
 }
+
 .start-button:hover {
   background-color: #2a5487;
 }
@@ -43,6 +40,7 @@
   font-weight: 500;
   font-size: 20px;
 }
+
 .instruction-info:hover {
   text-decoration: underline;
 }
@@ -81,6 +79,7 @@
     font-size: 20px;
   }
 }
+
 @media (min-width: 820px) and (max-width: 1180px) {
   .title {
     font-size: 25px;
