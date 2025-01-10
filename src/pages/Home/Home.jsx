@@ -3,42 +3,33 @@ import "./Home.css";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
-import Lottie from "lottie-react";
-import footprint from "../../animations/footprint_co2.json";
+// import Lottie from "lottie-react";
+// import footprint from "../../animations/footprint_co2.json";
 
 const Home = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
   const handleNavigation = () => {
-    navigate("/gamePage");
-  };
-
-  const style = {
-    height: 220,
+    navigate("/game-page");
   };
   return (
     <>
-      <div>
-        <div className="home-container home-page">
-          <section className="title_container">
-            <h1 className="title">{t('welcome_message')}</h1>
-            <h1 className="title">
-              {t('play_learn')}
-            </h1>
-            <div >
-              <Lottie animationData={footprint} style={style} className="home-animation" />
-            </div>
-            <Link to="/instructionsPage" style={{ textDecoration: 'none' }}>
-              <p className="instruction-info" >{t('check_instruction')}</p>
-            </Link>
-            <button className="start-button" onClick={handleNavigation}>
-              {t('start')}
-            </button>
-            <Footer />
-          </section>
+      <section className="container">
+        <div className="content">
+          <h1>{t('welcome_message')}</h1>
+          <h3>
+            {t('play_learn')}
+          </h3>
+          <button className="button" onClick={handleNavigation}>
+            {t('start')}
+          </button>
+          <Link to="/instruction-page">
+            <p className="link" >{t('check_instruction')}</p>
+          </Link>
         </div>
-      </div>
+      </section>
+      <Footer />
     </>
   );
 };

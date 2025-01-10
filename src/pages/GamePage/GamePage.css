@@ -64,6 +64,7 @@ body {
 }
 
 .card-heading {
+  font-family: 'Fredoka', sans-serif;
   font-weight: 400;
   font-size: 16px;
   text-align: center;
@@ -124,9 +125,11 @@ body {
   background: #1d4e89;
   transition: all 0.25s ease;
 }
+
 .restartBtn:hover {
   background-color: #2a5487;
 }
+
 .primaryBtn:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
@@ -139,6 +142,7 @@ body {
   gap: 200px;
   width: 100%;
 }
+
 .card-heading,
 .bottom-image,
 .card-text {
@@ -294,6 +298,7 @@ body {
     width: 70px;
     height: 120px;
   }
+
   .dropzone.selected {
     width: 70px;
   }
@@ -331,23 +336,28 @@ body {
     font-size: 13px;
   }
 }
+
 @media (min-width: 820px) and (max-width: 1180px) {
   .description-container {
     margin-top: 0.5rem;
   }
+
   .description-box {
     width: 120px;
     height: 100px;
   }
+
   .bottom-container {
     gap: 140px;
   }
 }
+
 @media (min-width: 1024px) and (max-width: 1366px) {
   .card-container {
     width: 95px;
     height: 150px;
   }
+
   .dropzone.selected {
     width: 100px;
   }
@@ -356,6 +366,7 @@ body {
     max-width: 90px;
     max-height: 65px;
   }
+
   .card-heading,
   .card-text {
     font-size: 18px;
@@ -364,19 +375,24 @@ body {
   .card-text span {
     font-size: 28px;
   }
+
   .card_and_description_container {
     margin-top: 5rem;
   }
+
   .description-container {
     margin-top: 0.5rem;
   }
+
   .description-box {
     width: 160px;
     height: 150px;
   }
+
   .description {
     font-size: 18px;
   }
+
   .bottom-container {
     gap: 180px;
   }

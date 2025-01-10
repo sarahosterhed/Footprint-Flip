@@ -12,19 +12,20 @@ const InstructionPage = () => {
 
   return (
     <>
-      <div className="instructions">
-        <h1 className="instruction-heading">{t("instr")}</h1>
-        <ol>
-          <li>{t("step_1")}</li>
-          <li>{t("step_2")}</li>
-          <li>{t("step_3")}</li>
-        </ol>
-        <p className="note">{t("note")}</p>
-        <p className="note">{t("disclaimer")}</p>
-        <button className="start-button" onClick={playGame}>
-          {t("play_button")}
-        </button>
-      </div>
+      <section className="container">
+        <div className="content">
+          <h2>{t("instr")}</h2>
+          <ol>
+            <li>{t("step_1")}</li>
+            <li>{t("step_2")}</li>
+            <li>{t("step_3")}</li>
+          </ol>
+          <p className="note">{t("disclaimer")}</p>
+          <button className="button" onClick={playGame}>
+            {t("play_button")}
+          </button>
+        </div>
+      </section>
     </>
   );
 };

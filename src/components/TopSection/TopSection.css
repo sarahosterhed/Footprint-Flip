@@ -9,8 +9,6 @@
 }
 
 .top-item {
-  font-weight: 700;
-  font-size: 20px;
   margin: 20px 3px;
 }
 
@@ -23,21 +21,25 @@
     font-size: 9px;
   }
 }
+
 @media (min-width: 360px) and (max-width: 740px) {
   .top-item {
     font-size: 12px;
   }
 }
+
 @media (min-width: 412px) and (max-width: 915px) {
   .top-item {
     font-size: 13px;
   }
 }
+
 @media (min-width: 414px) and (max-width: 896px) {
   .top-item {
     font-size: 14px;
   }
 }
+
 @media (min-width: 430px) and (max-width: 932px) {
   .top-item {
     font-size: 16px;
@@ -59,6 +61,7 @@
     margin-top: 60px;
   }
 }
+
 @media (min-width: 820px) and (max-width: 1180px) {
   .top-item {
     font-size: 22px;
@@ -68,6 +71,7 @@
     margin-top: 80px;
   }
 }
+
 @media (min-width: 1024px) and (max-width: 1366px) {
   .top-item {
     font-size: 26px;

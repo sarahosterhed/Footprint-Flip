@@ -3,7 +3,7 @@
   width: 100px;
   height: 170px;
   padding: 8px 10px;
-  background-color: #e6d5b9;
+  background-color: #FCFAF5;
   border-style: solid none none solid;
   border-color: gray;
   box-shadow: -1px -1px 3px lightgray;
@@ -38,6 +38,7 @@
     width: 45px;
     height: 80px;
   }
+
   .top-image {
     max-width: 40px;
     max-height: 40px;
@@ -60,6 +61,7 @@
     max-height: 45px;
   }
 }
+
 @media (min-width: 1024px) and (max-width: 1366px) {
   .top-container {
     width: 95px;

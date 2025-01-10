@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Teachers:wght@300;400;500;700&family=Grandstander:wght@500;600&display=swap');
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -17,7 +16,90 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Teachers', sans-serif;
   color: black;
   background-color: #b4d6cc;
+}
+
+h1 {
+  font-family: 'Grandstander', sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 76px;
+  text-align: center;
+  color: #91B07E;
+  margin-top: auto;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-family: 'Grandstander', sans-serif;
+  font-weight: 700;
+  font-size: 52px;
+  text-align: center;
+  color: #82637F;
+  margin-top: auto;
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  color: #222222;
+  font-family: 'Teachers', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: 0.5em;
+}
+
+p {
+  color: #222222;
+  font-family: 'Teachers', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: auto;
+  margin-bottom: 0.5em;
+}
+
+.link {
+  color: #222222;
+  font-family: 'Teachers', sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #82637F;
+  font-family: 'Teachers', sans-serif;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #E8EAD6;
+}
+
+.content {
+  width: 800px;
+}
+
+.button {
+  background-color: #3D8787;
+  color: #ffffff;
+  font-family: 'Teachers', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  border-radius: 60px;
+  border: none;
+  padding: 12px 24px;
+}
+
+.button:hover {
+  background-color: #82637F;
+  cursor: pointer;
 }

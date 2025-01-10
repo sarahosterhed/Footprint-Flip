@@ -25,8 +25,8 @@ const App = () => {
           <NavBar />
           <Routes>
             <Route path="/" element={<Home />}></Route>
-            <Route path="/gamePage" element={<GamePage />}></Route>
-            <Route path="/instructionsPage" element={ <InstructionsPage /> }></Route>
+            <Route path="/game-page" element={<GamePage />}></Route>
+            <Route path="/instruction-page" element={<InstructionsPage />}></Route>
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </BrowserRouter>
