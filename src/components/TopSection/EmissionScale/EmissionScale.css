@@ -9,8 +9,8 @@
   display: inline-block;
   width: 8px;
   height: 8px;
-  border-top: 2px solid #1d4e89;
-  border-right: 2px solid #1d4e89;
+  border-top: 2px solid #3D8787;
+  border-right: 2px solid #3D8787;
 }
 
 .right {
@@ -28,11 +28,11 @@
 .horizontal-line {
   width: 100%;
   height: 2px;
-  background-color: #1d4e89;
+  background-color: #3D8787;
 }
 
 .info-text {
-  color: #1d4e89;
+  color: #3D8787;
   display: flex;
   justify-content: center;
   font-weight: 700;

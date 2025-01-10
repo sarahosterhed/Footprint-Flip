@@ -6,7 +6,7 @@ const EmissionScale = () => {
   return (
     <>
       <div>
-        <p>{t("info_text")}</p>
+        {/* <p>{t("info_text")}</p> */}
         <div className="scale">
           <div className="arrow left"></div>
           <div className="horizontal-line"></div>

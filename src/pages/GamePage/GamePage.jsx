@@ -126,7 +126,9 @@ const GamePage = () => {
         // Update correct count
         dispatch(setCorrectCount(correctCount + 1));
       } else {
-        dispatch(setWrongPlacedId(draggedCard.id));
+        if (wrongPlacedId !== draggedCard.id) {
+          dispatch(setWrongPlacedId(draggedCard.id));
+        }
       }
 
       // Dispatch the setBottomCards action with the updated bottomCards
@@ -168,6 +170,16 @@ const GamePage = () => {
 
   const handleTouchCancel = (e) => {
     handleDragEnd(e);
+  };
+
+  const handleUserGuess = (cardId, correctPlacedId, wrongPlacedId) => {
+    if (cardId === correctPlacedId) {
+      return "correct";
+    } else if (cardId === wrongPlacedId) {
+      return "incorrect";
+    } else {
+      return "default";
+    }
   };
 
   const handleRestart = () => {
@@ -222,19 +234,12 @@ const GamePage = () => {
                 key={card.id}
                 card={card}
                 getImagePath={getImagePath}
-                color={
-                  card.id == correctPlacedId
-                    ? "green"
-                    : card.id == wrongPlacedId
-                    ? "red"
-                    : "default"
-                }
+                userGuess={handleUserGuess(card.id, correctPlacedId, wrongPlacedId)}
               />
               {showDescription && (
                 <div
-                  className={`dropzone ${
-                    topCards.length == dropzone ? "selected" : ""
-                  }`}
+                  className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+                    }`}
                 >
                   {topCards.length}
                 </div>
@@ -257,9 +262,8 @@ const GamePage = () => {
           ))}
           {!showDescription && (
             <div
-              className={`dropzone ${
-                topCards.length == dropzone ? "selected" : ""
-              }`}
+              className={`dropzone ${topCards.length == dropzone ? "selected" : ""
+                }`}
             >
               {topCards.length}
             </div>
@@ -273,9 +277,8 @@ const GamePage = () => {
                   {...(index === array.length - 1 ? { draggable: true } : {})}
                   id={card.id}
                   key={`${card.id}-${index}`}
-                  className={`bottom-cards card-container ${
-                    index === array.length - 1 ? "current-card" : ""
-                  }`}
+                  className={`bottom-card card ${index === array.length - 1 ? "current-card" : ""
+                    }`}
                   style={{
                     position: "absolute",
                     marginLeft: `${index * 2}px`,
