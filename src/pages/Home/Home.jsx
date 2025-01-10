@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <>
       <section className="container">
-        <div className="content">
+        <main className="content">
           <h1>{t('welcome_message')}</h1>
           <h3>
             {t('play_learn')}
@@ -25,9 +25,9 @@ const Home = () => {
             {t('start')}
           </button>
           <Link to="/instruction-page">
-            <p className="link" >{t('check_instruction')}</p>
+            <p className="instructions-link" >{t('check_instruction')}</p>
           </Link>
-        </div>
+        </main>
       </section>
       <Footer />
     </>

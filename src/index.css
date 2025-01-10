@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Teachers:wght@300;400;500;700&family=Grandstander:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teachers:wght@300;400;500;700&family=Grandstander:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Teachers, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
@@ -17,8 +17,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Teachers', sans-serif;
-  color: black;
-  background-color: #b4d6cc;
+  color: #222222;
+  background-color: #E8EAD6;
 }
 
 h1 {
@@ -28,8 +28,7 @@ h1 {
   line-height: 76px;
   text-align: center;
   color: #91B07E;
-  margin-top: auto;
-  margin-bottom: 0.5em;
+  margin: 0;
 }
 
 h2 {
@@ -38,8 +37,7 @@ h2 {
   font-size: 52px;
   text-align: center;
   color: #82637F;
-  margin-top: auto;
-  margin-bottom: 0.5em;
+  margin: 0;
 }
 
 h3 {
@@ -48,31 +46,40 @@ h3 {
   font-weight: 400;
   font-size: 20px;
   text-align: center;
-  margin-top: auto;
-  margin-bottom: 0.5em;
+  margin: 0;
 }
 
 p {
-  color: #222222;
   font-family: 'Teachers', sans-serif;
   font-weight: 400;
   font-size: 20px;
-  margin-top: auto;
-  margin-bottom: 0.5em;
+  margin: 0;
 }
 
-.link {
-  color: #222222;
-  font-family: 'Teachers', sans-serif;
-  font-weight: 400;
+a {
   text-decoration: none;
 }
 
-.link:hover {
+ul, ol {
+  margin: 0;
+}
+
+ol {
+  list-style-position: inside;
+  padding: 0;
+}
+
+li {
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+li::marker {
+  font-family: 'Grandstander';
   color: #82637F;
-  font-family: 'Teachers', sans-serif;
-  font-weight: 400;
-  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 6px;
 }
 
 .container {
@@ -85,21 +92,42 @@ p {
 }
 
 .content {
-  width: 800px;
+  width: 760px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
 }
 
 .button {
   background-color: #3D8787;
   color: #ffffff;
-  font-family: 'Teachers', sans-serif;
-  font-weight: 500;
-  font-size: 24px;
+  font-family: 'Grandstander', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
   border-radius: 60px;
   border: none;
-  padding: 12px 24px;
+  padding: 14px 24px 12px 24px;
+  align-self: center;
+  transition: all ease 0.2s;
 }
 
 .button:hover {
   background-color: #82637F;
   cursor: pointer;
+  animation: play 0.3s;
+  animation-iteration-count: 2;
+}
+
+@keyframes play {
+  0% {
+    transform: translateY(0px);
+  }
+  
+  50% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }

@@ -7,7 +7,7 @@ const InstructionPage = () => {
   const { t } = useTranslation();
 
   const playGame = () => {
-    navigate("/gamepage");
+    navigate("/game-page");
   };
 
   return (

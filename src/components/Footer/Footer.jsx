@@ -10,11 +10,11 @@ const Footer = () => {
       <p className="copyright_text">
         ©{t('copy_right')} 2023{" "}
         <Link
-          to="https://github.com/Priya-Pdh"
+          to="https://github.com/sarahosterhed"
           className="footer-item"
           target="_blank"
         >
-          Priya Pradhan
+          Sarah Österhed
         </Link>
         ,{" "}
         <Link
@@ -26,11 +26,11 @@ const Footer = () => {
         </Link>{" "}
         &{" "}
         <Link
-          to="https://github.com/sarahosterhed"
+          to="https://github.com/Priya-Pdh"
           className="footer-item"
           target="_blank"
         >
-          Sarah Österhed
+          Priya Pradhan
         </Link>
       </p>
     </footer>

@@ -3,6 +3,21 @@
   position: relative;
 }
 
+.instructions-link {
+  text-align: center;
+  color: #82637F;
+  font-family: 'Teachers', sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all ease-in-out 0.15s;
+}
+
+.instructions-link:hover {
+  color: #222222;
+  font-family: 'Teachers', sans-serif;
+  /* text-decoration: underline; */
+}
+
 @media only screen and (max-width: 667px) {
   .title {
     font-size: 17px;

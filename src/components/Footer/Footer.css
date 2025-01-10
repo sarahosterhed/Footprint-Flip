@@ -12,10 +12,15 @@ footer {
   left: 0;
   width: 100%;
   text-align: center;
+  padding: 32px 0;
 }
 
 footer a {
   color: #82637F;
+}
+
+.copyright_text {
+  font-size: 16px;
 }
 
 @media only screen and (max-width: 767px) {
