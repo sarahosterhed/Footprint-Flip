@@ -305,7 +305,7 @@ const GamePage = () => {
               ))}
             </div>
             {bottomCards.length === 0 && (
-              <button className="restartBtn" onClick={handleRestart}>
+              <button onClick={handleRestart}>
                 {t("restart")}
               </button>
             )}

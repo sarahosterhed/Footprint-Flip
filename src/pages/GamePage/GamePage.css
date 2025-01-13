@@ -121,7 +121,7 @@ body {
 }
 
 /* MODAL */
-.restartBtn {
+/* .restartBtn {
   margin: 20px 10px;
   cursor: pointer;
   font-weight: 500;
@@ -132,11 +132,11 @@ body {
   color: white;
   background: #1d4e89;
   transition: all 0.25s ease;
-}
+} */
 
-.restartBtn:hover {
+/* .restartBtn:hover {
   background-color: #2a5487;
-}
+} */
 
 .primaryBtn:hover {
   transform: translateY(-5px);

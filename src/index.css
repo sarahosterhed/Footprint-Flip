@@ -99,7 +99,7 @@ li::marker {
   gap: 32px;
 }
 
-.button {
+button {
   background-color: #3D8787;
   color: #ffffff;
   font-family: 'Grandstander', sans-serif;
@@ -112,7 +112,7 @@ li::marker {
   transition: all ease 0.2s;
 }
 
-.button:hover {
+button:hover {
   background-color: #82637F;
   cursor: pointer;
   animation: play 0.3s;
