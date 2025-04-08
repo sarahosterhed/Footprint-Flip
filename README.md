@@ -72,4 +72,4 @@ UI/UX: HTML Drag and Drop API, React-lottie for animations, React-confetti for t
 
 # View it Live 🎉
 
-https://footprint-flip.netlify.app 
+https://footprintflip.netlify.app 
